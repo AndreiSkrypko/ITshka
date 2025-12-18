@@ -6,8 +6,8 @@ const BonusCard = () => {
   
   return (
     <div
-      className="group relative overflow-hidden rounded-3xl opacity-0 animate-fade-in"
-      style={{ animationDelay: "0.5s" }}
+      className="group relative overflow-hidden rounded-3xl animate-fade-in"
+      style={{ animationDelay: "0.2s" }}
     >
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/[0.08] via-white/[0.04] to-transparent" />

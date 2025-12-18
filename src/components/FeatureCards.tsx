@@ -30,8 +30,8 @@ const FeatureCards = () => {
       {features.map((feature, index) => (
         <div 
           key={index}
-          className="group relative flex-1 overflow-hidden rounded-2xl opacity-0 animate-fade-in"
-          style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+          className="group relative flex-1 overflow-hidden rounded-2xl animate-fade-in"
+          style={{ animationDelay: `${0.2 + index * 0.05}s` }}
         >
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/[0.08] to-white/[0.02]" />

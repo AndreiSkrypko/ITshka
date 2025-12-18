@@ -17,8 +17,7 @@ const HeroSection = () => {
         <div className="max-w-2xl">
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: '0.05s' }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 animate-fade-in"
             role="status"
           >
             <Sparkles className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -29,8 +28,8 @@ const HeroSection = () => {
           
           {/* Main heading */}
           <h1 
-            className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white leading-[1.1] mb-6 opacity-0 animate-fade-in" 
-            style={{ animationDelay: '0.1s' }}
+            className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white leading-[1.1] mb-6 animate-fade-in" 
+            style={{ animationDelay: '0.05s' }}
           >
             {t('hero.title1')}{' '}
             <span className="relative inline-block">
@@ -50,8 +49,8 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p 
-            className="text-lg md:text-xl text-white/60 mb-10 leading-relaxed opacity-0 animate-fade-in max-w-lg" 
-            style={{ animationDelay: '0.2s' }}
+            className="text-lg md:text-xl text-white/60 mb-10 leading-relaxed animate-fade-in max-w-lg" 
+            style={{ animationDelay: '0.1s' }}
           >
             <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
             <br className="hidden sm:block" />
@@ -60,8 +59,8 @@ const HeroSection = () => {
           
           {/* CTA Button */}
           <div 
-            className="flex flex-col items-start gap-4 opacity-0 animate-fade-in w-full" 
-            style={{ animationDelay: '0.3s' }}
+            className="flex flex-col items-start gap-4 animate-fade-in w-full" 
+            style={{ animationDelay: '0.15s' }}
           >
             <Button 
               size="lg"
@@ -101,8 +100,8 @@ const HeroSection = () => {
       {/* Right - Abstract Premium Design (seamless with background) */}
       <div className="hidden lg:block absolute top-0 right-0 w-[55%] h-full pointer-events-none" aria-hidden="true">
         <div 
-          className="relative w-full h-full opacity-0 animate-slide-in-right" 
-          style={{ animationDelay: '0.2s' }}
+          className="relative w-full h-full animate-slide-in-right" 
+          style={{ animationDelay: '0.1s' }}
         >
           {/* Optimized glows - reduced blur for better performance */}
           <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-primary/20 rounded-full blur-[80px] transform-gpu" />
@@ -123,7 +122,7 @@ const HeroSection = () => {
           <div className="absolute top-[60%] right-[18%] w-2 h-2 bg-primary/35 rounded-full" />
           
           {/* Feature cards */}
-          <div className="absolute top-[8%] right-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.4s' }}>
+          <div className="absolute top-[8%] right-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.2s' }}>
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
                 <Code2 className="w-5 h-5 text-primary" />
@@ -135,7 +134,7 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="absolute top-[32%] left-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.6s' }}>
+          <div className="absolute top-[32%] left-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.25s' }}>
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
                 <Layers className="w-5 h-5 text-primary" />
@@ -147,7 +146,7 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="absolute bottom-[22%] right-[8%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.8s' }}>
+          <div className="absolute bottom-[22%] right-[8%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.3s' }}>
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
                 <Zap className="w-5 h-5 text-primary" />
