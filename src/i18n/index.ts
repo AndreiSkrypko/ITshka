@@ -13,59 +13,35 @@ const resources = {
 
 // Маппинг стран на языки
 const countryToLanguage: Record<string, string> = {
-  // Русскоязычные страны
-  'BY': 'ru', // Беларусь
-  'RU': 'ru', // Россия
-  'KZ': 'ru', // Казахстан
-  'UA': 'ru', // Украина
-  'KG': 'ru', // Киргизия
-  'UZ': 'ru', // Узбекистан
-  'TJ': 'ru', // Таджикистан
-  'MD': 'ru', // Молдова
-  'AM': 'ru', // Армения
-  'AZ': 'ru', // Азербайджан
-  'GE': 'ru', // Грузия
-  
-  // Польша
-  'PL': 'pl',
+  'BY': 'ru', 'RU': 'ru', 'KZ': 'ru', 'UA': 'ru', 
+  'KG': 'ru', 'UZ': 'ru', 'TJ': 'ru', 'MD': 'ru', 
+  'AM': 'ru', 'AZ': 'ru', 'GE': 'ru', 'PL': 'pl',
 };
 
-// Определение языка по стране
-const detectLanguageByCountry = async (): Promise<string> => {
-  // Сначала проверяем localStorage
+// Получаем начальный язык синхронно (без блокирующих запросов)
+const getInitialLanguage = (): string => {
+  // 1. Проверяем localStorage
   const savedLang = localStorage.getItem('i18nextLng');
   if (savedLang && ['ru', 'en', 'pl'].includes(savedLang)) {
     return savedLang;
   }
-
-  try {
-    // Определяем страну по IP
-    const response = await fetch('https://ipapi.co/json/', { 
-      signal: AbortSignal.timeout(3000) // Таймаут 3 секунды
-    });
-    const data = await response.json();
-    const countryCode = data.country_code;
-    
-    // Возвращаем язык по стране или английский по умолчанию
-    const language = countryToLanguage[countryCode] || 'en';
-    localStorage.setItem('i18nextLng', language);
-    return language;
-  } catch (error) {
-    // Если не удалось определить - используем язык браузера или русский
-    const browserLang = navigator.language.split('-')[0];
-    if (['ru', 'en', 'pl'].includes(browserLang)) {
-      return browserLang;
-    }
-    return 'ru';
+  
+  // 2. Проверяем язык браузера
+  const browserLang = navigator.language.split('-')[0];
+  if (['ru', 'en', 'pl'].includes(browserLang)) {
+    return browserLang;
   }
+  
+  // 3. По умолчанию русский
+  return 'ru';
 };
 
-// Инициализация i18n
+// Инициализация i18n (синхронная, без блокировки)
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'ru', // Начальный язык (будет изменён после определения)
+    lng: getInitialLanguage(),
     fallbackLng: 'ru',
     supportedLngs: ['ru', 'en', 'pl'],
     interpolation: {
@@ -73,12 +49,28 @@ i18n
     }
   });
 
-// Асинхронное определение языка после загрузки
-detectLanguageByCountry().then((lang) => {
-  if (i18n.language !== lang) {
-    i18n.changeLanguage(lang);
-  }
-});
+// Отложенное определение страны по IP (только если нет сохранённого языка)
+// Выполняется в фоне после загрузки страницы, НЕ блокирует рендеринг
+if (typeof window !== 'undefined' && !localStorage.getItem('i18nextLng')) {
+  // Откладываем на 2 секунды после загрузки
+  setTimeout(() => {
+    fetch('https://ipapi.co/json/', { 
+      signal: AbortSignal.timeout(2000)
+    })
+      .then(res => res.json())
+      .then(data => {
+        const detectedLang = countryToLanguage[data.country_code] || 'en';
+        if (i18n.language !== detectedLang) {
+          i18n.changeLanguage(detectedLang);
+          localStorage.setItem('i18nextLng', detectedLang);
+        }
+      })
+      .catch(() => {
+        // Ошибка - просто оставляем текущий язык
+        localStorage.setItem('i18nextLng', i18n.language);
+      });
+  }, 2000);
+}
 
 export default i18n;
 
