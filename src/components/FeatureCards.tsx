@@ -43,7 +43,7 @@ const FeatureCards = () => {
           {/* Content */}
           <div className="relative px-4 py-5 flex items-center gap-3">
             {/* Icon */}
-            <div className="relative flex-shrink-0">
+            <div className="relative flex-shrink-0" aria-hidden="true">
               <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center border border-primary/20 group-hover:scale-110 transition-transform duration-300`}>
                 <feature.icon className="w-5 h-5 text-primary" />
               </div>
@@ -56,7 +56,7 @@ const FeatureCards = () => {
               <p className="font-bold text-white text-sm group-hover:text-primary transition-colors duration-300">
                 {feature.title}
               </p>
-              <p className="text-xs text-white/40 truncate">
+              <p className="text-xs text-white/60 truncate">
                 {feature.description}
               </p>
             </div>

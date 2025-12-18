@@ -19,9 +19,10 @@ const HeroSection = () => {
           <div 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.05s' }}
+            role="status"
           >
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-xs uppercase tracking-[0.2em] text-white/60 font-medium">
+            <Sparkles className="w-4 h-4 text-primary" aria-hidden="true" />
+            <span className="text-xs uppercase tracking-[0.2em] text-white/70 font-medium">
               {t('hero.badge')}
             </span>
           </div>
@@ -35,7 +36,7 @@ const HeroSection = () => {
             <span className="relative inline-block">
               <span className="text-primary">{t('hero.title2')}</span>
               {/* Underline effect */}
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
+              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
                 <path 
                   d="M2 6C50 2 150 2 198 6" 
                   stroke="currentColor" 
@@ -49,10 +50,10 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p 
-            className="text-lg md:text-xl text-white/50 mb-10 leading-relaxed opacity-0 animate-fade-in max-w-lg" 
+            className="text-lg md:text-xl text-white/60 mb-10 leading-relaxed opacity-0 animate-fade-in max-w-lg" 
             style={{ animationDelay: '0.2s' }}
           >
-            <span className="text-white/70 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
+            <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
             <br className="hidden sm:block" />
             {t('hero.subtitleText2')}
           </p>
@@ -76,14 +77,14 @@ const HeroSection = () => {
             </Button>
             
             {/* Trust indicators */}
-            <div className="flex items-center gap-6 mt-2">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs text-white/40">{t('hero.response')}</span>
+            <div className="flex items-center gap-6 mt-2" role="list" aria-label="Преимущества">
+              <div className="flex items-center gap-2" role="listitem">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
+                <span className="text-xs text-white/60">{t('hero.response')}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary/60" />
-                <span className="text-xs text-white/40">{t('hero.projects')}</span>
+              <div className="flex items-center gap-2" role="listitem">
+                <div className="w-2 h-2 rounded-full bg-primary/60" aria-hidden="true" />
+                <span className="text-xs text-white/60">{t('hero.projects')}</span>
               </div>
             </div>
           </div>
@@ -98,7 +99,7 @@ const HeroSection = () => {
       )}
 
       {/* Right - Abstract Premium Design (seamless with background) */}
-      <div className="hidden lg:block absolute top-0 right-0 w-[55%] h-full pointer-events-none">
+      <div className="hidden lg:block absolute top-0 right-0 w-[55%] h-full pointer-events-none" aria-hidden="true">
         <div 
           className="relative w-full h-full opacity-0 animate-slide-in-right" 
           style={{ animationDelay: '0.2s' }}
@@ -121,7 +122,7 @@ const HeroSection = () => {
           <div className="absolute bottom-[35%] right-[40%] w-2 h-2 bg-primary/50 rounded-full" />
           <div className="absolute top-[60%] right-[18%] w-2 h-2 bg-primary/35 rounded-full" />
           
-          {/* Feature cards - pointer-events-auto to make them interactive */}
+          {/* Feature cards */}
           <div className="absolute top-[8%] right-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.4s' }}>
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
@@ -129,7 +130,7 @@ const HeroSection = () => {
               </div>
               <div>
                 <p className="text-sm font-bold text-white">{t('hero.cleanCode')}</p>
-                <p className="text-[11px] text-white/35">{t('hero.modernTech')}</p>
+                <p className="text-[11px] text-white/50">{t('hero.modernTech')}</p>
               </div>
             </div>
           </div>
@@ -141,7 +142,7 @@ const HeroSection = () => {
               </div>
               <div>
                 <p className="text-sm font-bold text-white">{t('hero.adaptive')}</p>
-                <p className="text-[11px] text-white/35">{t('hero.anyDevice')}</p>
+                <p className="text-[11px] text-white/50">{t('hero.anyDevice')}</p>
               </div>
             </div>
           </div>
@@ -153,7 +154,7 @@ const HeroSection = () => {
               </div>
               <div>
                 <p className="text-sm font-bold text-white">{t('hero.speed')}</p>
-                <p className="text-[11px] text-white/35">{t('hero.fastLoading')}</p>
+                <p className="text-[11px] text-white/50">{t('hero.fastLoading')}</p>
               </div>
             </div>
           </div>
@@ -180,12 +181,12 @@ const HeroSection = () => {
           <div className="absolute bottom-[10%] left-[10%] flex items-center gap-8 pointer-events-auto">
             <div className="text-center">
               <p className="text-4xl font-black text-primary">100+</p>
-              <p className="text-xs text-white/30 mt-1">{t('hero.projectsCount')}</p>
+              <p className="text-xs text-white/50 mt-1">{t('hero.projectsCount')}</p>
             </div>
             <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
             <div className="text-center">
               <p className="text-4xl font-black text-primary">5+</p>
-              <p className="text-xs text-white/30 mt-1">{t('hero.yearsExp')}</p>
+              <p className="text-xs text-white/50 mt-1">{t('hero.yearsExp')}</p>
             </div>
           </div>
         </div>

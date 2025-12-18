@@ -19,7 +19,7 @@ const BonusCard = () => {
       {/* Content */}
       <div className="relative px-6 md:px-8 py-5 md:py-6 flex items-center gap-5 md:gap-6">
         {/* Icon */}
-        <div className="relative flex-shrink-0">
+        <div className="relative flex-shrink-0" aria-hidden="true">
           <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center border border-primary/20 group-hover:scale-110 transition-transform duration-500">
             <Handshake className="w-7 h-7 md:w-8 md:h-8 text-primary" />
           </div>
@@ -32,7 +32,7 @@ const BonusCard = () => {
           <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-1">
             <span className="text-primary">{t('bonus.title')}</span> {t('bonus.titleAccent')}
           </h3>
-          <p className="text-white/40 text-xs md:text-sm leading-relaxed">
+          <p className="text-white/60 text-xs md:text-sm leading-relaxed">
             {t('bonus.description')}
           </p>
         </div>
