@@ -1,21 +1,43 @@
-import { Handshake } from "lucide-react";
+import { Handshake, ArrowRight } from "lucide-react";
 
 const BonusCard = () => {
   return (
     <div
-      className="relative bg-gradient-to-r from-card/95 via-card/85 to-card/50 backdrop-blur-xl rounded-2xl px-6 py-4 flex items-center gap-4 opacity-0 animate-fade-in border border-primary/30 shadow-[0_8px_32px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.03)] hover:border-primary/50 hover:shadow-[0_8px_45px_rgba(16,185,129,0.15)] transition-all lg:w-full group"
+      className="group relative overflow-hidden rounded-3xl opacity-0 animate-fade-in"
       style={{ animationDelay: "0.5s" }}
     >
-      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all shadow-[0_0_20px_hsl(160_84%_39%/0.2)]">
-        <Handshake className="w-5 h-5 text-primary" />
-      </div>
-      <div>
-        <p className="text-foreground font-semibold text-sm leading-tight mb-0.5">
-          <span className="text-primary">Персональный подход</span> к каждому проекту
-        </p>
-        <p className="text-muted-foreground text-xs">
-          Интервью → Анализ → Решение под ваш бизнес
-        </p>
+      {/* Background with gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/[0.08] via-white/[0.04] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Border glow effect */}
+      <div className="absolute inset-0 rounded-3xl border border-white/10 group-hover:border-primary/30 transition-colors duration-500" />
+      
+      {/* Content */}
+      <div className="relative px-6 md:px-8 py-5 md:py-6 flex items-center gap-5 md:gap-6">
+        {/* Icon */}
+        <div className="relative flex-shrink-0">
+          <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center border border-primary/20 group-hover:scale-110 transition-transform duration-500">
+            <Handshake className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+          </div>
+          {/* Glow */}
+          <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </div>
+        
+        {/* Text */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-1">
+            <span className="text-primary">Персональный разбор</span> вашего проекта
+          </h3>
+          <p className="text-white/40 text-xs md:text-sm leading-relaxed">
+            Созвонимся, зададим правильные вопросы и подберём решение под ваш бизнес
+          </p>
+        </div>
+        
+        {/* Arrow */}
+        <div className="hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
+          <ArrowRight className="w-5 h-5 text-white/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-300" />
+        </div>
       </div>
     </div>
   );
