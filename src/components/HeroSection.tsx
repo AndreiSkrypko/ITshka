@@ -11,31 +11,31 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex h-[calc(100vh-140px)] sm:h-[calc(100vh-180px)] lg:h-[calc(100vh-220px)]">
+    <section className="relative flex mt-20 md:mt-24 mb-8 lg:mt-16 lg:mb-0 lg:h-[calc(100vh-220px)]">
       {/* Left Content */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 z-10">
+      <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 md:px-12 lg:px-16 z-10">
         <div className="max-w-2xl">
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-3 sm:mb-6 opacity-0 animate-fade-in"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.05s' }}
           >
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/60 font-medium">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-xs uppercase tracking-[0.2em] text-white/60 font-medium">
               {t('hero.badge')}
             </span>
           </div>
           
           {/* Main heading */}
           <h1 
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white leading-[1.1] mb-3 sm:mb-6 opacity-0 animate-fade-in" 
+            className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white leading-[1.1] mb-6 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.1s' }}
           >
             {t('hero.title1')}{' '}
             <span className="relative inline-block">
               <span className="text-primary">{t('hero.title2')}</span>
               {/* Underline effect */}
-              <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
+              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                 <path 
                   d="M2 6C50 2 150 2 198 6" 
                   stroke="currentColor" 
@@ -49,21 +49,22 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p 
-            className="text-sm sm:text-lg md:text-xl text-white/50 mb-4 sm:mb-10 leading-relaxed opacity-0 animate-fade-in max-w-lg" 
+            className="text-lg md:text-xl text-white/50 mb-10 leading-relaxed opacity-0 animate-fade-in max-w-lg" 
             style={{ animationDelay: '0.2s' }}
           >
             <span className="text-white/70 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
-            <span className="hidden sm:inline"><br />{t('hero.subtitleText2')}</span>
+            <br className="hidden sm:block" />
+            {t('hero.subtitleText2')}
           </p>
           
           {/* CTA Button */}
           <div 
-            className="flex flex-col items-start gap-2 sm:gap-4 opacity-0 animate-fade-in w-full" 
+            className="flex flex-col items-start gap-4 opacity-0 animate-fade-in w-full" 
             style={{ animationDelay: '0.3s' }}
           >
             <Button 
               size="lg"
-              className="relative group text-sm sm:text-base md:text-xl px-5 sm:px-10 md:px-14 py-4 sm:py-7 md:py-8 rounded-xl sm:rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
+              className="relative group text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-14 py-6 sm:py-7 md:py-8 rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
               onClick={() => setIsModalOpen(true)}
             >
               {/* Shine effect */}
@@ -75,14 +76,14 @@ const HeroSection = () => {
             </Button>
             
             {/* Trust indicators */}
-            <div className="flex items-center gap-4 sm:gap-6 mt-1 sm:mt-2">
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-[10px] sm:text-xs text-white/40">{t('hero.response')}</span>
+            <div className="flex items-center gap-6 mt-2">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs text-white/40">{t('hero.response')}</span>
               </div>
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary/60" />
-                <span className="text-[10px] sm:text-xs text-white/40">{t('hero.projects')}</span>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary/60" />
+                <span className="text-xs text-white/40">{t('hero.projects')}</span>
               </div>
             </div>
           </div>

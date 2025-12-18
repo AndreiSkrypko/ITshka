@@ -29,19 +29,19 @@ const Index = () => {
         <FeatureCards />
       </div>
       
-      {/* Bottom Section - always absolute */}
-      <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 md:px-12 lg:px-16 pb-3 sm:pb-5">
+      {/* Bottom Section */}
+      <div className="px-6 md:px-12 lg:px-16 pb-5 mt-10 lg:mt-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0">
         <div className="w-full lg:max-w-[45%]">
           <BonusCard />
         </div>
         
         {/* Footer */}
-        <div className="flex flex-col sm:flex-row items-center justify-between mt-2 sm:mt-4 pt-2 sm:pt-4 border-t border-white/5">
-          <div className="flex items-center gap-3 sm:gap-4 mb-1 sm:mb-0">
-            <span className="text-[9px] sm:text-[10px] text-white/40 font-medium tracking-wide">© 2024 ITshka</span>
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-4 pt-4 border-t border-white/5">
+          <div className="flex items-center gap-4 mb-2 sm:mb-0">
+            <span className="text-[10px] text-white/40 font-medium tracking-wide">© 2024 ITshka</span>
             <SocialLinks />
           </div>
-          <span className="text-[9px] sm:text-[10px] text-white/30 tracking-wide hidden sm:block">
+          <span className="text-[10px] text-white/30 tracking-wide">
             Создаём сайты, которые работают на бизнес
           </span>
         </div>
