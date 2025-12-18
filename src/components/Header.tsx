@@ -6,7 +6,7 @@ const Header = () => {
   const { t } = useTranslation();
   
   return (
-    <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 md:px-12 py-5">
+    <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-5">
       {/* Logo */}
       <div className="flex items-center gap-4">
         <div className="relative">

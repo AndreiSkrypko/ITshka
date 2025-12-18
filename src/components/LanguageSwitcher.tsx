@@ -55,7 +55,7 @@ const LanguageSwitcher = () => {
 
       {isOpen && (
         <div 
-          className="absolute top-full right-0 mt-2 py-1.5 sm:py-2 w-28 sm:w-32 rounded-xl bg-[#0a0f14] border border-white/10 shadow-xl overflow-hidden"
+          className="absolute top-full right-0 mt-2 py-1.5 sm:py-2 w-28 sm:w-32 rounded-xl bg-[#0a0f14] border border-white/10 shadow-xl overflow-hidden z-[9999]"
           role="listbox"
         >
           {languages.map((lang) => (
