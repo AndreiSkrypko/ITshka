@@ -9,7 +9,7 @@ const Index = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="h-screen relative bg-[#050809] overflow-hidden">
+    <div className="min-h-screen relative bg-[#050809] overflow-x-hidden">
       {/* Decorative background elements */}
       <div aria-hidden="true">
         {/* Optimized gradient orbs - GPU accelerated, reduced blur */}
