@@ -36,7 +36,7 @@ const Header = () => {
         <a 
           href="tel:+375291210908" 
           className="flex items-center gap-2 sm:gap-3 group"
-          aria-label="Позвонить: +375 29 121-09-08"
+          aria-label={t('header.callAria')}
         >
           <div className="relative">
             <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
@@ -46,7 +46,7 @@ const Header = () => {
             <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-primary/20 animate-ping opacity-0 group-hover:opacity-100" style={{ animationDuration: '1.5s' }} aria-hidden="true" />
           </div>
           <div className="hidden sm:block">
-            <span className="block text-xs text-white/50 font-medium">Позвоните нам</span>
+            <span className="block text-xs text-white/50 font-medium">{t('header.callUs')}</span>
             <span className="block font-bold text-white group-hover:text-primary transition-colors">
               +375 29 121-09-08
             </span>

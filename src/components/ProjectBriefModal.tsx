@@ -75,7 +75,6 @@ interface BriefFormData {
   promotionMethods: string;
   promotionCalculation: string;
   otherRequirements: string;
-  howDidYouFindUs: string;
 }
 
 const initialBriefData: BriefFormData = {
@@ -110,18 +109,17 @@ const initialBriefData: BriefFormData = {
   promotionMethods: '',
   promotionCalculation: '',
   otherRequirements: '',
-  howDidYouFindUs: '',
 };
 
 const briefSteps = [
-  { id: 1, title: 'О компании', subtitle: 'Расскажите о себе', icon: Building2 },
-  { id: 2, title: 'Маркетинг', subtitle: 'Ваш бизнес', icon: Target },
-  { id: 3, title: 'Задачи', subtitle: 'Цели проекта', icon: FileText },
-  { id: 4, title: 'Контент', subtitle: 'Структура сайта', icon: Layout },
-  { id: 5, title: 'Технологии', subtitle: 'Требования', icon: Settings },
-  { id: 6, title: 'Дизайн', subtitle: 'Визуальный стиль', icon: Palette },
-  { id: 7, title: 'Поддержка', subtitle: 'После запуска', icon: Headphones },
-  { id: 8, title: 'Финал', subtitle: 'Пожелания', icon: MessageSquare },
+  { id: 1, titleKey: 'modal.briefNew.steps.company.title', subtitleKey: 'modal.briefNew.steps.company.subtitle', icon: Building2 },
+  { id: 2, titleKey: 'modal.briefNew.steps.marketing.title', subtitleKey: 'modal.briefNew.steps.marketing.subtitle', icon: Target },
+  { id: 3, titleKey: 'modal.briefNew.steps.tasks.title', subtitleKey: 'modal.briefNew.steps.tasks.subtitle', icon: FileText },
+  { id: 4, titleKey: 'modal.briefNew.steps.content.title', subtitleKey: 'modal.briefNew.steps.content.subtitle', icon: Layout },
+  { id: 5, titleKey: 'modal.briefNew.steps.tech.title', subtitleKey: 'modal.briefNew.steps.tech.subtitle', icon: Settings },
+  { id: 6, titleKey: 'modal.briefNew.steps.design.title', subtitleKey: 'modal.briefNew.steps.design.subtitle', icon: Palette },
+  { id: 7, titleKey: 'modal.briefNew.steps.support.title', subtitleKey: 'modal.briefNew.steps.support.subtitle', icon: Headphones },
+  { id: 8, titleKey: 'modal.briefNew.steps.final.title', subtitleKey: 'modal.briefNew.steps.final.subtitle', icon: MessageSquare },
 ];
 
 const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
@@ -250,8 +248,7 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
       `<b>Способы:</b> ${escapeHtml(briefForm.promotionMethods) || 'Не указаны'}\n` +
       `<b>Расчёт:</b> ${escapeHtml(briefForm.promotionCalculation) || 'Не нужен'}\n\n` +
       `<b>8️⃣ ПРОЧЕЕ</b>\n` +
-      `<b>Пожелания:</b> ${escapeHtml(briefForm.otherRequirements) || 'Нет'}\n` +
-      `<b>Откуда узнали:</b> ${escapeHtml(briefForm.howDidYouFindUs) || 'Не указано'}\n\n` +
+      `<b>Пожелания:</b> ${escapeHtml(briefForm.otherRequirements) || 'Нет'}\n\n` +
       `📅 ${new Date().toLocaleString('ru-RU')}`
     ];
 
@@ -283,30 +280,33 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
       case 1:
         return (
           <div className="space-y-4">
+            <p className="text-xs text-white/60">
+              {t('modal.briefNew.step1Intro')}
+            </p>
             <div>
-              <label className={labelClass}>Название компании *</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.companyNameLabel')} *</label>
               <Input
                 value={briefForm.companyName}
                 onChange={(e) => setBriefForm({...briefForm, companyName: e.target.value})}
-                placeholder="ООО «Ваша компания»"
+                placeholder={t('modal.briefNew.fields.companyNamePlaceholder')}
                 className={inputClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Контактная информация *</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.contactInfoLabel')} *</label>
               <Textarea
                 value={briefForm.contactInfo}
                 onChange={(e) => setBriefForm({...briefForm, contactInfo: e.target.value})}
-                placeholder="ФИО, телефон, email"
+                placeholder={t('modal.briefNew.fields.contactInfoPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Адрес сайта</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.websiteUrlLabel')}</label>
               <Input
                 value={briefForm.websiteUrl}
                 onChange={(e) => setBriefForm({...briefForm, websiteUrl: e.target.value})}
-                placeholder="www.example.by"
+                placeholder={t('modal.briefNew.fields.websiteUrlPlaceholder')}
                 className={inputClass}
               />
             </div>
@@ -317,39 +317,39 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
         return (
           <div className="space-y-4">
             <div>
-              <label className={labelClass}>Сфера деятельности</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.businessAreaLabel')}</label>
               <Textarea
                 value={briefForm.businessArea}
                 onChange={(e) => setBriefForm({...briefForm, businessArea: e.target.value})}
-                placeholder="Опишите область деятельности"
+                placeholder={t('modal.briefNew.fields.businessAreaPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Описание проекта</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.projectDescriptionLabel')}</label>
               <Textarea
                 value={briefForm.projectDescription}
                 onChange={(e) => setBriefForm({...briefForm, projectDescription: e.target.value})}
-                placeholder="Бренд/продукт/услуга"
+                placeholder={t('modal.briefNew.fields.projectDescriptionPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className={labelClass}>Целевая аудитория</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.targetAudienceLabel')}</label>
                 <Input
                   value={briefForm.targetAudience}
                   onChange={(e) => setBriefForm({...briefForm, targetAudience: e.target.value})}
-                  placeholder="Пол, возраст"
+                  placeholder={t('modal.briefNew.fields.targetAudiencePlaceholder')}
                   className={inputClass}
                 />
               </div>
               <div>
-                <label className={labelClass}>Преимущества</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.advantagesLabel')}</label>
                 <Input
                   value={briefForm.advantages}
                   onChange={(e) => setBriefForm({...briefForm, advantages: e.target.value})}
-                  placeholder="УТП"
+                  placeholder={t('modal.briefNew.fields.advantagesPlaceholder')}
                   className={inputClass}
                 />
               </div>
@@ -361,48 +361,48 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
         return (
           <div className="space-y-4">
             <div>
-              <label className={labelClass}>Цели проекта</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.goalsLabel')}</label>
               <Textarea
                 value={briefForm.goals}
                 onChange={(e) => setBriefForm({...briefForm, goals: e.target.value})}
-                placeholder="Что необходимо сделать?"
+                placeholder={t('modal.briefNew.fields.goalsPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Существующий сайт</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.existingSiteLabel')}</label>
               <Input
                 value={briefForm.existingSite}
                 onChange={(e) => setBriefForm({...briefForm, existingSite: e.target.value})}
-                placeholder="Ссылка или описание проблем"
+                placeholder={t('modal.briefNew.fields.existingSitePlaceholder')}
                 className={inputClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Конкуренты</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.competitorsLabel')}</label>
               <Input
                 value={briefForm.competitors}
                 onChange={(e) => setBriefForm({...briefForm, competitors: e.target.value})}
-                placeholder="Ссылки на сайты конкурентов"
+                placeholder={t('modal.briefNew.fields.competitorsPlaceholder')}
                 className={inputClass}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className={labelClass}>Бюджет</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.budgetLabel')}</label>
                 <Input
                   value={briefForm.budget}
                   onChange={(e) => setBriefForm({...briefForm, budget: e.target.value})}
-                  placeholder="от 1000 BYN"
+                  placeholder={t('modal.briefNew.fields.budgetPlaceholder')}
                   className={inputClass}
                 />
               </div>
               <div>
-                <label className={labelClass}>Сроки</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.timelineLabel')}</label>
                 <Input
                   value={briefForm.timeline}
                   onChange={(e) => setBriefForm({...briefForm, timeline: e.target.value})}
-                  placeholder="1-2 месяца"
+                  placeholder={t('modal.briefNew.fields.timelinePlaceholder')}
                   className={inputClass}
                 />
               </div>
@@ -414,39 +414,39 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
         return (
           <div className="space-y-4">
             <div>
-              <label className={labelClass}>Разделы сайта</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.siteSectionsLabel')}</label>
               <Textarea
                 value={briefForm.siteSections}
                 onChange={(e) => setBriefForm({...briefForm, siteSections: e.target.value})}
-                placeholder="О компании, услуги, контакты..."
+                placeholder={t('modal.briefNew.fields.siteSectionsPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Структура главной</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.mainPageStructureLabel')}</label>
               <Textarea
                 value={briefForm.mainPageStructure}
                 onChange={(e) => setBriefForm({...briefForm, mainPageStructure: e.target.value})}
-                placeholder="Меню, баннеры, блоки..."
+                placeholder={t('modal.briefNew.fields.mainPageStructurePlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className={labelClass}>Модули</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.programModulesLabel')}</label>
                 <Input
                   value={briefForm.programModules}
                   onChange={(e) => setBriefForm({...briefForm, programModules: e.target.value})}
-                  placeholder="Каталог, формы..."
+                  placeholder={t('modal.briefNew.fields.programModulesPlaceholder')}
                   className={inputClass}
                 />
               </div>
               <div>
-                <label className={labelClass}>Языки</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.languagesLabel')}</label>
                 <Input
                   value={briefForm.languages}
                   onChange={(e) => setBriefForm({...briefForm, languages: e.target.value})}
-                  placeholder="RU, EN..."
+                  placeholder={t('modal.briefNew.fields.languagesPlaceholder')}
                   className={inputClass}
                 />
               </div>
@@ -458,40 +458,29 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
         return (
           <div className="space-y-4">
             <div>
-              <label className={labelClass}>Готовность контента</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.contentReadinessLabel')}</label>
               <Textarea
                 value={briefForm.contentReadiness}
                 onChange={(e) => setBriefForm({...briefForm, contentReadiness: e.target.value})}
-                placeholder="Есть ли тексты, фото? Нужна помощь?"
+                placeholder={t('modal.briefNew.fields.contentReadinessPlaceholder')}
                 className={textareaClass}
               />
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className={labelClass}>Платформа/CMS</label>
-                <Input
-                  value={briefForm.technicalAspects}
-                  onChange={(e) => setBriefForm({...briefForm, technicalAspects: e.target.value})}
-                  placeholder="WordPress, React..."
-                  className={inputClass}
-                />
-              </div>
-              <div>
-                <label className={labelClass}>Интеграции</label>
-                <Input
-                  value={briefForm.integrations}
-                  onChange={(e) => setBriefForm({...briefForm, integrations: e.target.value})}
-                  placeholder="1С, CRM..."
-                  className={inputClass}
-                />
-              </div>
+            <div>
+              <label className={labelClass}>{t('modal.briefNew.fields.integrationsLabel')}</label>
+              <Input
+                value={briefForm.integrations}
+                onChange={(e) => setBriefForm({...briefForm, integrations: e.target.value})}
+                placeholder={t('modal.briefNew.fields.integrationsPlaceholder')}
+                className={inputClass}
+              />
             </div>
             <div>
-              <label className={labelClass}>Мобильная версия</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.mobileVersionLabel')}</label>
               <Input
                 value={briefForm.mobileVersion}
                 onChange={(e) => setBriefForm({...briefForm, mobileVersion: e.target.value})}
-                placeholder="Да, адаптивный дизайн"
+                placeholder={t('modal.briefNew.fields.mobileVersionPlaceholder')}
                 className={inputClass}
               />
             </div>
@@ -502,38 +491,38 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
         return (
           <div className="space-y-4">
             <div>
-              <label className={labelClass}>Фирменный стиль</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.brandStyleLabel')}</label>
               <Input
                 value={briefForm.brandStyle}
                 onChange={(e) => setBriefForm({...briefForm, brandStyle: e.target.value})}
-                placeholder="Есть логотип? Нужна разработка?"
+                placeholder={t('modal.briefNew.fields.brandStylePlaceholder')}
                 className={inputClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Сайты, которые нравятся</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.positiveSitesLabel')}</label>
               <Textarea
                 value={briefForm.positiveSites}
                 onChange={(e) => setBriefForm({...briefForm, positiveSites: e.target.value})}
-                placeholder="Ссылки и что привлекает"
+                placeholder={t('modal.briefNew.fields.positiveSitesPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Сайты, которые не нравятся</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.negativeSitesLabel')}</label>
               <Textarea
                 value={briefForm.negativeSites}
                 onChange={(e) => setBriefForm({...briefForm, negativeSites: e.target.value})}
-                placeholder="Ссылки и что отталкивает"
+                placeholder={t('modal.briefNew.fields.negativeSitesPlaceholder')}
                 className={textareaClass}
               />
             </div>
             <div>
-              <label className={labelClass}>Желаемый стиль</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.visualDescriptionLabel')}</label>
               <Input
                 value={briefForm.visualDescription}
                 onChange={(e) => setBriefForm({...briefForm, visualDescription: e.target.value})}
-                placeholder="Современный, строгий, яркий..."
+                placeholder={t('modal.briefNew.fields.visualDescriptionPlaceholder')}
                 className={inputClass}
               />
             </div>
@@ -545,59 +534,59 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className={labelClass}>Обновление контента</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.updateFrequencyLabel')}</label>
                 <Input
                   value={briefForm.updateFrequency}
                   onChange={(e) => setBriefForm({...briefForm, updateFrequency: e.target.value})}
-                  placeholder="Часто / Редко"
+                  placeholder={t('modal.briefNew.fields.updateFrequencyPlaceholder')}
                   className={inputClass}
                 />
               </div>
               <div>
-                <label className={labelClass}>Нужен хостинг?</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.hostingNeededLabel')}</label>
                 <Input
                   value={briefForm.hostingNeeded}
                   onChange={(e) => setBriefForm({...briefForm, hostingNeeded: e.target.value})}
-                  placeholder="Да / Нет"
+                  placeholder={t('modal.briefNew.fields.hostingNeededPlaceholder')}
                   className={inputClass}
                 />
               </div>
             </div>
             <div>
-              <label className={labelClass}>Дальнейшая поддержка</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.supportNeededLabel')}</label>
               <Input
                 value={briefForm.supportNeeded}
                 onChange={(e) => setBriefForm({...briefForm, supportNeeded: e.target.value})}
-                placeholder="Да, техническая / Нет"
+                placeholder={t('modal.briefNew.fields.supportNeededPlaceholder')}
                 className={inputClass}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className={labelClass}>Продвижение</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.promotionPlannedLabel')}</label>
                 <Input
                   value={briefForm.promotionPlanned}
                   onChange={(e) => setBriefForm({...briefForm, promotionPlanned: e.target.value})}
-                  placeholder="Да / Нет"
+                  placeholder={t('modal.briefNew.fields.promotionPlannedPlaceholder')}
                   className={inputClass}
                 />
               </div>
               <div>
-                <label className={labelClass}>Способы</label>
+                <label className={labelClass}>{t('modal.briefNew.fields.promotionMethodsLabel')}</label>
                 <Input
                   value={briefForm.promotionMethods}
                   onChange={(e) => setBriefForm({...briefForm, promotionMethods: e.target.value})}
-                  placeholder="SEO, реклама..."
+                  placeholder={t('modal.briefNew.fields.promotionMethodsPlaceholder')}
                   className={inputClass}
                 />
               </div>
             </div>
             <div>
-              <label className={labelClass}>Расчёт продвижения</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.promotionCalculationLabel')}</label>
               <Input
                 value={briefForm.promotionCalculation}
                 onChange={(e) => setBriefForm({...briefForm, promotionCalculation: e.target.value})}
-                placeholder="Ключевые слова для расчёта"
+                placeholder={t('modal.briefNew.fields.promotionCalculationPlaceholder')}
                 className={inputClass}
               />
             </div>
@@ -608,21 +597,12 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
         return (
           <div className="space-y-4">
             <div>
-              <label className={labelClass}>Дополнительные пожелания</label>
+              <label className={labelClass}>{t('modal.briefNew.fields.otherRequirementsLabel')}</label>
               <Textarea
                 value={briefForm.otherRequirements}
                 onChange={(e) => setBriefForm({...briefForm, otherRequirements: e.target.value})}
-                placeholder="Любая дополнительная информация..."
+                placeholder={t('modal.briefNew.fields.otherRequirementsPlaceholder')}
                 className={`${textareaClass} min-h-[100px]`}
-              />
-            </div>
-            <div>
-              <label className={labelClass}>Откуда узнали о нас?</label>
-              <Input
-                value={briefForm.howDidYouFindUs}
-                onChange={(e) => setBriefForm({...briefForm, howDidYouFindUs: e.target.value})}
-                placeholder="Поиск, рекомендация..."
-                className={inputClass}
               />
             </div>
             
@@ -632,8 +612,8 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                   <Rocket className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-white">Почти готово!</p>
-                  <p className="text-xs text-white/50">Нажмите «Отправить» и мы свяжемся с вами</p>
+                  <p className="text-sm font-medium text-white">{t('modal.briefNew.almostDoneTitle')}</p>
+                  <p className="text-xs text-white/50">{t('modal.briefNew.almostDoneText')}</p>
                 </div>
               </div>
             </div>
@@ -796,7 +776,7 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                   size="sm"
                 >
                   <ArrowLeft className="w-4 h-4 mr-1" />
-                  Назад
+                  {t('modal.back')}
                 </Button>
                 <Button
                   onClick={handleQuickSubmit}
@@ -809,7 +789,7 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                   ) : (
                     <Send className="w-4 h-4 mr-2" />
                   )}
-                  Отправить заявку
+                  {t('modal.sendRequest')}
                 </Button>
               </div>
             </div>
@@ -826,8 +806,11 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                     <StepIcon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white text-base">{currentStepData?.title}</h3>
-                    <p className="text-xs text-white/50">{currentStepData?.subtitle}</p>
+                    <h3 className="font-semibold text-white text-base">{t(currentStepData?.titleKey || '')}</h3>
+                    <p className="text-xs text-white/50">{t(currentStepData?.subtitleKey || '')}</p>
+                    <p className="text-[11px] text-white/40 mt-1">
+                      {t('modal.briefNew.commonHint')}
+                    </p>
                   </div>
                 </div>
                 <div className="text-right">
@@ -869,7 +852,7 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                   size="sm"
                 >
                   <ArrowLeft className="w-4 h-4 mr-1" />
-                  Назад
+                  {t('modal.back')}
                 </Button>
                 
                 {briefStep < totalBriefSteps ? (
@@ -878,7 +861,7 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                     className="flex-1 bg-primary hover:bg-primary/90 text-white shadow-[0_10px_30px_-10px_rgba(29,185,176,0.5)]"
                     size="sm"
                   >
-                    Далее
+                    {t('modal.next')}
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Button>
                 ) : (
@@ -893,7 +876,7 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                     ) : (
                       <Send className="w-4 h-4 mr-2" />
                     )}
-                    Отправить
+                    {t('modal.send')}
                   </Button>
                 )}
               </div>
