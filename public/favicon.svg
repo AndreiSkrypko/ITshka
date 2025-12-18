@@ -1,35 +1,21 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0a0a"/>
-      <stop offset="100%" stop-color="#111111"/>
+      <stop offset="0%" stop-color="#050809"/>
+      <stop offset="100%" stop-color="#0a1015"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981"/>
-      <stop offset="100%" stop-color="#059669"/>
+      <stop offset="0%" stop-color="#1db9b0"/>
+      <stop offset="100%" stop-color="#17a49c"/>
     </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   
   <!-- Background -->
-  <rect width="32" height="32" rx="8" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
   
-  <!-- Border glow -->
-  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="url(#accent)" stroke-opacity="0.4"/>
+  <!-- Border -->
+  <rect x="8" y="8" width="496" height="496" rx="88" stroke="url(#accent)" stroke-width="4" stroke-opacity="0.3"/>
   
-  <!-- Code brackets < > -->
-  <g filter="url(#glow)">
-    <path d="M10 10L5 16L10 22" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M22 10L27 16L22 22" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  
-  <!-- Slash / -->
-  <path d="M18 8L14 24" stroke="#ffffff" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round"/>
+  <!-- IT text -->
+  <text x="256" y="340" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="280" fill="url(#accent)">IT</text>
 </svg>
-
