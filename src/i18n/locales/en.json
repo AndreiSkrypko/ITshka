@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Website Development in Minsk | ITshka",
+    "description": "Website development in Minsk and Minsk region. We make the website first — you pay later!"
+  },
+  "header": {
+    "studio": "Web Studio in Minsk"
+  },
+  "hero": {
+    "badge": "Web Studio in Minsk",
+    "title1": "Website first —",
+    "title2": "pay later!",
+    "subtitle": "No risks.",
+    "subtitleText": "You see the result before payment.",
+    "subtitleText2": "Don't like it — don't pay.",
+    "cta": "Get project for free",
+    "response": "Reply in 15 minutes",
+    "projects": "100+ projects",
+    "cleanCode": "Clean Code",
+    "modernTech": "Modern Technologies",
+    "adaptive": "Adaptive",
+    "anyDevice": "Any Device",
+    "speed": "Speed",
+    "fastLoading": "Fast Loading",
+    "projectsCount": "Projects",
+    "yearsExp": "Years of exp."
+  },
+  "features": {
+    "design": "Design",
+    "designDesc": "Turnkey",
+    "seo": "SEO",
+    "seoDesc": "Top Rankings",
+    "guarantee": "Guarantee",
+    "guaranteeDesc": "Of Result"
+  },
+  "bonus": {
+    "title": "Personal consultation",
+    "titleAccent": "for your project",
+    "description": "We work with businesses in Minsk and Minsk region. We'll find a solution for you"
+  },
+  "modal": {
+    "tellAboutProject": "Tell us about your project",
+    "chooseOption": "Choose the appropriate option",
+    "iKnow": "I know what my project should be",
+    "iKnowDesc": "Fill out the brief with description",
+    "iDontKnow": "I don't know what my project should be",
+    "iDontKnowDesc": "Leave contacts — we'll help",
+    "contactForm": "We'll contact you",
+    "contactFormDesc": "Leave your contacts and we'll call you to discuss the project",
+    "name": "Name",
+    "namePlaceholder": "What's your name?",
+    "organization": "Organization",
+    "organizationPlaceholder": "Company name",
+    "phone": "Phone",
+    "phonePlaceholder": "+375 (__) ___-__-__",
+    "weWillCall": "We'll call back within 15 minutes during business hours",
+    "sendRequest": "Send request",
+    "brief": "Website Brief",
+    "step": "Step",
+    "of": "of",
+    "back": "Back",
+    "next": "Next",
+    "send": "Send",
+    "success": "Great!",
+    "successDesc": "Your request has been sent. We will contact you shortly.",
+    "close": "Close",
+    "step1Title": "Basic Information",
+    "step2Title": "About Company",
+    "step3Title": "Website Requirements",
+    "step4Title": "Design and Content",
+    "step5Title": "Budget and Timeline",
+    "companyName": "Company Name",
+    "contactPerson": "Contact Person",
+    "email": "Email",
+    "activity": "Field of Activity",
+    "сompanyDescription": "Company Description",
+    "сompetitors": "Competitors",
+    "targetAudience": "Target Audience",
+    "siteType": "Website Type",
+    "sitePurpose": "Website Purpose",
+    "requiredPages": "Required Pages",
+    "functionality": "Functionality",
+    "likedSites": "Examples of websites you like",
+    "colorPreferences": "Color Preferences",
+    "hasLogo": "Do you have a logo and brand identity?",
+    "contentReady": "Is the content ready?",
+    "budget": "Budget",
+    "deadline": "Deadline",
+    "additionalInfo": "Additional Information"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
+

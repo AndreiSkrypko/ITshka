@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Tworzenie stron internetowych w Mińsku | ITshka",
+    "description": "Tworzenie stron internetowych w Mińsku i obwodzie mińskim. Najpierw strona — potem płatność!"
+  },
+  "header": {
+    "studio": "Studio webowe w Mińsku"
+  },
+  "hero": {
+    "badge": "Studio webowe w Mińsku",
+    "title1": "Najpierw strona —",
+    "title2": "potem pieniądze!",
+    "subtitle": "Bez ryzyka.",
+    "subtitleText": "Widzisz wynik przed płatnością.",
+    "subtitleText2": "Nie podoba się — nie płacisz.",
+    "cta": "Otrzymaj projekt za darmo",
+    "response": "Odpowiemy w 15 minut",
+    "projects": "100+ projektów",
+    "cleanCode": "Czysty kod",
+    "modernTech": "Nowoczesne technologie",
+    "adaptive": "Adaptacyjność",
+    "anyDevice": "Każde urządzenie",
+    "speed": "Szybkość",
+    "fastLoading": "Szybkie ładowanie",
+    "projectsCount": "Projektów",
+    "yearsExp": "Lat doświadczenia"
+  },
+  "features": {
+    "design": "Design",
+    "designDesc": "Pod klucz",
+    "seo": "SEO",
+    "seoDesc": "Wysoka pozycja",
+    "guarantee": "Gwarancja",
+    "guaranteeDesc": "Wyniku"
+  },
+  "bonus": {
+    "title": "Osobista konsultacja",
+    "titleAccent": "Twojego projektu",
+    "description": "Pracujemy z firmami w Mińsku i obwodzie mińskim. Znajdziemy rozwiązanie dla Ciebie"
+  },
+  "modal": {
+    "tellAboutProject": "Opowiedz o projekcie",
+    "chooseOption": "Wybierz odpowiednią opcję",
+    "iKnow": "Wiem, jaki powinien być mój projekt",
+    "iKnowDesc": "Wypełnij brief z opisem",
+    "iDontKnow": "Nie wiem, jaki powinien być mój projekt",
+    "iDontKnowDesc": "Zostaw kontakt — pomożemy",
+    "contactForm": "Skontaktujemy się",
+    "contactFormDesc": "Zostaw kontakt, oddzwonimy, żeby omówić projekt",
+    "name": "Imię",
+    "namePlaceholder": "Jak masz na imię?",
+    "organization": "Organizacja",
+    "organizationPlaceholder": "Nazwa firmy",
+    "phone": "Telefon",
+    "phonePlaceholder": "+375 (__) ___-__-__",
+    "weWillCall": "Oddzwonimy w ciągu 15 minut w godzinach pracy",
+    "sendRequest": "Wyślij zapytanie",
+    "brief": "Brief na stronę",
+    "step": "Krok",
+    "of": "z",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "send": "Wyślij",
+    "success": "Świetnie!",
+    "successDesc": "Twoje zapytanie zostało wysłane. Skontaktujemy się wkrótce.",
+    "close": "Zamknij",
+    "step1Title": "Podstawowe informacje",
+    "step2Title": "O firmie",
+    "step3Title": "Wymagania strony",
+    "step4Title": "Design i treść",
+    "step5Title": "Budżet i terminy",
+    "companyName": "Nazwa firmy",
+    "contactPerson": "Osoba kontaktowa",
+    "email": "Email",
+    "activity": "Dziedzina działalności",
+    "сompanyDescription": "Opis firmy",
+    "сompetitors": "Konkurenci",
+    "targetAudience": "Grupa docelowa",
+    "siteType": "Typ strony",
+    "sitePurpose": "Cel strony",
+    "requiredPages": "Wymagane strony",
+    "functionality": "Funkcjonalność",
+    "likedSites": "Przykłady stron, które Ci się podobają",
+    "colorPreferences": "Preferencje kolorystyczne",
+    "hasLogo": "Czy masz logo i identyfikację wizualną?",
+    "contentReady": "Czy treść jest gotowa?",
+    "budget": "Budżet",
+    "deadline": "Termin",
+    "additionalInfo": "Dodatkowe informacje"
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone"
+  }
+}
+

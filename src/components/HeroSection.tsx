@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Code2, Layers, Zap } from "lucide-react";
 import ProjectBriefModal from "./ProjectBriefModal";
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <section className="relative flex mt-20 md:mt-24 mb-8 lg:mt-16 lg:mb-0 lg:h-[calc(100vh-220px)]">
@@ -18,7 +20,7 @@ const HeroSection = () => {
           >
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-xs uppercase tracking-[0.2em] text-white/60 font-medium">
-              Веб-студия в Минске
+              {t('hero.badge')}
             </span>
           </div>
           
@@ -27,9 +29,9 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white leading-[1.1] mb-6 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.1s' }}
           >
-            Сначала сайт —{' '}
+            {t('hero.title1')}{' '}
             <span className="relative inline-block">
-              <span className="text-primary">потом деньги!</span>
+              <span className="text-primary">{t('hero.title2')}</span>
               {/* Underline effect */}
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                 <path 
@@ -48,9 +50,9 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-white/50 mb-10 leading-relaxed opacity-0 animate-fade-in max-w-lg" 
             style={{ animationDelay: '0.2s' }}
           >
-            <span className="text-white/70 font-medium">Без рисков.</span> Вы видите результат до оплаты.
+            <span className="text-white/70 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
             <br className="hidden sm:block" />
-            Не нравится — не платите.
+            {t('hero.subtitleText2')}
           </p>
           
           {/* CTA Button */}
@@ -66,7 +68,7 @@ const HeroSection = () => {
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative flex items-center gap-3">
-                Получить проект бесплатно
+                {t('hero.cta')}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
             </Button>
@@ -75,11 +77,11 @@ const HeroSection = () => {
             <div className="flex items-center gap-6 mt-2">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs text-white/40">Ответим за 15 минут</span>
+                <span className="text-xs text-white/40">{t('hero.response')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary/60" />
-                <span className="text-xs text-white/40">100+ проектов</span>
+                <span className="text-xs text-white/40">{t('hero.projects')}</span>
               </div>
             </div>
           </div>
@@ -120,8 +122,8 @@ const HeroSection = () => {
                 <Code2 className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Чистый код</p>
-                <p className="text-[11px] text-white/35">Современные технологии</p>
+                <p className="text-sm font-bold text-white">{t('hero.cleanCode')}</p>
+                <p className="text-[11px] text-white/35">{t('hero.modernTech')}</p>
               </div>
             </div>
           </div>
@@ -132,8 +134,8 @@ const HeroSection = () => {
                 <Layers className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Адаптивность</p>
-                <p className="text-[11px] text-white/35">Любое устройство</p>
+                <p className="text-sm font-bold text-white">{t('hero.adaptive')}</p>
+                <p className="text-[11px] text-white/35">{t('hero.anyDevice')}</p>
               </div>
             </div>
           </div>
@@ -144,8 +146,8 @@ const HeroSection = () => {
                 <Zap className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Скорость</p>
-                <p className="text-[11px] text-white/35">Быстрая загрузка</p>
+                <p className="text-sm font-bold text-white">{t('hero.speed')}</p>
+                <p className="text-[11px] text-white/35">{t('hero.fastLoading')}</p>
               </div>
             </div>
           </div>
@@ -172,12 +174,12 @@ const HeroSection = () => {
           <div className="absolute bottom-[10%] left-[10%] flex items-center gap-8 pointer-events-auto">
             <div className="text-center">
               <p className="text-4xl font-black text-primary drop-shadow-[0_0_30px_rgba(25,167,158,0.3)]">100+</p>
-              <p className="text-xs text-white/30 mt-1">Проектов</p>
+              <p className="text-xs text-white/30 mt-1">{t('hero.projectsCount')}</p>
             </div>
             <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
             <div className="text-center">
               <p className="text-4xl font-black text-primary drop-shadow-[0_0_30px_rgba(25,167,158,0.3)]">5+</p>
-              <p className="text-xs text-white/30 mt-1">Лет опыта</p>
+              <p className="text-xs text-white/30 mt-1">{t('hero.yearsExp')}</p>
             </div>
           </div>
         </div>

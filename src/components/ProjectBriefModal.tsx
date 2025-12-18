@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -124,6 +125,7 @@ const briefSteps = [
 ];
 
 const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
+  const { t } = useTranslation();
   const [step, setStep] = useState<Step>('choice');
   const [briefStep, setBriefStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -659,8 +661,8 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 mb-4">
                 <Sparkles className="w-7 h-7 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-2">Расскажите о проекте</h2>
-              <p className="text-sm text-white/50">Выберите подходящий вариант</p>
+              <h2 className="text-2xl font-bold text-white mb-2">{t('modal.tellAboutProject')}</h2>
+              <p className="text-sm text-white/50">{t('modal.chooseOption')}</p>
             </div>
             
             <div className="space-y-3">
@@ -673,8 +675,8 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                     <Lightbulb className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-white mb-0.5">Я знаю, каким должен быть проект</h3>
-                    <p className="text-sm text-white/50">Заполните бриф с описанием</p>
+                    <h3 className="font-semibold text-white mb-0.5">{t('modal.iKnow')}</h3>
+                    <p className="text-sm text-white/50">{t('modal.iKnowDesc')}</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </div>
@@ -689,8 +691,8 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                     <HelpCircle className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-white mb-0.5">Я не знаю, каким должен быть проект</h3>
-                    <p className="text-sm text-white/50">Оставьте контакты — поможем</p>
+                    <h3 className="font-semibold text-white mb-0.5">{t('modal.iDontKnow')}</h3>
+                    <p className="text-sm text-white/50">{t('modal.iDontKnowDesc')}</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </div>
@@ -907,15 +909,15 @@ const ProjectBriefModal = ({ open, onOpenChange }: ProjectBriefModalProps) => {
                 <CheckCircle2 className="w-10 h-10 text-primary" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Отлично!</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">{t('modal.success')}</h3>
             <p className="text-white/50 mb-6">
-              Заявка отправлена. Мы свяжемся с вами<br />в ближайшее время.
+              {t('modal.successDesc')}
             </p>
             <Button 
               onClick={handleClose} 
               className="bg-primary hover:bg-primary/90 text-white px-8"
             >
-              Закрыть
+              {t('modal.close')}
             </Button>
           </div>
         )}

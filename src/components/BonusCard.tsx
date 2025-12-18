@@ -1,6 +1,9 @@
 import { Handshake, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const BonusCard = () => {
+  const { t } = useTranslation();
+  
   return (
     <div
       className="group relative overflow-hidden rounded-3xl opacity-0 animate-fade-in"
@@ -27,10 +30,10 @@ const BonusCard = () => {
         {/* Text */}
         <div className="flex-1 min-w-0">
           <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-1">
-            <span className="text-primary">Персональный разбор</span> вашего проекта
+            <span className="text-primary">{t('bonus.title')}</span> {t('bonus.titleAccent')}
           </h3>
           <p className="text-white/40 text-xs md:text-sm leading-relaxed">
-            Работаем с бизнесом в Минске и Минской области. Подберём решение под вас
+            {t('bonus.description')}
           </p>
         </div>
         

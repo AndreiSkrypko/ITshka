@@ -1,27 +1,30 @@
 import { Palette, TrendingUp, Shield } from "lucide-react";
-
-const features = [
-  {
-    icon: Palette,
-    title: "Дизайн",
-    description: "Под ключ",
-    gradient: "from-primary/30 to-primary/10"
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO Минск", 
-    description: "В топ Яндекса",
-    gradient: "from-primary/25 to-primary/5"
-  },
-  {
-    icon: Shield,
-    title: "Гарантия",
-    description: "Результата",
-    gradient: "from-primary/20 to-primary/5"
-  }
-];
+import { useTranslation } from "react-i18next";
 
 const FeatureCards = () => {
+  const { t } = useTranslation();
+  
+  const features = [
+    {
+      icon: Palette,
+      title: t('features.design'),
+      description: t('features.designDesc'),
+      gradient: "from-primary/30 to-primary/10"
+    },
+    {
+      icon: TrendingUp,
+      title: t('features.seo'), 
+      description: t('features.seoDesc'),
+      gradient: "from-primary/25 to-primary/5"
+    },
+    {
+      icon: Shield,
+      title: t('features.guarantee'),
+      description: t('features.guaranteeDesc'),
+      gradient: "from-primary/20 to-primary/5"
+    }
+  ];
+
   return (
     <div className="flex gap-3 w-full">
       {features.map((feature, index) => (
