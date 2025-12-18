@@ -28,21 +28,21 @@ const Header = () => {
       </div>
       
       {/* Right side */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {/* Language Switcher */}
         <LanguageSwitcher />
         
         {/* Phone */}
         <a 
           href="tel:+375291210908" 
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 sm:gap-3 group"
         >
           <div className="relative">
-            <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
-              <Phone className="w-5 h-5 text-primary" />
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
             </div>
             {/* Ping animation on hover */}
-            <div className="absolute inset-0 rounded-xl bg-primary/20 animate-ping opacity-0 group-hover:opacity-100" style={{ animationDuration: '1.5s' }} />
+            <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-primary/20 animate-ping opacity-0 group-hover:opacity-100" style={{ animationDuration: '1.5s' }} />
           </div>
           <div className="hidden sm:block">
             <span className="block text-xs text-white/40 font-medium">Call us</span>

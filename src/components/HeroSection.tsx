@@ -59,19 +59,19 @@ const HeroSection = () => {
           
           {/* CTA Button */}
           <div 
-            className="flex flex-col items-start gap-4 opacity-0 animate-fade-in" 
+            className="flex flex-col items-start gap-4 opacity-0 animate-fade-in w-full" 
             style={{ animationDelay: '0.3s' }}
           >
             <Button 
               size="lg"
-              className="relative group text-lg md:text-xl px-10 md:px-14 py-7 md:py-8 rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden"
+              className="relative group text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-14 py-6 sm:py-7 md:py-8 rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
               onClick={() => setIsModalOpen(true)}
             >
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative flex items-center gap-3">
+              <span className="relative flex items-center gap-2 sm:gap-3">
                 {t('hero.cta')}
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </span>
             </Button>
             
