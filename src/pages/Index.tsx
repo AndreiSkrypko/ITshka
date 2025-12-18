@@ -3,8 +3,11 @@ import HeroSection from "@/components/HeroSection";
 import BonusCard from "@/components/BonusCard";
 import FeatureCards from "@/components/FeatureCards";
 import SocialLinks from "@/components/SocialLinks";
+import { useTranslation } from "react-i18next";
 
 const Index = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="h-screen relative bg-[#050809] overflow-hidden">
       {/* Decorative background elements */}
@@ -45,7 +48,7 @@ const Index = () => {
             <SocialLinks />
           </div>
           <span className="text-[10px] text-white/50 tracking-wide">
-            Создаём сайты, которые работают на бизнес
+            {t("footer.tagline")}
           </span>
         </footer>
       </div>

@@ -2,20 +2,35 @@
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050809"/>
-      <stop offset="100%" stop-color="#0a1015"/>
+      <stop offset="100%" stop-color="#0b1015"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1db9b0"/>
-      <stop offset="100%" stop-color="#17a49c"/>
+      <stop offset="0%" stop-color="#1DB9B0"/>
+      <stop offset="100%" stop-color="#19A79F"/>
+    </linearGradient>
+    <linearGradient id="accentSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1DB9B0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#19A79F" stop-opacity="0.1"/>
     </linearGradient>
   </defs>
-  
+
   <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  
-  <!-- Border -->
-  <rect x="8" y="8" width="496" height="496" rx="88" stroke="url(#accent)" stroke-width="4" stroke-opacity="0.3"/>
-  
-  <!-- IT text -->
-  <text x="256" y="340" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="280" fill="url(#accent)">IT</text>
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+
+  <!-- Strong inner panel (better visible at 16x16) -->
+  <rect x="60" y="60" width="392" height="392" rx="90" fill="#050809" stroke="url(#accent)" stroke-width="20"/>
+
+  <!-- Big code brackets: < /> scaled up and thick -->
+  <g stroke="#1DB9B0" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left bracket < -->
+    <path d="M150 256 L230 196" stroke-width="32"/>
+    <path d="M150 256 L230 316" stroke-width="32"/>
+
+    <!-- Right bracket > -->
+    <path d="M282 196 L362 256" stroke-width="32"/>
+    <path d="M282 316 L362 256" stroke-width="32"/>
+
+    <!-- Slash / -->
+    <path d="M244 188 L288 324" stroke-width="26"/>
+  </g>
 </svg>
