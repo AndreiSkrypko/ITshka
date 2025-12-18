@@ -1,14 +1,25 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Robots.txt для ITshka - Создание сайтов в Минске
+# https://itshka.by
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://itshka.by/sitemap.xml
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Запрет индексации служебных файлов
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /assets/*.map
+
+# Host для Яндекса
+Host: https://itshka.by

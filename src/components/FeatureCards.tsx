@@ -4,19 +4,19 @@ const features = [
   {
     icon: Palette,
     title: "Дизайн",
-    description: "Уникальный",
+    description: "Под ключ",
     gradient: "from-primary/30 to-primary/10"
   },
   {
     icon: TrendingUp,
-    title: "SEO", 
-    description: "С первого дня",
+    title: "SEO Минск", 
+    description: "В топ Яндекса",
     gradient: "from-primary/25 to-primary/5"
   },
   {
     icon: Shield,
-    title: "Поддержка",
-    description: "24/7",
+    title: "Гарантия",
+    description: "Результата",
     gradient: "from-primary/20 to-primary/5"
   }
 ];

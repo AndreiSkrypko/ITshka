@@ -30,7 +30,7 @@ const BonusCard = () => {
             <span className="text-primary">Персональный разбор</span> вашего проекта
           </h3>
           <p className="text-white/40 text-xs md:text-sm leading-relaxed">
-            Созвонимся, зададим правильные вопросы и подберём решение под ваш бизнес
+            Работаем с бизнесом в Минске и Минской области. Подберём решение под вас
           </p>
         </div>
         

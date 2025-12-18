@@ -18,7 +18,7 @@ const HeroSection = () => {
           >
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-xs uppercase tracking-[0.2em] text-white/60 font-medium">
-              Веб-студия полного цикла
+              Веб-студия в Минске
             </span>
           </div>
           
