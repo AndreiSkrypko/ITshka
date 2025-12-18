@@ -1,8 +1,14 @@
 import { PhoneCall, Send, MessageCircleMore } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+const BY_PHONE_CLEAN = "375291210908";
+const PL_PHONE_CLEAN = "48502420839";
 
 const SocialLinks = () => {
-  const phone = "+375291210908";
-  const phoneClean = "375291210908";
+  const { i18n } = useTranslation();
+
+  const phoneClean = i18n.language === "ru" ? BY_PHONE_CLEAN : PL_PHONE_CLEAN;
+  const phone = `+${phoneClean}`;
   const phoneEncoded = encodeURIComponent(phone);
 
   const links = [

@@ -2,9 +2,21 @@ import { Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+const BY_PHONE = {
+  display: "+375 29 121-09-08",
+  tel: "+375291210908",
+};
+
+const PL_PHONE = {
+  display: "+48 502 420 839",
+  tel: "+48502420839",
+};
+
 const Header = () => {
-  const { t } = useTranslation();
-  
+  const { t, i18n } = useTranslation();
+
+  const currentPhone = i18n.language === "ru" ? BY_PHONE : PL_PHONE;
+
   return (
     <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-5">
       {/* Logo */}
@@ -34,7 +46,7 @@ const Header = () => {
         
         {/* Phone */}
         <a 
-          href="tel:+375291210908" 
+          href={`tel:${currentPhone.tel}`} 
           className="flex items-center gap-2 sm:gap-3 group"
           aria-label={t('header.callAria')}
         >
@@ -48,7 +60,7 @@ const Header = () => {
           <div className="hidden sm:block">
             <span className="block text-xs text-white/50 font-medium">{t('header.callUs')}</span>
             <span className="block font-bold text-white group-hover:text-primary transition-colors">
-              +375 29 121-09-08
+              {currentPhone.display}
             </span>
           </div>
         </a>
