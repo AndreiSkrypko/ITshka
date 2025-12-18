@@ -24,10 +24,10 @@ const FeatureCards = () => {
       {features.map((feature, index) => (
         <div 
           key={index}
-          className="bg-card/80 backdrop-blur-sm rounded-xl px-4 py-3 shadow-card flex items-center gap-3 opacity-0 animate-fade-in border border-border/30 hover:shadow-lg transition-shadow"
+          className="bg-card/60 backdrop-blur-md rounded-xl px-4 py-3 flex items-center gap-3 opacity-0 animate-fade-in border border-border/40 hover:border-primary/30 hover:bg-card/80 transition-all group"
           style={{ animationDelay: `${0.4 + index * 0.1}s` }}
         >
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors">
             <feature.icon className="w-4 h-4 text-primary" />
           </div>
           <div>

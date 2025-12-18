@@ -7,6 +7,10 @@ import SocialLinks from "@/components/SocialLinks";
 const Index = () => {
   return (
     <div className="h-screen overflow-hidden relative bg-background">
+      {/* Ambient glow effects */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/8 rounded-full blur-[100px] pointer-events-none" />
+      
       <Header />
       <HeroSection />
       
@@ -25,7 +29,7 @@ const Index = () => {
         </div>
         
         {/* Footer */}
-        <div className="flex flex-col sm:flex-row items-center justify-between mt-4 pt-3 border-t border-border/50">
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-4 pt-3 border-t border-border/30">
           <div className="flex items-center gap-4 mb-2 sm:mb-0">
             <span className="text-xs text-muted-foreground">© 2024 ITshka</span>
             <SocialLinks />

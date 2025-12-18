@@ -9,8 +9,8 @@ const HeroSection = () => {
       <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 md:px-12 lg:px-16 z-10">
         <div className="max-w-2xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 opacity-0 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 opacity-0 animate-fade-in backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_hsl(142_70%_50%/0.8)]" />
             Разрабатываем сайты под ключ
           </div>
           
@@ -28,7 +28,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <Button 
               size="lg"
-              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full shadow-button hover:shadow-lg transition-all hover:scale-105 group"
+              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full shadow-button hover:shadow-[0_4px_30px_-2px_hsl(142_70%_50%/0.6)] transition-all hover:scale-105 group bg-primary text-primary-foreground"
               onClick={() => window.open('https://wa.me/375291210908', '_blank')}
             >
               Получить проект бесплатно
@@ -48,13 +48,14 @@ const HeroSection = () => {
       {/* Right Image */}
       <div className="hidden lg:block absolute top-0 right-0 w-[50%] h-full">
         <div className="relative w-full h-full opacity-0 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
-          <div className="absolute inset-4 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="absolute inset-4 rounded-3xl overflow-hidden shadow-2xl border border-border/30">
             <img 
               src={heroImage} 
               alt="Разработка сайтов ITshka"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           </div>
         </div>
       </div>
