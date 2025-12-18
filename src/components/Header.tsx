@@ -6,15 +6,15 @@ const Header = () => {
   const { t } = useTranslation();
   
   return (
-    <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-5">
+    <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 sm:py-5">
       {/* Logo */}
       <div className="flex items-center gap-4">
         <div className="relative">
           <div className="flex items-center gap-0.5">
-            <span className="text-2xl md:text-3xl font-black text-primary drop-shadow-[0_0_20px_hsl(174_72%_38%/0.4)]">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black text-primary">
               IT
             </span>
-            <span className="text-2xl md:text-3xl font-black text-white">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black text-white">
               shka
             </span>
           </div>
