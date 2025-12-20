@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Website Development in Minsk | ITshka",
-    "description": "Website development in Minsk and Minsk region. We make the website first — you pay later!"
+    "title": "Website Development in Lida | ITshka",
+    "description": "Website development in Lida and Grodno region. We make the website first — you pay later!"
   },
   "header": {
-    "studio": "Web Studio in Minsk",
+    "studio": "Web Studio in Lida",
     "callUs": "Call us",
     "callAria": "Call: +375 29 121-09-08"
   },
   "hero": {
-    "badge": "Web Studio in Minsk",
+    "badge": "Web Studio in Lida",
     "title1": "Website first —",
     "title2": "pay later!",
     "subtitle": "No risks.",
@@ -30,7 +30,7 @@
   "features": {
     "design": "Design",
     "designDesc": "Turnkey",
-    "seo": "SEO",
+    "seo": "SEO Lida",
     "seoDesc": "Top Rankings",
     "guarantee": "Guarantee",
     "guaranteeDesc": "Of Result"
@@ -38,7 +38,7 @@
   "bonus": {
     "title": "Personal consultation",
     "titleAccent": "for your project",
-    "description": "We work with businesses in Minsk and Minsk region. We'll find a solution for you"
+    "description": "We work with businesses in Lida and Grodno region. We'll find a solution for you"
   },
   "modal": {
     "tellAboutProject": "Tell us about your project",
@@ -93,7 +93,7 @@
       "commonHint": "Fill in only what you understand. If you're not sure — just leave the field empty.",
       "step1Intro": "Start with the basic information. It's totally fine to fill the next steps only partially.",
       "almostDoneTitle": "Almost done!",
-      "almostDoneText": "Click “Send” and we will contact you soon",
+      "almostDoneText": "Click \"Send\" and we will contact you soon",
       "steps": {
         "company": { "title": "About company", "subtitle": "Tell us about yourself in simple words" },
         "marketing": { "title": "Marketing", "subtitle": "What you do and for whom" },
@@ -106,7 +106,7 @@
       },
       "fields": {
         "companyNameLabel": "Company name",
-        "companyNamePlaceholder": "LLC “Your company”",
+        "companyNamePlaceholder": "LLC \"Your company\"",
         "contactInfoLabel": "Contact details",
         "contactInfoPlaceholder": "Full name, phone, email",
         "websiteUrlLabel": "Website address",
@@ -116,13 +116,13 @@
         "projectDescriptionLabel": "Project description",
         "projectDescriptionPlaceholder": "What exactly is needed: landing, corporate site, store...",
         "targetAudienceLabel": "Target audience",
-        "targetAudiencePlaceholder": "For example: men 25–45, Minsk region",
+        "targetAudiencePlaceholder": "For example: men 25–45, Lida region",
         "advantagesLabel": "Advantages",
         "advantagesPlaceholder": "Why clients choose you",
         "goalsLabel": "Project goals",
         "goalsPlaceholder": "For example: more leads, strong presentation website",
         "existingSiteLabel": "Existing website",
-        "existingSitePlaceholder": "Link to your current site or “none”",
+        "existingSitePlaceholder": "Link to your current site or \"none\"",
         "competitorsLabel": "Competitors",
         "competitorsPlaceholder": "Links to competitors' websites (if you know)",
         "budgetLabel": "Budget",
@@ -166,7 +166,12 @@
         "otherRequirementsLabel": "Additional wishes",
         "otherRequirementsPlaceholder": "Any other details that are important to consider"
       }
-    }
+    },
+    "quickTitle": "Quick contact",
+    "quickSubtitle": "Leave your contacts and we'll call back within 15 minutes",
+    "quickInfoTitle": "What's next?",
+    "quickInfoText": "We'll contact you, discuss the project and answer all your questions",
+    "sendError": "Send error. Please try again."
   },
   "footer": {
     "rights": "All rights reserved",

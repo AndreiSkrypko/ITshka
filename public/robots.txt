@@ -1,4 +1,4 @@
-# Robots.txt для ITshka - Создание сайтов в Минске
+# Robots.txt для ITshka - Создание сайтов в Лиде
 # https://itshka.by
 
 User-agent: *
@@ -23,3 +23,4 @@ Disallow: /assets/*.map
 
 # Host для Яндекса
 Host: https://itshka.by
+
