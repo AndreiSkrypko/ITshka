@@ -9,7 +9,7 @@ const Index = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen relative bg-[#050809] overflow-x-hidden">
+    <div className="min-h-screen lg:h-screen lg:overflow-hidden relative bg-[#050809] overflow-x-hidden">
       {/* Decorative background elements */}
       <div aria-hidden="true">
         {/* Optimized gradient orbs - GPU accelerated, reduced blur */}
@@ -31,18 +31,18 @@ const Index = () => {
       <HeroSection />
       
       {/* Right - Features (aligned with image) */}
-      <div className="hidden lg:block absolute bottom-[85px] right-0 w-[50%] px-8">
+      <div className="hidden lg:block absolute bottom-[145px] right-0 w-[50%] px-8">
         <FeatureCards />
       </div>
       
       {/* Bottom Section */}
-      <div className="px-6 md:px-12 lg:px-16 pb-5 mt-10 lg:mt-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0">
+      <div className="px-6 md:px-12 lg:px-16 pb-5 mt-10 lg:mt-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:h-[140px] lg:flex lg:flex-col lg:justify-end">
         <div className="w-full lg:max-w-[45%]">
           <BonusCard />
         </div>
         
         {/* Footer */}
-        <footer className="flex flex-col sm:flex-row items-center justify-between mt-4 pt-4 border-t border-white/10">
+        <footer className="flex flex-col sm:flex-row items-center justify-between mt-4 lg:mt-2 pt-4 lg:pt-2 border-t border-white/10">
           <div className="flex items-center gap-4 mb-2 sm:mb-0">
             <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
             <SocialLinks />

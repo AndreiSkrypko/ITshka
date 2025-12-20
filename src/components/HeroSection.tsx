@@ -11,7 +11,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex mt-20 md:mt-24 mb-8 lg:mt-16 lg:mb-0 lg:h-[calc(100vh-220px)]">
+    <section className="relative flex mt-20 md:mt-24 mb-8 lg:mt-16 lg:mb-0 lg:h-[calc(100vh-180px)] lg:flex-shrink-0">
       {/* Left Content */}
       <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 md:px-12 lg:px-16 z-10">
         <div className="max-w-2xl">
@@ -28,7 +28,7 @@ const HeroSection = () => {
           
           {/* Main heading */}
           <h1 
-            className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white leading-[1.1] mb-6 animate-fade-in" 
+            className="text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.5rem] font-black text-white leading-[1.1] mb-4 lg:mb-5 animate-fade-in" 
             style={{ animationDelay: '0.05s' }}
           >
             {t('hero.title1')}{' '}
@@ -49,7 +49,7 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p 
-            className="text-lg md:text-xl text-white/60 mb-10 leading-relaxed animate-fade-in max-w-lg" 
+            className="text-lg md:text-xl lg:text-lg text-white/60 mb-6 lg:mb-7 leading-relaxed animate-fade-in max-w-lg" 
             style={{ animationDelay: '0.1s' }}
           >
             <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
@@ -64,7 +64,7 @@ const HeroSection = () => {
           >
             <Button 
               size="lg"
-              className="relative group text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-14 py-6 sm:py-7 md:py-8 rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
+              className="relative group text-base sm:text-lg lg:text-base px-6 sm:px-10 lg:px-8 py-5 sm:py-6 lg:py-5 rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
               onClick={() => setIsModalOpen(true)}
             >
               {/* Shine effect */}
