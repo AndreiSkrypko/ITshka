@@ -37,13 +37,102 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     return null;
   };
 
+  // Определение города по координатам (геолокация)
+  const detectCityByCoordinates = async (lat: number, lon: number): Promise<CityCode> => {
+    // Координаты городов (примерные)
+    const cityCoordinates = {
+      lida: { lat: 53.8833, lon: 25.2997 },
+      minsk: { lat: 53.9045, lon: 27.5615 },
+      warsaw: { lat: 52.2297, lon: 21.0122 }
+    };
+
+    // Вычисляем расстояние до каждого города и выбираем ближайший
+    let minDistance = Infinity;
+    let closestCity: CityCode = 'minsk';
+
+    for (const [city, coords] of Object.entries(cityCoordinates)) {
+      const distance = Math.sqrt(
+        Math.pow(lat - coords.lat, 2) + Math.pow(lon - coords.lon, 2)
+      );
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestCity = city as CityCode;
+      }
+    }
+
+    return closestCity;
+  };
+
   // Автоопределение города по IP (только если нет в URL и localStorage)
   const detectCityByIP = async () => {
     try {
+      // Сначала пытаемся использовать геолокацию браузера (более точно)
+      if (navigator.geolocation) {
+        return new Promise<CityCode>((resolve) => {
+          navigator.geolocation.getCurrentPosition(
+            async (position) => {
+              const city = await detectCityByCoordinates(
+                position.coords.latitude,
+                position.coords.longitude
+              );
+              resolve(city);
+            },
+            async () => {
+              // Если геолокация недоступна, используем IP
+              const response = await fetch('https://ipapi.co/json/', {
+                signal: AbortSignal.timeout(2000)
+              });
+              const data = await response.json();
+              
+              // Пытаемся определить город по названию города из API
+              if (data.city) {
+                const cityName = data.city.toLowerCase();
+                // Проверяем точные совпадения
+                if (cityName.includes('lida') || cityName.includes('лида')) {
+                  resolve('lida');
+                  return;
+                }
+                if (cityName.includes('minsk') || cityName.includes('минск') || cityName.includes('mińsk')) {
+                  resolve('minsk');
+                  return;
+                }
+                if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
+                  resolve('warsaw');
+                  return;
+                }
+              }
+              
+              // Если город не определен, используем маппинг по стране
+              const detectedCity = countryToCity[data.country_code] || 'minsk';
+              resolve(detectedCity);
+            },
+            { timeout: 2000, enableHighAccuracy: false }
+          );
+        });
+      }
+
+      // Если геолокация не поддерживается, используем IP
       const response = await fetch('https://ipapi.co/json/', {
         signal: AbortSignal.timeout(2000)
       });
       const data = await response.json();
+      
+      // Пытаемся определить город по названию города из API
+      if (data.city) {
+        const cityName = data.city.toLowerCase();
+        // Проверяем точные совпадения
+        if (cityName.includes('lida') || cityName.includes('лида')) {
+          return 'lida';
+        }
+        if (cityName.includes('minsk') || cityName.includes('минск') || cityName.includes('mińsk')) {
+          return 'minsk';
+        }
+        if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
+          return 'warsaw';
+        }
+      }
+      
+      // Если город не определен, используем маппинг по стране
       const detectedCity = countryToCity[data.country_code] || 'minsk';
       return detectedCity;
     } catch {
