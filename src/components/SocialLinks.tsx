@@ -1,20 +1,15 @@
 import { PhoneCall, Send, MessageCircleMore } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { useCity } from "@/contexts/CityContext";
-import { getPhoneByCountry } from "@/utils/phoneSelector";
 
 const SocialLinks = () => {
-  const { i18n } = useTranslation();
-  const { userCountry } = useCity();
 
-  // Выбираем телефон в зависимости от региона пользователя
-  const selectedPhone = userCountry 
-    ? getPhoneByCountry(userCountry)
-    : { tel: '+375291210908', display: '+375 29 121-09-08' };
+  // Для соцсетей ВСЕГДА используем белорусский номер, независимо от региона
+  const socialPhone = { tel: '+375291210908', display: '+375 29 121-09-08' };
   
-  // Убираем + и пробелы для WhatsApp/Telegram
-  const phoneClean = selectedPhone.tel.replace(/[+\s-]/g, '');
-  const phone = selectedPhone.tel;
+  // Убираем + и пробелы для WhatsApp
+  const phoneClean = socialPhone.tel.replace(/[+\s-]/g, '');
+  // Для Telegram нужен номер с плюсом
+  const phoneForTelegram = socialPhone.tel;
+  const phone = socialPhone.tel;
   const phoneEncoded = encodeURIComponent(phone);
 
   const links = [
@@ -26,7 +21,7 @@ const SocialLinks = () => {
       shadow: "hover:shadow-[0_10px_30px_rgba(37,211,102,0.3)]"
     },
     {
-      href: `https://t.me/${phoneClean}`,
+      href: `https://t.me/${phoneForTelegram}`,
       icon: Send,
       label: "Telegram",
       gradient: "from-[#2AABEE] to-[#229ED9]",
