@@ -23,37 +23,38 @@ const LanguageSwitcher = () => {
 
   // Close dropdown when clicking/touching outside
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      if (dropdownRef.current && !dropdownRef.current.contains(target)) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
+    // Используем задержку, чтобы не закрыть сразу после открытия
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside, true);
+      document.addEventListener('touchend', handleClickOutside, true);
+    }, 200);
+
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
+      clearTimeout(timeoutId);
+      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('touchend', handleClickOutside, true);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
-    <div className="relative z-[150]" ref={dropdownRef}>
+    <div className="relative z-[1000]" ref={dropdownRef}>
       <button
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setIsOpen(!isOpen);
-        }}
-        onTouchStart={(e) => {
-          e.stopPropagation();
-        }}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setIsOpen(!isOpen);
-        }}
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 active:bg-white/15 transition-all duration-300 touch-manipulation cursor-pointer"
+        style={{ 
+          WebkitTapHighlightColor: 'transparent',
+          touchAction: 'manipulation'
+        }}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
@@ -63,7 +64,7 @@ const LanguageSwitcher = () => {
 
       {isOpen && (
         <div 
-          className="absolute top-full right-0 mt-2 py-1.5 sm:py-2 w-28 sm:w-32 rounded-xl bg-[#0a0f14] border border-white/10 shadow-xl overflow-hidden z-[200]"
+          className="absolute top-full right-0 mt-2 py-1.5 sm:py-2 w-28 sm:w-32 rounded-xl bg-[#0a0f14] border border-white/10 shadow-xl overflow-hidden z-[1001]"
           role="listbox"
           onClick={(e) => e.stopPropagation()}
           onTouchStart={(e) => e.stopPropagation()}
@@ -71,21 +72,14 @@ const LanguageSwitcher = () => {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                changeLanguage(lang.code);
-              }}
-              onTouchStart={(e) => {
-                e.stopPropagation();
-              }}
-              onTouchEnd={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                changeLanguage(lang.code);
-              }}
+              type="button"
+              onClick={() => changeLanguage(lang.code)}
               role="option"
               aria-selected={currentLang.code === lang.code}
+              style={{ 
+                WebkitTapHighlightColor: 'transparent',
+                touchAction: 'manipulation'
+              }}
               className={`w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-left hover:bg-white/10 active:bg-white/15 transition-colors touch-manipulation cursor-pointer ${
                 currentLang.code === lang.code ? 'bg-primary/20 text-primary' : 'text-white/70'
               }`}
