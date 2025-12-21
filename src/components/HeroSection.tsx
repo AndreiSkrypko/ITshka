@@ -12,15 +12,11 @@ const HeroSection = () => {
   const { t, i18n } = useTranslation();
   const { cityConfig } = useCity();
   const lang = i18n.language as 'ru' | 'en' | 'pl';
-  // Всегда используем склонение для русского языка
-  const cityName = lang === 'ru' 
-    ? cityConfig.nameLocative[lang] 
-    : cityConfig.name[lang] || cityConfig.name.ru;
   const badgeText = lang === 'ru' 
-    ? `Веб-студия в ${cityName}`
+    ? 'От простых лендингов до интернет-магазинов и сложных проектов'
     : lang === 'en'
-    ? `Web Studio in ${cityName}`
-    : `Studio Internetowe w ${cityName}`;
+    ? 'From simple landing pages to online stores and complex projects'
+    : 'Od prostych stron landingowych po sklepy internetowe i złożone projekty';
 
   return (
     <section className="relative flex mt-0 lg:mt-16 mb-0 h-auto lg:h-[calc(100vh-180px)] flex-shrink-0">
