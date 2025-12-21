@@ -14,10 +14,10 @@ const SEOMeta = () => {
   // Генерируем title и description в зависимости от города и языка
   const getTitle = () => {
     const base = lang === 'ru' 
-      ? `Создание сайтов в ${cityName} под ключ | Разработка сайтов недорого — ITshka`
+      ? `Сделать сайт в ${cityName} | Создание сайтов под ключ недорого — ITshka`
       : lang === 'en'
-      ? `Website Development in ${cityName} | ITshka`
-      : `Tworzenie stron internetowych w ${cityName} | ITshka`;
+      ? `Make a Website in ${cityName} | Website Development — ITshka`
+      : `Zrobić stronę w ${cityName} | Tworzenie stron internetowych — ITshka`;
     return base;
   };
 
