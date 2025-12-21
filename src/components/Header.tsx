@@ -1,7 +1,6 @@
 import { Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
-import CitySwitcher from "./CitySwitcher";
 import { useCity } from "@/contexts/CityContext";
 
 const Header = () => {
@@ -41,9 +40,6 @@ const Header = () => {
       
       {/* Right side */}
       <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
-        {/* City Switcher */}
-        <CitySwitcher />
-        
         {/* Language Switcher */}
         <LanguageSwitcher />
         
