@@ -27,6 +27,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   const location = useLocation();
   const [currentCity, setCurrentCityState] = useState<CityCode>('minsk');
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isManualSwitch, setIsManualSwitch] = useState(false);
 
   // Определяем город из URL
   const getCityFromPath = (): CityCode | null => {
@@ -151,6 +152,12 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   // Инициализация города
   useEffect(() => {
     const initializeCity = async () => {
+      // Если было ручное переключение, не переопределяем город автоматически
+      if (isManualSwitch) {
+        setIsInitialized(true);
+        return;
+      }
+
       // 1. Проверяем URL (высший приоритет)
       const cityFromPath = getCityFromPath();
       if (cityFromPath) {
@@ -160,24 +167,14 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         return;
       }
 
-      // 2. Пытаемся определить город по геолокации/IP (приоритет над localStorage)
+      // 2. Пытаемся определить город по геолокации/IP (только при первой загрузке)
       try {
         const detectedCity = await detectCityByIP();
         
         // Проверяем, есть ли сохраненный город в localStorage
         const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
         
-        // Если геолокация определила город, используем его (переопределяем localStorage)
-        // Это позволяет автоматически обновлять город при переезде
-        if (detectedCity && detectedCity !== savedCity) {
-          setCurrentCityState(detectedCity);
-          localStorage.setItem('selectedCity', detectedCity);
-          navigate(`/${detectedCity}`, { replace: true });
-          setIsInitialized(true);
-          return;
-        }
-        
-        // Если сохраненный город совпадает с определенным, используем его
+        // Если есть сохраненный город, используем его (не переопределяем автоматически)
         if (savedCity && cities[savedCity]) {
           setCurrentCityState(savedCity);
           navigate(`/${savedCity}`, { replace: true });
@@ -190,7 +187,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         localStorage.setItem('selectedCity', detectedCity);
         navigate(`/${detectedCity}`, { replace: true });
         setIsInitialized(true);
-      } catch {
+      } catch (error) {
         // Если автоопределение не сработало, используем localStorage или дефолт
         const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
         if (savedCity && cities[savedCity]) {
@@ -210,21 +207,33 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     if (!isInitialized) {
       initializeCity();
     }
-  }, [location.pathname, navigate, isInitialized]);
+  }, [location.pathname, navigate, isInitialized, isManualSwitch]);
 
-  // Синхронизация с URL при изменении пути
+  // Синхронизация с URL при изменении пути (только если не было ручного переключения)
   useEffect(() => {
+    if (isManualSwitch) {
+      setIsManualSwitch(false);
+      return;
+    }
+    
     const cityFromPath = getCityFromPath();
-    if (cityFromPath && cityFromPath !== currentCity) {
+    if (cityFromPath && cityFromPath !== currentCity && cities[cityFromPath]) {
       setCurrentCityState(cityFromPath);
       localStorage.setItem('selectedCity', cityFromPath);
     }
-  }, [location.pathname, currentCity]);
+  }, [location.pathname, currentCity, isManualSwitch]);
 
   const setCity = (city: CityCode) => {
+    // Проверяем валидность города
+    if (!cities[city]) {
+      console.error(`Invalid city code: ${city}`);
+      return;
+    }
+    
+    setIsManualSwitch(true);
     setCurrentCityState(city);
     localStorage.setItem('selectedCity', city);
-    navigate(`/${city}`);
+    navigate(`/${city}`, { replace: true });
   };
 
   const value: CityContextType = {
