@@ -136,16 +136,16 @@ const Index = () => {
         
         <Header />
         
-        {/* Stats - responsive positioning */}
-        <div className="absolute top-[80px] sm:top-[100px] right-4 sm:right-[10%] lg:right-[15%] flex items-center gap-4 sm:gap-6 lg:gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
+        {/* Stats - hidden on mobile, visible from sm breakpoint */}
+        <div className="hidden sm:flex absolute top-[100px] right-[10%] lg:right-[15%] items-center gap-6 lg:gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
           <div className="text-center">
-            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">100+</p>
-            <p className="text-xs sm:text-sm md:text-base text-white/70 mt-1 sm:mt-2 font-medium">{t('hero.projectsCount')}</p>
+            <p className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">100+</p>
+            <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.projectsCount')}</p>
           </div>
-          <div className="w-px h-12 sm:h-14 lg:h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="w-px h-14 lg:h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
           <div className="text-center">
-            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">5+</p>
-            <p className="text-xs sm:text-sm md:text-base text-white/70 mt-1 sm:mt-2 font-medium">{t('hero.yearsExp')}</p>
+            <p className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">5+</p>
+            <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.yearsExp')}</p>
           </div>
         </div>
         
