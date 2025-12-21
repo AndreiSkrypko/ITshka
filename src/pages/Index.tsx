@@ -235,12 +235,12 @@ const Index = () => {
         </div>
         
         {/* Hero Section */}
-        <div className="relative z-10 pt-16 pb-4 px-4">
+        <div className="relative z-10 pt-16 pb-2 px-4">
           <HeroSection />
         </div>
         
         {/* Bonus Card */}
-        <div className="relative z-10 px-4 pb-3">
+        <div className="relative z-10 px-4 pb-2 -mt-2">
           <BonusCard />
         </div>
         

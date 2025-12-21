@@ -49,7 +49,7 @@ const HeroSection = () => {
           
           {/* CTA Button */}
           <div 
-            className="flex flex-col items-start gap-4 animate-fade-in w-full mb-8 lg:mb-12" 
+            className="flex flex-col items-start gap-4 animate-fade-in w-full mb-4 lg:mb-12" 
             style={{ animationDelay: '0.15s' }}
           >
             <Button 
