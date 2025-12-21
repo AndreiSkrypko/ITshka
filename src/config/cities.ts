@@ -78,7 +78,23 @@ export const cities: Record<CityCode, CityConfig> = {
         'веб дизайн минск',
         'создание сайтов беларусь',
         'разработка сайтов беларусь',
-        'itshka'
+        'веб студия минск недорого',
+        'создание сайта минск цена',
+        'разработка сайта минск стоимость',
+        'заказать сайт минск дешево',
+        'создание лендинга минск',
+        'разработка интернет магазина минск',
+        'создание корпоративного сайта минск',
+        'сайт визитка минск цена',
+        'seo оптимизация сайта минск',
+        'продвижение сайта минск яндекс',
+        'продвижение сайта минск google',
+        'создание сайта для компании минск',
+        'разработка сайта для бизнеса минск',
+        'веб дизайн минск студия',
+        'создание сайта без предоплаты минск',
+        'itshka минск',
+        'itshka создание сайтов минск'
       ],
       en: [
         'website development minsk',
@@ -86,13 +102,27 @@ export const cities: Record<CityCode, CityConfig> = {
         'create website minsk',
         'website design minsk',
         'web studio minsk',
-        'itshka'
+        'website development belarus',
+        'web development belarus',
+        'landing page minsk',
+        'online store development minsk',
+        'corporate website minsk',
+        'business website minsk',
+        'responsive website minsk',
+        'seo optimization minsk',
+        'itshka minsk',
+        'itshka website development'
       ],
       pl: [
         'tworzenie stron www mińsk',
         'tworzenie stron internetowych mińsk',
         'pozycjonowanie stron mińsk',
-        'itshka'
+        'strony www mińsk',
+        'sklepy internetowe mińsk',
+        'strony firmowe mińsk',
+        'projektowanie stron mińsk',
+        'itshka mińsk',
+        'itshka tworzenie stron mińsk'
       ]
     }
   },
@@ -143,7 +173,25 @@ export const cities: Record<CityCode, CityConfig> = {
         'веб дизайн лида',
         'создание сайтов беларусь',
         'разработка сайтов беларусь',
-        'itshka'
+        'веб студия лида недорого',
+        'создание сайта лида цена',
+        'разработка сайта лида стоимость',
+        'заказать сайт лида дешево',
+        'создание лендинга лида',
+        'разработка интернет магазина лида',
+        'создание корпоративного сайта лида',
+        'сайт визитка лида цена',
+        'seo оптимизация сайта лида',
+        'продвижение сайта лида яндекс',
+        'продвижение сайта лида google',
+        'создание сайта для компании лида',
+        'разработка сайта для бизнеса лида',
+        'веб дизайн лида студия',
+        'создание сайта без предоплаты лида',
+        'веб студия гродненская область',
+        'создание сайтов гродно',
+        'itshka лида',
+        'itshka создание сайтов лида'
       ],
       en: [
         'website development lida',
@@ -151,13 +199,27 @@ export const cities: Record<CityCode, CityConfig> = {
         'create website lida',
         'website design lida',
         'web studio lida',
-        'itshka'
+        'website development belarus',
+        'web development belarus',
+        'landing page lida',
+        'online store development lida',
+        'corporate website lida',
+        'business website lida',
+        'responsive website lida',
+        'seo optimization lida',
+        'itshka lida',
+        'itshka website development'
       ],
       pl: [
         'tworzenie stron www lida',
         'tworzenie stron internetowych lida',
         'pozycjonowanie stron lida',
-        'itshka'
+        'strony www lida',
+        'sklepy internetowe lida',
+        'strony firmowe lida',
+        'projektowanie stron lida',
+        'itshka lida',
+        'itshka tworzenie stron lida'
       ]
     }
   },
@@ -206,7 +268,22 @@ export const cities: Record<CityCode, CityConfig> = {
         'продвижение сайтов варшава',
         'веб разработка варшава',
         'веб дизайн варшава',
-        'itshka'
+        'веб студия варшава недорого',
+        'создание сайта варшава цена',
+        'разработка сайта варшава стоимость',
+        'заказать сайт варшава дешево',
+        'создание лендинга варшава',
+        'разработка интернет магазина варшава',
+        'создание корпоративного сайта варшава',
+        'сайт визитка варшава цена',
+        'seo оптимизация сайта варшава',
+        'продвижение сайта варшава google',
+        'создание сайта для компании варшава',
+        'разработка сайта для бизнеса варшава',
+        'веб дизайн варшава студия',
+        'создание сайта без предоплаты варшава',
+        'itshka варшава',
+        'itshka создание сайтов варшава'
       ],
       en: [
         'website development warsaw',
@@ -214,17 +291,38 @@ export const cities: Record<CityCode, CityConfig> = {
         'create website warsaw',
         'website design warsaw',
         'web studio warsaw',
+        'website development poland',
+        'web development poland',
+        'landing page warsaw',
+        'online store development warsaw',
+        'corporate website warsaw',
+        'business website warsaw',
+        'responsive website warsaw',
+        'seo optimization warsaw',
         'tworzenie stron www warszawa',
         'tworzenie stron internetowych warszawa',
         'pozycjonowanie stron warszawa',
-        'itshka'
+        'itshka warsaw',
+        'itshka website development'
       ],
       pl: [
         'tworzenie stron www warszawa',
         'tworzenie stron internetowych warszawa',
         'pozycjonowanie stron warszawa',
+        'strony www warszawa',
+        'sklepy internetowe warszawa',
+        'strony firmowe warszawa',
+        'projektowanie stron warszawa',
+        'tworzenie stron warszawa cena',
+        'strony internetowe warszawa tanie',
+        'landing page warszawa',
+        'sklep internetowy warszawa',
+        'strona firmowa warszawa',
+        'seo warszawa',
+        'pozycjonowanie warszawa',
         'website development warsaw',
-        'itshka'
+        'itshka warszawa',
+        'itshka tworzenie stron warszawa'
       ]
     }
   }

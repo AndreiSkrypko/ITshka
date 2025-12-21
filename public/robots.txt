@@ -1,8 +1,11 @@
-# Robots.txt для ITshka - Создание сайтов в Минске
+# Robots.txt для ITshka - Создание сайтов в Минске, Лиде, Варшаве
 # https://itshka.by
 
 User-agent: *
 Allow: /
+Allow: /minsk
+Allow: /lida
+Allow: /warsaw
 
 # Sitemap
 Sitemap: https://itshka.by/sitemap.xml
@@ -10,16 +13,31 @@ Sitemap: https://itshka.by/sitemap.xml
 # Яндекс
 User-agent: Yandex
 Allow: /
+Allow: /minsk
+Allow: /lida
+Allow: /warsaw
 Crawl-delay: 1
 
 # Google
 User-agent: Googlebot
 Allow: /
+Allow: /minsk
+Allow: /lida
+Allow: /warsaw
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Allow: /minsk
+Allow: /lida
+Allow: /warsaw
 
 # Запрет индексации служебных файлов
 Disallow: /api/
 Disallow: /*.json$
 Disallow: /assets/*.map
+Disallow: /_redirects
+Disallow: /manifest.json
 
 # Host для Яндекса
 Host: https://itshka.by
