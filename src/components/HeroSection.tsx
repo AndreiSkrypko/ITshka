@@ -84,18 +84,6 @@ const HeroSection = () => {
                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </span>
             </Button>
-            
-            {/* Trust indicators */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 mt-2 sm:mt-3" role="list" aria-label="Преимущества">
-              <div className="flex items-center gap-2" role="listitem">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary animate-pulse" aria-hidden="true" />
-                <span className="text-xs sm:text-sm text-white/60">{t('hero.noPrepay')}</span>
-              </div>
-              <div className="flex items-center gap-2" role="listitem">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary/60" aria-hidden="true" />
-                <span className="text-xs sm:text-sm text-white/60">{t('hero.supportAfter')}</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
