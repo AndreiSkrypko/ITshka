@@ -1,8 +1,27 @@
 import { Handshake, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useCity } from "@/contexts/CityContext";
 
 const BonusCard = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { cityConfig } = useCity();
+  const lang = i18n.language as 'ru' | 'en' | 'pl';
+  
+  // Динамическое описание с текущим городом
+  const getDescription = () => {
+    const cityName = lang === 'ru' 
+      ? cityConfig.nameLocative[lang] 
+      : cityConfig.name[lang] || cityConfig.name.ru;
+    const regionName = cityConfig.region[lang] || cityConfig.region.ru;
+    
+    if (lang === 'ru') {
+      return `Работаем с бизнесом в ${cityName} и ${regionName}. Подберём решение под вас`;
+    } else if (lang === 'en') {
+      return `We work with businesses in ${cityName} and ${regionName}. We'll find a solution for you`;
+    } else {
+      return `Pracujemy z firmami w ${cityName} i ${regionName}. Znajdziemy rozwiązanie dla Ciebie`;
+    }
+  };
   
   return (
     <div
@@ -33,7 +52,7 @@ const BonusCard = () => {
             <span className="text-primary">{t('bonus.title')}</span> {t('bonus.titleAccent')}
           </h3>
           <p className="text-white/60 text-[11px] sm:text-xs md:text-sm leading-relaxed">
-            {t('bonus.description')}
+            {getDescription()}
           </p>
         </div>
         

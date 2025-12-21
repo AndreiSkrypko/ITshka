@@ -2,11 +2,16 @@ import { Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useCity } from "@/contexts/CityContext";
+import { getPhoneByCountry, PHONE_BY } from "@/utils/phoneSelector";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
-  const { cityConfig } = useCity();
-  const currentPhone = cityConfig.phone;
+  const { cityConfig, userCountry } = useCity();
+  
+  // Выбираем телефон в зависимости от региона пользователя
+  const currentPhone = userCountry 
+    ? getPhoneByCountry(userCountry)
+    : cityConfig.phone;
   const lang = i18n.language as 'ru' | 'en' | 'pl';
   // Всегда используем склонение для русского языка
   const cityName = lang === 'ru' 

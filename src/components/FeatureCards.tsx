@@ -1,8 +1,23 @@
 import { Palette, TrendingUp, Shield } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useCity } from "@/contexts/CityContext";
 
 const FeatureCards = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { cityConfig } = useCity();
+  const lang = i18n.language as 'ru' | 'en' | 'pl';
+  
+  // Динамический заголовок SEO с текущим городом
+  const getSeoTitle = () => {
+    const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+    if (lang === 'ru') {
+      return `SEO ${cityName}`;
+    } else if (lang === 'en') {
+      return `SEO ${cityName}`;
+    } else {
+      return `SEO ${cityName}`;
+    }
+  };
   
   const features = [
     {
@@ -13,7 +28,7 @@ const FeatureCards = () => {
     },
     {
       icon: TrendingUp,
-      title: t('features.seo'), 
+      title: getSeoTitle(), 
       description: t('features.seoDesc'),
       gradient: "from-primary/25 to-primary/5"
     },

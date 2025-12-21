@@ -1,14 +1,20 @@
 import { PhoneCall, Send, MessageCircleMore } from "lucide-react";
 import { useTranslation } from "react-i18next";
-
-const BY_PHONE_CLEAN = "375291210908";
-const PL_PHONE_CLEAN = "48502420839";
+import { useCity } from "@/contexts/CityContext";
+import { getPhoneByCountry } from "@/utils/phoneSelector";
 
 const SocialLinks = () => {
   const { i18n } = useTranslation();
+  const { userCountry } = useCity();
 
-  const phoneClean = i18n.language === "ru" ? BY_PHONE_CLEAN : PL_PHONE_CLEAN;
-  const phone = `+${phoneClean}`;
+  // Выбираем телефон в зависимости от региона пользователя
+  const selectedPhone = userCountry 
+    ? getPhoneByCountry(userCountry)
+    : { tel: '+375291210908', display: '+375 29 121-09-08' };
+  
+  // Убираем + и пробелы для WhatsApp/Telegram
+  const phoneClean = selectedPhone.tel.replace(/[+\s-]/g, '');
+  const phone = selectedPhone.tel;
   const phoneEncoded = encodeURIComponent(phone);
 
   const links = [

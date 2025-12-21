@@ -1,15 +1,21 @@
 import { Helmet } from "react-helmet-async";
 import { useCity } from "@/contexts/CityContext";
+import { getPhoneByCountry } from "@/utils/phoneSelector";
 import { useTranslation } from "react-i18next";
 
 const SEOMeta = () => {
-  const { cityConfig } = useCity();
+  const { cityConfig, userCountry } = useCity();
   const { i18n } = useTranslation();
   const lang = i18n.language as 'ru' | 'en' | 'pl';
 
   const cityName = cityConfig.name[lang] || cityConfig.name.ru;
   const regionName = cityConfig.region[lang] || cityConfig.region.ru;
   const keywords = cityConfig.keywords[lang] || cityConfig.keywords.ru;
+  
+  // Выбираем телефон в зависимости от региона пользователя
+  const currentPhone = userCountry 
+    ? getPhoneByCountry(userCountry)
+    : cityConfig.phone;
 
   // Генерируем title и description в зависимости от города и языка
   const getTitle = () => {
@@ -23,10 +29,10 @@ const SEOMeta = () => {
 
   const getDescription = () => {
     const base = lang === 'ru'
-      ? `🚀 Создание сайтов в ${cityName} и ${regionName}. Сначала делаем сайт — потом платите! ✅ Без предоплаты ✅ Гарантия результата ✅ От 3 дней. Звоните: ${cityConfig.phone.display}`
+      ? `🚀 Создание сайтов в ${cityName} и ${regionName}. Сначала делаем сайт — потом платите! ✅ Без предоплаты ✅ Гарантия результата ✅ От 3 дней. Звоните: ${currentPhone.display}`
       : lang === 'en'
-      ? `🚀 Website development in ${cityName} and ${regionName}. Website first — pay later! ✅ No prepayment ✅ Result guarantee ✅ From 3 days. Call: ${cityConfig.phone.display}`
-      : `🚀 Tworzenie stron internetowych w ${cityName} i ${regionName}. Najpierw strona — potem płatność! ✅ Bez przedpłaty ✅ Gwarancja wyniku ✅ Od 3 dni. Zadzwoń: ${cityConfig.phone.display}`;
+      ? `🚀 Website development in ${cityName} and ${regionName}. Website first — pay later! ✅ No prepayment ✅ Result guarantee ✅ From 3 days. Call: ${currentPhone.display}`
+      : `🚀 Tworzenie stron internetowych w ${cityName} i ${regionName}. Najpierw strona — potem płatność! ✅ Bez przedpłaty ✅ Gwarancja wyniku ✅ Od 3 dni. Zadzwoń: ${currentPhone.display}`;
     return base;
   };
 
@@ -47,7 +53,7 @@ const SEOMeta = () => {
       "alternateName": "ITshka",
       "description": getDescription(),
       "url": canonicalUrl,
-      "telephone": cityConfig.phone.tel,
+      "telephone": currentPhone.tel,
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -120,7 +126,7 @@ const SEOMeta = () => {
       "logo": `${baseUrl}/favicon.svg`,
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": cityConfig.phone.tel,
+        "telephone": currentPhone.tel,
         "contactType": "customer service",
         "areaServed": cityConfig.countryCode,
         "availableLanguage": ["ru", "en", "pl"]
@@ -248,7 +254,7 @@ const SEOMeta = () => {
       <meta property="og:image:alt" content={`ITshka — Создание сайтов в ${cityName}`} />
       <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : lang === 'en' ? 'en_US' : 'pl_PL'} />
       <meta property="og:site_name" content={`ITshka — Создание сайтов в ${cityName}`} />
-      <meta property="og:phone_number" content={cityConfig.phone.tel} />
+      <meta property="og:phone_number" content={currentPhone.tel} />
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

@@ -7,6 +7,7 @@ interface CityContextType {
   setCity: (city: CityCode) => void;
   cityConfig: typeof cities[CityCode];
   isInCity: boolean; // находится ли пользователь физически в городе
+  userCountry: string | null; // код страны пользователя
 }
 
 const CityContext = createContext<CityContextType | undefined>(undefined);
@@ -30,6 +31,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   const [isInitialized, setIsInitialized] = useState(false);
   const [isManualSwitch, setIsManualSwitch] = useState(false);
   const [isInCity, setIsInCity] = useState(false);
+  const [userCountry, setUserCountry] = useState<string | null>(null);
 
   // Определяем город из URL
   const getCityFromPath = (): CityCode | null => {
@@ -114,6 +116,11 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 }
               }
               
+              // Сохраняем код страны пользователя
+              if (data.country_code) {
+                setUserCountry(data.country_code);
+              }
+              
               // Если город не определен, используем маппинг по стране
               const detectedCity = countryToCity[data.country_code] || 'minsk';
               resolve({ city: detectedCity, isInCity: false });
@@ -142,6 +149,11 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
           return { city: 'warsaw', isInCity: true };
         }
+      }
+      
+      // Сохраняем код страны пользователя
+      if (data.country_code) {
+        setUserCountry(data.country_code);
       }
       
       // Если город не определен, используем маппинг по стране
@@ -260,7 +272,8 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     currentCity,
     setCity,
     cityConfig: cities[currentCity],
-    isInCity
+    isInCity,
+    userCountry
   };
 
   return <CityContext.Provider value={value}>{children}</CityContext.Provider>;
