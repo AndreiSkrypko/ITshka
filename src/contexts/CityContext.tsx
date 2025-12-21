@@ -93,10 +93,60 @@ export const CityProvider = ({ children }: CityProviderProps) => {
             },
             async () => {
               // Если геолокация недоступна, используем IP
+              // Используем кэш для уменьшения запросов
+              const cacheKey = 'ipapi_cache';
+              const cached = sessionStorage.getItem(cacheKey);
+              if (cached) {
+                try {
+                  const cachedData = JSON.parse(cached);
+                  const now = Date.now();
+                  // Кэш действителен 1 час
+                  if (now - cachedData.timestamp < 3600000) {
+                    const data = cachedData.data;
+                    // Сохраняем код страны
+                    if (data.country_code) {
+                      setUserCountry(data.country_code);
+                    }
+                    // Продолжаем обработку с кэшированными данными
+                    if (data.city) {
+                      const cityName = data.city.toLowerCase();
+                      if (cityName.includes('lida') || cityName.includes('лида')) {
+                        resolve({ city: 'lida', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('minsk') || cityName.includes('минск') || cityName.includes('mińsk')) {
+                        resolve({ city: 'minsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
+                        resolve({ city: 'warsaw', isInCity: true });
+                        return;
+                      }
+                    }
+                    const detectedCity = countryToCity[data.country_code] || 'minsk';
+                    resolve({ city: detectedCity, isInCity: false });
+                    return;
+                  }
+                } catch (e) {
+                  // Игнорируем ошибки кэша
+                }
+              }
+              
               const response = await fetch('https://ipapi.co/json/', {
-                signal: AbortSignal.timeout(2000)
+                signal: AbortSignal.timeout(2000),
+                cache: 'default'
               });
               const data = await response.json();
+              
+              // Сохраняем в кэш
+              try {
+                sessionStorage.setItem(cacheKey, JSON.stringify({
+                  data,
+                  timestamp: Date.now()
+                }));
+              } catch (e) {
+                // Игнорируем ошибки сохранения кэша
+              }
               
               // Пытаемся определить город по названию города из API
               if (data.city) {

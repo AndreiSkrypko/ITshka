@@ -1,11 +1,21 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import BonusCard from "@/components/BonusCard";
-import FeatureCards from "@/components/FeatureCards";
-import SocialLinks from "@/components/SocialLinks";
 import SEOMeta from "@/components/SEOMeta";
 import { useTranslation } from "react-i18next";
 import { useCity } from "@/contexts/CityContext";
+
+// Lazy load non-critical components
+const BonusCard = lazy(() => import("@/components/BonusCard"));
+const FeatureCards = lazy(() => import("@/components/FeatureCards"));
+const SocialLinks = lazy(() => import("@/components/SocialLinks"));
+
+// Loading fallback component
+const ComponentLoader = () => (
+  <div className="animate-pulse">
+    <div className="h-20 bg-white/5 rounded-xl" />
+  </div>
+);
 
 const Index = () => {
   const { t, i18n } = useTranslation();
@@ -147,19 +157,25 @@ const Index = () => {
         
         {/* Right - Features */}
         <div className="absolute bottom-[145px] right-0 w-[50%] px-8">
-          <FeatureCards />
+          <Suspense fallback={<ComponentLoader />}>
+            <FeatureCards />
+          </Suspense>
         </div>
         
         {/* Bottom Section */}
         <div className="px-16 pb-5 absolute bottom-0 left-0 right-0 h-[140px] flex flex-col justify-end">
           <div className="w-full max-w-[45%]">
-            <BonusCard />
+            <Suspense fallback={<ComponentLoader />}>
+              <BonusCard />
+            </Suspense>
           </div>
           
           <footer className="flex flex-row items-center justify-between mt-2 pt-2 border-t border-white/10">
             <div className="flex items-center gap-4">
               <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
-              <SocialLinks />
+              <Suspense fallback={<div className="w-9 h-9 bg-white/5 rounded-xl animate-pulse" />}>
+                <SocialLinks />
+              </Suspense>
             </div>
             <span className="text-[10px] text-white/50 tracking-wide">
               {t("footer.tagline")}

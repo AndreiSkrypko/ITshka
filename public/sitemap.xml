@@ -8,7 +8,7 @@
   <!-- Главная страница -->
   <url>
     <loc>https://itshka.by/</loc>
-    <lastmod>2024-12-18</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/" />
@@ -19,7 +19,7 @@
   <!-- Минск -->
   <url>
     <loc>https://itshka.by/minsk</loc>
-    <lastmod>2024-12-18</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/minsk" />
@@ -30,7 +30,7 @@
   <!-- Лида -->
   <url>
     <loc>https://itshka.by/lida</loc>
-    <lastmod>2024-12-18</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/lida" />
@@ -41,7 +41,7 @@
   <!-- Варшава -->
   <url>
     <loc>https://itshka.by/warsaw</loc>
-    <lastmod>2024-12-18</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/warsaw" />

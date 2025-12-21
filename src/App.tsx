@@ -8,7 +8,17 @@ import { CityProvider } from "@/contexts/CityContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
+// Оптимизированная конфигурация QueryClient для лучшей производительности
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 минут
+      cacheTime: 10 * 60 * 1000, // 10 минут
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <HelmetProvider>

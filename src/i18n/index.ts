@@ -52,13 +52,55 @@ i18n
 // Отложенное определение страны по IP (только если нет сохранённого языка)
 // Выполняется в фоне после загрузки страницы, НЕ блокирует рендеринг
 if (typeof window !== 'undefined' && !localStorage.getItem('i18nextLng')) {
-  // Откладываем на 2 секунды после загрузки
-  setTimeout(() => {
+  // Используем requestIdleCallback для выполнения в свободное время
+  const scheduleDetection = () => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        detectLanguageByIP();
+      }, { timeout: 2000 });
+    } else {
+      setTimeout(detectLanguageByIP, 2000);
+    }
+  };
+  
+  const detectLanguageByIP = () => {
+    // Проверяем кэш
+    const cacheKey = 'ipapi_lang_cache';
+    const cached = sessionStorage.getItem(cacheKey);
+    if (cached) {
+      try {
+        const cachedData = JSON.parse(cached);
+        const now = Date.now();
+        // Кэш действителен 1 час
+        if (now - cachedData.timestamp < 3600000) {
+          const detectedLang = countryToLanguage[cachedData.country_code] || 'en';
+          if (i18n.language !== detectedLang) {
+            i18n.changeLanguage(detectedLang);
+            localStorage.setItem('i18nextLng', detectedLang);
+          }
+          return;
+        }
+      } catch (e) {
+        // Игнорируем ошибки кэша
+      }
+    }
+    
     fetch('https://ipapi.co/json/', { 
-      signal: AbortSignal.timeout(2000)
+      signal: AbortSignal.timeout(2000),
+      cache: 'default'
     })
       .then(res => res.json())
       .then(data => {
+        // Сохраняем в кэш
+        try {
+          sessionStorage.setItem(cacheKey, JSON.stringify({
+            country_code: data.country_code,
+            timestamp: Date.now()
+          }));
+        } catch (e) {
+          // Игнорируем ошибки сохранения
+        }
+        
         const detectedLang = countryToLanguage[data.country_code] || 'en';
         if (i18n.language !== detectedLang) {
           i18n.changeLanguage(detectedLang);
@@ -69,7 +111,9 @@ if (typeof window !== 'undefined' && !localStorage.getItem('i18nextLng')) {
         // Ошибка - просто оставляем текущий язык
         localStorage.setItem('i18nextLng', i18n.language);
       });
-  }, 2000);
+  };
+  
+  scheduleDetection();
 }
 
 export default i18n;
