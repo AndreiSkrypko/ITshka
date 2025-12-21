@@ -2,13 +2,23 @@ import { useState, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Code2, Layers, Zap } from "lucide-react";
+import { useCity } from "@/contexts/CityContext";
 
 // Lazy load heavy modal component
 const ProjectBriefModal = lazy(() => import("./ProjectBriefModal"));
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { cityConfig } = useCity();
+  
+  const lang = i18n.language as 'ru' | 'en' | 'pl';
+  const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+  const badgeText = lang === 'ru' 
+    ? `Веб-студия в ${cityName}`
+    : lang === 'en'
+    ? `Web Studio in ${cityName}`
+    : `Studio Internetowe w ${cityName}`;
 
   return (
     <section className="relative flex mt-12 md:mt-16 mb-0 h-[calc(100vh-180px)] flex-shrink-0">
@@ -22,7 +32,7 @@ const HeroSection = () => {
           >
             <Sparkles className="w-5 h-5 text-primary" aria-hidden="true" />
             <span className="text-sm uppercase tracking-[0.2em] text-white/70 font-medium">
-              {t('hero.badge')}
+              {badgeText}
             </span>
           </div>
           

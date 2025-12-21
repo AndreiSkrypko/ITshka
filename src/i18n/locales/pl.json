@@ -4,12 +4,11 @@
     "description": "Tworzenie stron internetowych w Mińsku i obwodzie mińskim. Najpierw strona — potem płatność!"
   },
   "header": {
-    "studio": "Studio webowe w Mińsku",
+    "studio": "Studio Internetowe",
     "callUs": "Zadzwoń do nas",
-    "callAria": "Zadzwoń: +375 29 121-09-08"
+    "callAria": "Zadzwoń"
   },
   "hero": {
-    "badge": "Studio webowe w Mińsku",
     "title1": "Najpierw strona",
     "title2": "potem płatność!",
     "subtitle": "Bez ryzyka.",

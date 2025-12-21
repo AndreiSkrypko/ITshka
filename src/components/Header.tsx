@@ -1,21 +1,21 @@
 import { Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
-
-const BY_PHONE = {
-  display: "+375 29 121-09-08",
-  tel: "+375291210908",
-};
-
-const PL_PHONE = {
-  display: "+48 502 420 839",
-  tel: "+48502420839",
-};
+import CitySwitcher from "./CitySwitcher";
+import { useCity } from "@/contexts/CityContext";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const { cityConfig } = useCity();
 
-  const currentPhone = i18n.language === "ru" ? BY_PHONE : PL_PHONE;
+  const currentPhone = cityConfig.phone;
+  const lang = i18n.language as 'ru' | 'en' | 'pl';
+  const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+  const studioText = lang === 'ru' 
+    ? `Веб-студия в ${cityName}`
+    : lang === 'en'
+    ? `Web Studio in ${cityName}`
+    : `Studio Internetowe w ${cityName}`;
 
   return (
     <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-5">
@@ -35,12 +35,15 @@ const Header = () => {
         </div>
         <div className="hidden md:block h-8 w-px bg-white/10" />
         <span className="hidden md:inline text-sm text-white/40 font-medium">
-          {t('header.studio')}
+          {studioText}
         </span>
       </div>
       
       {/* Right side */}
       <div className="flex items-center gap-2 sm:gap-4">
+        {/* City Switcher */}
+        <CitySwitcher />
+        
         {/* Language Switcher */}
         <LanguageSwitcher />
         
@@ -48,7 +51,7 @@ const Header = () => {
         <a 
           href={`tel:${currentPhone.tel}`} 
           className="flex items-center gap-2 sm:gap-3 group"
-          aria-label={t('header.callAria')}
+          aria-label={`${t('header.callAria')}: ${currentPhone.display}`}
         >
           <div className="relative">
             <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">

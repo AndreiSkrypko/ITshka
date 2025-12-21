@@ -4,12 +4,11 @@
     "description": "Website development in Minsk and Minsk region. We make the website first — you pay later!"
   },
   "header": {
-    "studio": "Web Studio in Minsk",
+    "studio": "Web Studio",
     "callUs": "Call us",
-    "callAria": "Call: +375 29 121-09-08"
+    "callAria": "Call"
   },
   "hero": {
-    "badge": "Web Studio in Minsk",
     "title1": "Website first —",
     "title2": "pay later!",
     "subtitle": "No risks.",

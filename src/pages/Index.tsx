@@ -3,62 +3,119 @@ import HeroSection from "@/components/HeroSection";
 import BonusCard from "@/components/BonusCard";
 import FeatureCards from "@/components/FeatureCards";
 import SocialLinks from "@/components/SocialLinks";
+import SEOMeta from "@/components/SEOMeta";
 import { useTranslation } from "react-i18next";
+import { useCity } from "@/contexts/CityContext";
 
 const Index = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { cityConfig } = useCity();
+  const lang = i18n.language as 'ru' | 'en' | 'pl';
+
+  const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+  const regionName = cityConfig.region[lang] || cityConfig.region.ru;
+
+  // Генерируем SEO контент в зависимости от города и языка
+  const getSEOContent = () => {
+    if (lang === 'ru') {
+      return {
+        h2: `Веб-студия ITshka в ${cityName} — создание сайтов под ключ`,
+        intro: `ITshka — профессиональная веб-студия в ${cityName}, специализирующаяся на создании сайтов под ключ. Мы предлагаем разработку сайтов в ${cityName} и ${regionName}: лендинги, интернет-магазины, корпоративные сайты, сайты-визитки. Сначала делаем сайт — потом вы платите. Без предоплаты, с гарантией результата. Сроки разработки от 3 дней. Звоните: ${cityConfig.phone.display}.`,
+        h3_1: `Создание сайтов в ${cityName}`,
+        p1: `Разработка сайтов в ${cityName} — наша основная специализация. Мы создаём современные, адаптивные сайты для бизнеса в ${cityName} и ${regionName}. Каждый сайт оптимизирован для поисковых систем, имеет мобильную версию и работает на всех устройствах.`,
+        h3_2: `Услуги веб-разработки в ${cityName}`,
+        services: [
+          `Создание лендингов в ${cityName} — одностраничные сайты для рекламных кампаний`,
+          `Разработка интернет-магазинов в ${cityName} — полнофункциональные онлайн-магазины`,
+          `Корпоративные сайты под ключ — многостраничные сайты для компаний`,
+          `Сайты-визитки для бизнеса в ${cityName} — простые и эффективные решения`,
+          `Адаптивный дизайн — сайты работают на всех устройствах`,
+          `SEO-оптимизация — продвижение сайтов в поисковых системах`
+        ],
+        h3_3: `Почему выбирают ITshka в ${cityName}`,
+        p2: `Веб-студия ITshka работает в ${cityName} и ${regionName} более 5 лет. Мы создали более 100 успешных проектов. Наша особенность — сначала делаем сайт, показываем результат, и только потом вы платите. Если результат не нравится — вы не платите. Это наша гарантия качества.`,
+        h3_4: `Стоимость создания сайта в ${cityName}`,
+        p3: `Стоимость разработки сайта в ${cityName} зависит от типа проекта: лендинг от 500 BYN, сайт-визитка от 800 BYN, корпоративный сайт от 1500 BYN, интернет-магазин от 2500 BYN. Точную стоимость рассчитаем после заполнения брифа. Сроки разработки: лендинг от 3 дней, сайт-визитка от 5 дней, корпоративный сайт от 10 дней, интернет-магазин от 14 дней.`,
+        h3_5: `Контакты веб-студии в ${cityName}`,
+        p4: `Веб-студия ITshka работает в ${cityName}, ${regionName}. Телефон: ${cityConfig.phone.display}. Мы создаём сайты для бизнеса в ${cityName} и по всей ${regionName}. Свяжитесь с нами через WhatsApp, Telegram или Viber для консультации.`
+      };
+    } else if (lang === 'en') {
+      return {
+        h2: `ITshka Web Studio in ${cityName} — Website Development`,
+        intro: `ITshka is a professional web studio in ${cityName}, specializing in turnkey website development. We offer website development in ${cityName} and ${regionName}: landing pages, online stores, corporate websites, business card sites. Website first — pay later. No prepayment, with result guarantee. Development time from 3 days. Call: ${cityConfig.phone.display}.`,
+        h3_1: `Website Development in ${cityName}`,
+        p1: `Website development in ${cityName} is our main specialization. We create modern, responsive websites for businesses in ${cityName} and ${regionName}. Every website is optimized for search engines, has a mobile version and works on all devices.`,
+        h3_2: `Web Development Services in ${cityName}`,
+        services: [
+          `Landing page creation in ${cityName} — single-page sites for advertising campaigns`,
+          `Online store development in ${cityName} — full-featured online stores`,
+          `Corporate websites — multi-page sites for companies`,
+          `Business card sites for businesses in ${cityName} — simple and effective solutions`,
+          `Responsive design — sites work on all devices`,
+          `SEO optimization — website promotion in search engines`
+        ],
+        h3_3: `Why Choose ITshka in ${cityName}`,
+        p2: `ITshka web studio has been working in ${cityName} and ${regionName} for over 5 years. We have created over 100 successful projects. Our feature — we make the website first, show the result, and only then you pay. If you don't like the result — you don't pay. This is our quality guarantee.`,
+        h3_4: `Website Development Cost in ${cityName}`,
+        p3: `The cost of website development in ${cityName} depends on the project type: landing page from 500 BYN, business card site from 800 BYN, corporate website from 1500 BYN, online store from 2500 BYN. Exact cost will be calculated after filling out the brief. Development time: landing page from 3 days, business card site from 5 days, corporate website from 10 days, online store from 14 days.`,
+        h3_5: `Web Studio Contacts in ${cityName}`,
+        p4: `ITshka web studio works in ${cityName}, ${regionName}. Phone: ${cityConfig.phone.display}. We create websites for businesses in ${cityName} and throughout ${regionName}. Contact us via WhatsApp, Telegram or Viber for consultation.`
+      };
+    } else {
+      return {
+        h2: `ITshka Web Studio w ${cityName} — Tworzenie Stron Internetowych`,
+        intro: `ITshka to profesjonalne studio internetowe w ${cityName}, specjalizujące się w tworzeniu stron internetowych pod klucz. Oferujemy tworzenie stron internetowych w ${cityName} i ${regionName}: strony landingowe, sklepy internetowe, strony korporacyjne, strony wizytówkowe. Najpierw strona — potem płatność. Bez przedpłaty, z gwarancją wyniku. Czas realizacji od 3 dni. Zadzwoń: ${cityConfig.phone.display}.`,
+        h3_1: `Tworzenie Stron Internetowych w ${cityName}`,
+        p1: `Tworzenie stron internetowych w ${cityName} to nasza główna specjalizacja. Tworzymy nowoczesne, responsywne strony internetowe dla firm w ${cityName} i ${regionName}. Każda strona jest zoptymalizowana pod kątem wyszukiwarek, ma wersję mobilną i działa na wszystkich urządzeniach.`,
+        h3_2: `Usługi Tworzenia Stron w ${cityName}`,
+        services: [
+          `Tworzenie stron landingowych w ${cityName} — strony jednoscreenowe dla kampanii reklamowych`,
+          `Tworzenie sklepów internetowych w ${cityName} — w pełni funkcjonalne sklepy online`,
+          `Strony korporacyjne pod klucz — wielostronne strony dla firm`,
+          `Strony wizytówkowe dla firm w ${cityName} — proste i skuteczne rozwiązania`,
+          `Projekt responsywny — strony działają na wszystkich urządzeniach`,
+          `Optymalizacja SEO — promocja stron w wyszukiwarkach`
+        ],
+        h3_3: `Dlaczego Wybrać ITshka w ${cityName}`,
+        p2: `Studio internetowe ITshka działa w ${cityName} i ${regionName} od ponad 5 lat. Stworzyliśmy ponad 100 udanych projektów. Nasza cecha — najpierw robimy stronę, pokazujemy wynik, a dopiero potem płacisz. Jeśli wynik Ci się nie podoba — nie płacisz. To nasza gwarancja jakości.`,
+        h3_4: `Koszt Tworzenia Strony w ${cityName}`,
+        p3: `Koszt tworzenia strony w ${cityName} zależy od typu projektu: strona landingowa od 500 BYN, strona wizytówkowa od 800 BYN, strona korporacyjna od 1500 BYN, sklep internetowy od 2500 BYN. Dokładny koszt obliczymy po wypełnieniu briefu. Czas realizacji: strona landingowa od 3 dni, strona wizytówkowa od 5 dni, strona korporacyjna od 10 dni, sklep internetowy od 14 dni.`,
+        h3_5: `Kontakty Studia w ${cityName}`,
+        p4: `Studio internetowe ITshka działa w ${cityName}, ${regionName}. Telefon: ${cityConfig.phone.display}. Tworzymy strony internetowe dla firm w ${cityName} i w całej ${regionName}. Skontaktuj się z nami przez WhatsApp, Telegram lub Viber w celu konsultacji.`
+      };
+    }
+  };
+
+  const seoContent = getSEOContent();
 
   return (
-    <div className="h-screen overflow-hidden relative bg-[#050809] overflow-x-hidden">
-      {/* SEO Content - видимый для поисковиков, скрыт для пользователей */}
-      <div className="sr-only" aria-hidden="false">
-        <h2>Веб-студия ITshka в Минске — создание сайтов под ключ</h2>
-        <p>
-          ITshka — профессиональная веб-студия в Минске, специализирующаяся на создании сайтов под ключ. 
-          Мы предлагаем разработку сайтов в Минске и Минской области: лендинги, интернет-магазины, 
-          корпоративные сайты, сайты-визитки. Сначала делаем сайт — потом вы платите. Без предоплаты, 
-          с гарантией результата. Сроки разработки от 3 дней. Звоните: +375 29 121-09-08.
-        </p>
-        
-        <h3>Создание сайтов в Минске</h3>
-        <p>
-          Разработка сайтов в Минске — наша основная специализация. Мы создаём современные, адаптивные 
-          сайты для бизнеса в Минске и Минской области. Каждый сайт оптимизирован для поисковых систем, 
-          имеет мобильную версию и работает на всех устройствах.
-        </p>
-        
-        <h3>Услуги веб-разработки в Минске</h3>
-        <ul>
-          <li>Создание лендингов в Минске — одностраничные сайты для рекламных кампаний</li>
-          <li>Разработка интернет-магазинов в Минске — полнофункциональные онлайн-магазины</li>
-          <li>Корпоративные сайты под ключ — многостраничные сайты для компаний</li>
-          <li>Сайты-визитки для бизнеса в Минске — простые и эффективные решения</li>
-          <li>Адаптивный дизайн — сайты работают на всех устройствах</li>
-          <li>SEO-оптимизация — продвижение сайтов в поисковых системах</li>
-        </ul>
-        
-        <h3>Почему выбирают ITshka в Минске</h3>
-        <p>
-          Веб-студия ITshka работает в Минске и Минской области более 5 лет. Мы создали более 100 
-          успешных проектов. Наша особенность — сначала делаем сайт, показываем результат, и только 
-          потом вы платите. Если результат не нравится — вы не платите. Это наша гарантия качества.
-        </p>
-        
-        <h3>Стоимость создания сайта в Минске</h3>
-        <p>
-          Стоимость разработки сайта в Минске зависит от типа проекта: лендинг от 500 BYN, сайт-визитка 
-          от 800 BYN, корпоративный сайт от 1500 BYN, интернет-магазин от 2500 BYN. Точную стоимость 
-          рассчитаем после заполнения брифа. Сроки разработки: лендинг от 3 дней, сайт-визитка от 5 дней, 
-          корпоративный сайт от 10 дней, интернет-магазин от 14 дней.
-        </p>
-        
-        <h3>Контакты веб-студии в Минске</h3>
-        <p>
-          Веб-студия ITshka работает в Минске, Минская область, Беларусь. Телефон: +375 29 121-09-08. 
-          Мы создаём сайты для бизнеса в Минске и по всей Минской области. Свяжитесь с нами через 
-          WhatsApp, Telegram или Viber для консультации.
-        </p>
-      </div>
+    <>
+      <SEOMeta />
+      <div className="h-screen overflow-hidden relative bg-[#050809] overflow-x-hidden">
+        {/* SEO Content - видимый для поисковиков, скрыт для пользователей */}
+        <div className="sr-only" aria-hidden="false">
+          <h2>{seoContent.h2}</h2>
+          <p>{seoContent.intro}</p>
+          
+          <h3>{seoContent.h3_1}</h3>
+          <p>{seoContent.p1}</p>
+          
+          <h3>{seoContent.h3_2}</h3>
+          <ul>
+            {seoContent.services.map((service, index) => (
+              <li key={index}>{service}</li>
+            ))}
+          </ul>
+          
+          <h3>{seoContent.h3_3}</h3>
+          <p>{seoContent.p2}</p>
+          
+          <h3>{seoContent.h3_4}</h3>
+          <p>{seoContent.p3}</p>
+          
+          <h3>{seoContent.h3_5}</h3>
+          <p>{seoContent.p4}</p>
+        </div>
       {/* Decorative background elements */}
       <div aria-hidden="true">
         {/* Optimized gradient orbs - GPU accelerated, reduced blur */}
