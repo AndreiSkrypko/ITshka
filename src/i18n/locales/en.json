@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Website Development in Lida | ITshka",
-    "description": "Website development in Lida and Grodno region. We make the website first — you pay later!"
+    "title": "Website Development in Minsk | ITshka",
+    "description": "Website development in Minsk and Minsk region. We make the website first — you pay later!"
   },
   "header": {
-    "studio": "Web Studio in Lida",
+    "studio": "Web Studio in Minsk",
     "callUs": "Call us",
     "callAria": "Call: +375 29 121-09-08"
   },
   "hero": {
-    "badge": "Web Studio in Lida",
+    "badge": "Web Studio in Minsk",
     "title1": "Website first —",
     "title2": "pay later!",
     "subtitle": "No risks.",
@@ -30,7 +30,7 @@
   "features": {
     "design": "Design",
     "designDesc": "Turnkey",
-    "seo": "SEO Lida",
+    "seo": "SEO Minsk",
     "seoDesc": "Top Rankings",
     "guarantee": "Guarantee",
     "guaranteeDesc": "Of Result"
@@ -38,7 +38,7 @@
   "bonus": {
     "title": "Personal consultation",
     "titleAccent": "for your project",
-    "description": "We work with businesses in Lida and Grodno region. We'll find a solution for you"
+    "description": "We work with businesses in Minsk and Minsk region. We'll find a solution for you"
   },
   "modal": {
     "tellAboutProject": "Tell us about your project",
@@ -116,7 +116,7 @@
         "projectDescriptionLabel": "Project description",
         "projectDescriptionPlaceholder": "What exactly is needed: landing, corporate site, store...",
         "targetAudienceLabel": "Target audience",
-        "targetAudiencePlaceholder": "For example: men 25–45, Lida region",
+        "targetAudiencePlaceholder": "For example: men 25–45, Minsk region",
         "advantagesLabel": "Advantages",
         "advantagesPlaceholder": "Why clients choose you",
         "goalsLabel": "Project goals",

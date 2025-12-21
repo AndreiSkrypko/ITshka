@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Tworzenie stron internetowych w Lidzie | ITshka",
-    "description": "Tworzenie stron internetowych w Lidzie i obwodzie grodzieńskim. Najpierw strona — potem płatność!"
+    "title": "Tworzenie stron internetowych w Mińsku | ITshka",
+    "description": "Tworzenie stron internetowych w Mińsku i obwodzie mińskim. Najpierw strona — potem płatność!"
   },
   "header": {
-    "studio": "Studio webowe w Lidzie",
+    "studio": "Studio webowe w Mińsku",
     "callUs": "Zadzwoń do nas",
     "callAria": "Zadzwoń: +375 29 121-09-08"
   },
   "hero": {
-    "badge": "Studio webowe w Lidzie",
+    "badge": "Studio webowe w Mińsku",
     "title1": "Najpierw strona",
     "title2": "potem płatność!",
     "subtitle": "Bez ryzyka.",
@@ -30,7 +30,7 @@
   "features": {
     "design": "Design",
     "designDesc": "Pod klucz",
-    "seo": "SEO Lida",
+    "seo": "SEO Mińsk",
     "seoDesc": "Wysoka pozycja",
     "guarantee": "Gwarancja",
     "guaranteeDesc": "Wyniku"
@@ -38,7 +38,7 @@
   "bonus": {
     "title": "Osobista konsultacja",
     "titleAccent": "Twojego projektu",
-    "description": "Pracujemy z firmami w Lidzie i obwodzie grodzieńskim. Znajdziemy rozwiązanie dla Ciebie"
+    "description": "Pracujemy z firmami w Mińsku i obwodzie mińskim. Znajdziemy rozwiązanie dla Ciebie"
   },
   "modal": {
     "tellAboutProject": "Opowiedz o projekcie",
@@ -93,7 +93,7 @@
       "commonHint": "Wypełnij tylko to, co jest dla Ciebie zrozumiałe. Jeśli czegoś nie wiesz — zostaw pole puste.",
       "step1Intro": "Zacznij od podstawowych danych. Kolejne kroki możesz wypełnić tylko częściowo — to w porządku.",
       "almostDoneTitle": "Prawie gotowe!",
-      "almostDoneText": "Kliknij „Wyślij", a skontaktujemy się z Tobą",
+      "almostDoneText": "Kliknij \"Wyślij\", a skontaktujemy się z Tobą",
       "steps": {
         "company": { "title": "O firmie", "subtitle": "Opowiedz o sobie prostym językiem" },
         "marketing": { "title": "Marketing", "subtitle": "Czym się zajmujesz i dla kogo" },
@@ -106,7 +106,7 @@
       },
       "fields": {
         "companyNameLabel": "Nazwa firmy",
-        "companyNamePlaceholder": "Sp. z o.o. „Twoja firma”",
+        "companyNamePlaceholder": "Sp. z o.o. \"Twoja firma\"",
         "contactInfoLabel": "Dane kontaktowe",
         "contactInfoPlaceholder": "Imię i nazwisko, telefon, email",
         "websiteUrlLabel": "Adres strony",
@@ -116,13 +116,13 @@
         "projectDescriptionLabel": "Opis projektu",
         "projectDescriptionPlaceholder": "Czego dokładnie potrzebujesz: landing, strona firmowa, sklep...",
         "targetAudienceLabel": "Grupa docelowa",
-        "targetAudiencePlaceholder": "Np.: mężczyźni 25–45, Lida i okolice",
+        "targetAudiencePlaceholder": "Np.: mężczyźni 25–45, Mińsk i okolice",
         "advantagesLabel": "Atuty",
         "advantagesPlaceholder": "Dlaczego klienci wybierają właśnie Ciebie?",
         "goalsLabel": "Cele projektu",
         "goalsPlaceholder": "Np.: więcej zapytań, lepsza prezentacja firmy",
         "existingSiteLabel": "Istniejąca strona",
-        "existingSitePlaceholder": "Link do aktualnej strony lub „brak”",
+        "existingSitePlaceholder": "Link do aktualnej strony lub \"brak\"",
         "competitorsLabel": "Konkurenci",
         "competitorsPlaceholder": "Linki do stron konkurencji (jeśli znasz)",
         "budgetLabel": "Budżet",
