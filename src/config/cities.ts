@@ -7,6 +7,11 @@ export interface CityConfig {
     en: string;
     pl: string;
   };
+  nameLocative: {
+    ru: string; // предложный падеж: в Минске, в Лиде
+    en: string;
+    pl: string;
+  };
   region: {
     ru: string;
     en: string;
@@ -37,6 +42,11 @@ export const cities: Record<CityCode, CityConfig> = {
       ru: 'Минск',
       en: 'Minsk',
       pl: 'Mińsk'
+    },
+    nameLocative: {
+      ru: 'Минске',
+      en: 'Minsk',
+      pl: 'Mińsku'
     },
     region: {
       ru: 'Минская область',
@@ -132,6 +142,11 @@ export const cities: Record<CityCode, CityConfig> = {
       ru: 'Лида',
       en: 'Lida',
       pl: 'Lida'
+    },
+    nameLocative: {
+      ru: 'Лиде',
+      en: 'Lida',
+      pl: 'Lidzie'
     },
     region: {
       ru: 'Гродненская область',
@@ -229,6 +244,11 @@ export const cities: Record<CityCode, CityConfig> = {
       ru: 'Варшава',
       en: 'Warsaw',
       pl: 'Warszawa'
+    },
+    nameLocative: {
+      ru: 'Варшаве',
+      en: 'Warsaw',
+      pl: 'Warszawie'
     },
     region: {
       ru: 'Мазовецкое воеводство',

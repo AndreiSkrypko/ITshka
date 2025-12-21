@@ -10,10 +10,12 @@ const ProjectBriefModal = lazy(() => import("./ProjectBriefModal"));
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const { cityConfig } = useCity();
-  
+  const { cityConfig, isInCity } = useCity();
   const lang = i18n.language as 'ru' | 'en' | 'pl';
-  const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+  // Используем склонение только если пользователь в городе
+  const cityName = (isInCity && lang === 'ru') 
+    ? cityConfig.nameLocative[lang] 
+    : cityConfig.name[lang] || cityConfig.name.ru;
   const badgeText = lang === 'ru' 
     ? `Веб-студия в ${cityName}`
     : lang === 'en'

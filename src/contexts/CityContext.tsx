@@ -6,6 +6,7 @@ interface CityContextType {
   currentCity: CityCode;
   setCity: (city: CityCode) => void;
   cityConfig: typeof cities[CityCode];
+  isInCity: boolean; // находится ли пользователь физически в городе
 }
 
 const CityContext = createContext<CityContextType | undefined>(undefined);
@@ -28,6 +29,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   const [currentCity, setCurrentCityState] = useState<CityCode>('minsk');
   const [isInitialized, setIsInitialized] = useState(false);
   const [isManualSwitch, setIsManualSwitch] = useState(false);
+  const [isInCity, setIsInCity] = useState(false);
 
   // Определяем город из URL
   const getCityFromPath = (): CityCode | null => {
@@ -39,7 +41,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   };
 
   // Определение города по координатам (геолокация)
-  const detectCityByCoordinates = async (lat: number, lon: number): Promise<CityCode> => {
+  const detectCityByCoordinates = async (lat: number, lon: number): Promise<{ city: CityCode; isInCity: boolean }> => {
     // Координаты городов (точные)
     const cityCoordinates = {
       lida: { lat: 53.8833, lon: 25.2997 },
@@ -67,9 +69,10 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       }
     }
 
-    // Если расстояние до ближайшего города больше 100 км, возможно определение неточно
-    // Но все равно возвращаем ближайший город
-    return closestCity;
+    // Считаем, что пользователь в городе, если расстояние меньше 30 км
+    const isInCity = minDistance < 30;
+    
+    return { city: closestCity, isInCity };
   };
 
   // Автоопределение города по IP (только если нет в URL и localStorage)
@@ -77,14 +80,14 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     try {
       // Сначала пытаемся использовать геолокацию браузера (более точно)
       if (navigator.geolocation) {
-        return new Promise<CityCode>((resolve) => {
+        return new Promise<{ city: CityCode; isInCity: boolean }>((resolve) => {
           navigator.geolocation.getCurrentPosition(
             async (position) => {
-              const city = await detectCityByCoordinates(
+              const result = await detectCityByCoordinates(
                 position.coords.latitude,
                 position.coords.longitude
               );
-              resolve(city);
+              resolve(result);
             },
             async () => {
               // Если геолокация недоступна, используем IP
@@ -98,22 +101,22 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 const cityName = data.city.toLowerCase();
                 // Проверяем точные совпадения
                 if (cityName.includes('lida') || cityName.includes('лида')) {
-                  resolve('lida');
+                  resolve({ city: 'lida', isInCity: true });
                   return;
                 }
                 if (cityName.includes('minsk') || cityName.includes('минск') || cityName.includes('mińsk')) {
-                  resolve('minsk');
+                  resolve({ city: 'minsk', isInCity: true });
                   return;
                 }
                 if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
-                  resolve('warsaw');
+                  resolve({ city: 'warsaw', isInCity: true });
                   return;
                 }
               }
               
               // Если город не определен, используем маппинг по стране
               const detectedCity = countryToCity[data.country_code] || 'minsk';
-              resolve(detectedCity);
+              resolve({ city: detectedCity, isInCity: false });
             },
             { timeout: 2000, enableHighAccuracy: false }
           );
@@ -131,21 +134,21 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         const cityName = data.city.toLowerCase();
         // Проверяем точные совпадения
         if (cityName.includes('lida') || cityName.includes('лида')) {
-          return 'lida';
+          return { city: 'lida', isInCity: true };
         }
         if (cityName.includes('minsk') || cityName.includes('минск') || cityName.includes('mińsk')) {
-          return 'minsk';
+          return { city: 'minsk', isInCity: true };
         }
         if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
-          return 'warsaw';
+          return { city: 'warsaw', isInCity: true };
         }
       }
       
       // Если город не определен, используем маппинг по стране
       const detectedCity = countryToCity[data.country_code] || 'minsk';
-      return detectedCity;
+      return { city: detectedCity, isInCity: false };
     } catch {
-      return 'minsk';
+      return { city: 'minsk', isInCity: false };
     }
   };
 
@@ -169,7 +172,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
 
       // 2. Пытаемся определить город по геолокации/IP (только при первой загрузке)
       try {
-        const detectedCity = await detectCityByIP();
+        const detected = await detectCityByIP();
         
         // Проверяем, есть ли сохраненный город в localStorage
         const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
@@ -177,15 +180,22 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         // Если есть сохраненный город, используем его (не переопределяем автоматически)
         if (savedCity && cities[savedCity]) {
           setCurrentCityState(savedCity);
+          // Проверяем, находится ли пользователь в сохраненном городе
+          if (savedCity === detected.city) {
+            setIsInCity(detected.isInCity);
+          } else {
+            setIsInCity(false);
+          }
           navigate(`/${savedCity}`, { replace: true });
           setIsInitialized(true);
           return;
         }
         
         // Если нет сохраненного, используем определенный
-        setCurrentCityState(detectedCity);
-        localStorage.setItem('selectedCity', detectedCity);
-        navigate(`/${detectedCity}`, { replace: true });
+        setCurrentCityState(detected.city);
+        setIsInCity(detected.isInCity);
+        localStorage.setItem('selectedCity', detected.city);
+        navigate(`/${detected.city}`, { replace: true });
         setIsInitialized(true);
       } catch (error) {
         // Если автоопределение не сработало, используем localStorage или дефолт
@@ -220,6 +230,16 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     if (cityFromPath && cityFromPath !== currentCity && cities[cityFromPath]) {
       setCurrentCityState(cityFromPath);
       localStorage.setItem('selectedCity', cityFromPath);
+      // Проверяем, находится ли пользователь в городе из URL
+      detectCityByIP().then((detected) => {
+        if (detected.city === cityFromPath) {
+          setIsInCity(detected.isInCity);
+        } else {
+          setIsInCity(false);
+        }
+      }).catch(() => {
+        setIsInCity(false);
+      });
     }
   }, [location.pathname, currentCity, isManualSwitch]);
 
@@ -239,7 +259,8 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   const value: CityContextType = {
     currentCity,
     setCity,
-    cityConfig: cities[currentCity]
+    cityConfig: cities[currentCity],
+    isInCity
   };
 
   return <CityContext.Provider value={value}>{children}</CityContext.Provider>;

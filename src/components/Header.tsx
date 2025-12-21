@@ -5,11 +5,13 @@ import { useCity } from "@/contexts/CityContext";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
-  const { cityConfig } = useCity();
-
+  const { cityConfig, isInCity } = useCity();
   const currentPhone = cityConfig.phone;
   const lang = i18n.language as 'ru' | 'en' | 'pl';
-  const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+  // Используем склонение только если пользователь в городе
+  const cityName = (isInCity && lang === 'ru') 
+    ? cityConfig.nameLocative[lang] 
+    : cityConfig.name[lang] || cityConfig.name.ru;
   const studioText = lang === 'ru' 
     ? `Веб-студия в ${cityName}`
     : lang === 'en'
