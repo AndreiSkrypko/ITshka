@@ -17,7 +17,7 @@ const HeroSection = () => {
     <section className="relative flex mt-0 lg:mt-16 mb-0 h-auto flex-shrink-0" style={{ maxHeight: 'calc(100vh - 320px)' }}>
       {/* Left Content */}
       <div className="w-full lg:w-[55%] flex flex-col justify-center px-0 lg:px-16 z-10 py-8 lg:py-8">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl w-full">
           {/* Main heading */}
           <h1 
             className="text-4xl lg:text-[4rem] xl:text-[4.5rem] font-black text-white leading-[1.1] mb-5 lg:mb-6 animate-fade-in" 
@@ -41,8 +41,8 @@ const HeroSection = () => {
           
           {/* Subtitle - уникальное описание для каждого города */}
           <p 
-            className="text-lg lg:text-xl text-white/60 mb-5 lg:mb-6 leading-relaxed animate-fade-in" 
-            style={{ animationDelay: '0.1s' }}
+            className="text-base sm:text-lg lg:text-xl text-white/60 mb-5 lg:mb-6 leading-[1.6] sm:leading-relaxed lg:leading-relaxed text-justify sm:text-left animate-fade-in max-w-full hyphens-auto sm:hyphens-none" 
+            style={{ animationDelay: '0.1s', textAlignLast: 'left', wordSpacing: '0.05em' }}
           >
             <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {cityConfig.uniqueContent.heroDescription[lang]}
           </p>
