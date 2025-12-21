@@ -39,27 +39,35 @@ export const CityProvider = ({ children }: CityProviderProps) => {
 
   // Определение города по координатам (геолокация)
   const detectCityByCoordinates = async (lat: number, lon: number): Promise<CityCode> => {
-    // Координаты городов (примерные)
+    // Координаты городов (точные)
     const cityCoordinates = {
       lida: { lat: 53.8833, lon: 25.2997 },
       minsk: { lat: 53.9045, lon: 27.5615 },
       warsaw: { lat: 52.2297, lon: 21.0122 }
     };
 
-    // Вычисляем расстояние до каждого города и выбираем ближайший
+    // Вычисляем расстояние до каждого города (используем формулу гаверсинуса для большей точности)
     let minDistance = Infinity;
     let closestCity: CityCode = 'minsk';
 
     for (const [city, coords] of Object.entries(cityCoordinates)) {
-      const distance = Math.sqrt(
-        Math.pow(lat - coords.lat, 2) + Math.pow(lon - coords.lon, 2)
-      );
+      // Упрощенная формула расстояния (достаточно точная для наших целей)
+      const dLat = (lat - coords.lat) * Math.PI / 180;
+      const dLon = (lon - coords.lon) * Math.PI / 180;
+      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(coords.lat * Math.PI / 180) * Math.cos(lat * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = 6371 * c; // Радиус Земли в км
+      
       if (distance < minDistance) {
         minDistance = distance;
         closestCity = city as CityCode;
       }
     }
 
+    // Если расстояние до ближайшего города больше 100 км, возможно определение неточно
+    // Но все равно возвращаем ближайший город
     return closestCity;
   };
 
@@ -143,7 +151,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   // Инициализация города
   useEffect(() => {
     const initializeCity = async () => {
-      // 1. Проверяем URL
+      // 1. Проверяем URL (высший приоритет)
       const cityFromPath = getCityFromPath();
       if (cityFromPath) {
         setCurrentCityState(cityFromPath);
@@ -152,21 +160,51 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         return;
       }
 
-      // 2. Проверяем localStorage
-      const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
-      if (savedCity && cities[savedCity]) {
-        setCurrentCityState(savedCity);
-        navigate(`/${savedCity}`, { replace: true });
+      // 2. Пытаемся определить город по геолокации/IP (приоритет над localStorage)
+      try {
+        const detectedCity = await detectCityByIP();
+        
+        // Проверяем, есть ли сохраненный город в localStorage
+        const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
+        
+        // Если геолокация определила город, используем его (переопределяем localStorage)
+        // Это позволяет автоматически обновлять город при переезде
+        if (detectedCity && detectedCity !== savedCity) {
+          setCurrentCityState(detectedCity);
+          localStorage.setItem('selectedCity', detectedCity);
+          navigate(`/${detectedCity}`, { replace: true });
+          setIsInitialized(true);
+          return;
+        }
+        
+        // Если сохраненный город совпадает с определенным, используем его
+        if (savedCity && cities[savedCity]) {
+          setCurrentCityState(savedCity);
+          navigate(`/${savedCity}`, { replace: true });
+          setIsInitialized(true);
+          return;
+        }
+        
+        // Если нет сохраненного, используем определенный
+        setCurrentCityState(detectedCity);
+        localStorage.setItem('selectedCity', detectedCity);
+        navigate(`/${detectedCity}`, { replace: true });
         setIsInitialized(true);
-        return;
+      } catch {
+        // Если автоопределение не сработало, используем localStorage или дефолт
+        const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
+        if (savedCity && cities[savedCity]) {
+          setCurrentCityState(savedCity);
+          navigate(`/${savedCity}`, { replace: true });
+          setIsInitialized(true);
+        } else {
+          // Последний резерв - Минск
+          setCurrentCityState('minsk');
+          localStorage.setItem('selectedCity', 'minsk');
+          navigate('/minsk', { replace: true });
+          setIsInitialized(true);
+        }
       }
-
-      // 3. Автоопределение по IP (в фоне, не блокируем)
-      const detectedCity = await detectCityByIP();
-      setCurrentCityState(detectedCity);
-      localStorage.setItem('selectedCity', detectedCity);
-      navigate(`/${detectedCity}`, { replace: true });
-      setIsInitialized(true);
     };
 
     if (!isInitialized) {
