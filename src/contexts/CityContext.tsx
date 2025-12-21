@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { CityCode, cities, countryToCity } from '@/config/cities';
+import { detectNearestCity } from '@/utils/nearestCity';
 
 interface CityContextType {
   currentCity: CityCode;
@@ -36,9 +37,25 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   // Определяем город из URL
   const getCityFromPath = (): CityCode | null => {
     const path = location.pathname;
-    if (path.startsWith('/minsk')) return 'minsk';
-    if (path.startsWith('/lida')) return 'lida';
-    if (path.startsWith('/warsaw')) return 'warsaw';
+    if (path === '/' || path === '') return null;
+    
+    // Извлекаем первый сегмент пути (город)
+    const pathSegments = path.split('/').filter(Boolean);
+    if (pathSegments.length === 0) return null;
+    
+    const citySegment = pathSegments[0].toLowerCase();
+    
+    // Проверяем точные совпадения
+    if (citySegment === 'minsk') return 'minsk';
+    if (citySegment === 'lida') return 'lida';
+    if (citySegment === 'warsaw') return 'warsaw';
+    if (citySegment === 'brest') return 'brest';
+    if (citySegment === 'vitebsk') return 'vitebsk';
+    if (citySegment === 'gomel') return 'gomel';
+    if (citySegment === 'grodno') return 'grodno';
+    if (citySegment === 'mogilev') return 'mogilev';
+    
+    // Если город не найден, возвращаем null (будет определен ближайший)
     return null;
   };
 
@@ -48,7 +65,12 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     const cityCoordinates = {
       lida: { lat: 53.8833, lon: 25.2997 },
       minsk: { lat: 53.9045, lon: 27.5615 },
-      warsaw: { lat: 52.2297, lon: 21.0122 }
+      warsaw: { lat: 52.2297, lon: 21.0122 },
+      brest: { lat: 52.0975, lon: 23.7341 },
+      vitebsk: { lat: 55.1904, lon: 30.2049 },
+      gomel: { lat: 52.4345, lon: 30.9754 },
+      grodno: { lat: 53.6884, lon: 23.8258 },
+      mogilev: { lat: 53.8945, lon: 30.3307 }
     };
 
     // Вычисляем расстояние до каждого города (используем формулу гаверсинуса для большей точности)
@@ -122,6 +144,26 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                         resolve({ city: 'warsaw', isInCity: true });
                         return;
                       }
+                      if (cityName.includes('brest') || cityName.includes('брест') || cityName.includes('brześć')) {
+                        resolve({ city: 'brest', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('vitebsk') || cityName.includes('витебск') || cityName.includes('witebsk')) {
+                        resolve({ city: 'vitebsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('gomel') || cityName.includes('гомель') || cityName.includes('homel')) {
+                        resolve({ city: 'gomel', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('grodno') || cityName.includes('гродно')) {
+                        resolve({ city: 'grodno', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('mogilev') || cityName.includes('могилев') || cityName.includes('могилёв') || cityName.includes('mohylew')) {
+                        resolve({ city: 'mogilev', isInCity: true });
+                        return;
+                      }
                     }
                     const detectedCity = countryToCity[data.country_code] || 'minsk';
                     resolve({ city: detectedCity, isInCity: false });
@@ -164,6 +206,26 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                   resolve({ city: 'warsaw', isInCity: true });
                   return;
                 }
+                if (cityName.includes('brest') || cityName.includes('брест') || cityName.includes('brześć')) {
+                  resolve({ city: 'brest', isInCity: true });
+                  return;
+                }
+                if (cityName.includes('vitebsk') || cityName.includes('витебск') || cityName.includes('witebsk')) {
+                  resolve({ city: 'vitebsk', isInCity: true });
+                  return;
+                }
+                if (cityName.includes('gomel') || cityName.includes('гомель') || cityName.includes('homel')) {
+                  resolve({ city: 'gomel', isInCity: true });
+                  return;
+                }
+                if (cityName.includes('grodno') || cityName.includes('гродно')) {
+                  resolve({ city: 'grodno', isInCity: true });
+                  return;
+                }
+                if (cityName.includes('mogilev') || cityName.includes('могилев') || cityName.includes('могилёв') || cityName.includes('mohylew')) {
+                  resolve({ city: 'mogilev', isInCity: true });
+                  return;
+                }
               }
               
               // Сохраняем код страны пользователя
@@ -199,6 +261,21 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
           return { city: 'warsaw', isInCity: true };
         }
+        if (cityName.includes('brest') || cityName.includes('брест') || cityName.includes('brześć')) {
+          return { city: 'brest', isInCity: true };
+        }
+        if (cityName.includes('vitebsk') || cityName.includes('витебск') || cityName.includes('witebsk')) {
+          return { city: 'vitebsk', isInCity: true };
+        }
+        if (cityName.includes('gomel') || cityName.includes('гомель') || cityName.includes('homel')) {
+          return { city: 'gomel', isInCity: true };
+        }
+        if (cityName.includes('grodno') || cityName.includes('гродно')) {
+          return { city: 'grodno', isInCity: true };
+        }
+        if (cityName.includes('mogilev') || cityName.includes('могилев') || cityName.includes('могилёв') || cityName.includes('mohylew')) {
+          return { city: 'mogilev', isInCity: true };
+        }
       }
       
       // Сохраняем код страны пользователя
@@ -226,13 +303,39 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       // 1. Проверяем URL (высший приоритет)
       const cityFromPath = getCityFromPath();
       if (cityFromPath) {
+        // Город найден в URL и он валидный
         setCurrentCityState(cityFromPath);
         localStorage.setItem('selectedCity', cityFromPath);
         setIsInitialized(true);
         return;
       }
 
-      // 2. Пытаемся определить город по геолокации/IP (только при первой загрузке)
+      // 2. Если в URL указан несуществующий город, определяем ближайший
+      const path = location.pathname;
+      if (path !== '/' && path !== '') {
+        const pathSegments = path.split('/').filter(Boolean);
+        if (pathSegments.length > 0) {
+          // В URL есть город, но он не найден в списке - определяем ближайший
+          try {
+            const nearestCity = await detectNearestCity();
+            setCurrentCityState(nearestCity);
+            localStorage.setItem('selectedCity', nearestCity);
+            // Обновляем URL на ближайший город (но сохраняем остальную часть пути если есть)
+            navigate(`/${nearestCity}`, { replace: true });
+            setIsInitialized(true);
+            return;
+          } catch (error) {
+            // Если не удалось определить, используем дефолт
+            setCurrentCityState('minsk');
+            localStorage.setItem('selectedCity', 'minsk');
+            navigate('/minsk', { replace: true });
+            setIsInitialized(true);
+            return;
+          }
+        }
+      }
+
+      // 3. Пытаемся определить город по геолокации/IP (только при первой загрузке)
       try {
         const detected = await detectCityByIP();
         
@@ -289,6 +392,8 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     }
     
     const cityFromPath = getCityFromPath();
+    
+    // Если найден валидный город в URL
     if (cityFromPath && cityFromPath !== currentCity && cities[cityFromPath]) {
       setCurrentCityState(cityFromPath);
       localStorage.setItem('selectedCity', cityFromPath);
@@ -302,8 +407,32 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       }).catch(() => {
         setIsInCity(false);
       });
+      return;
     }
-  }, [location.pathname, currentCity, isManualSwitch]);
+    
+    // Если в URL указан несуществующий город, определяем ближайший
+    const path = location.pathname;
+    if (path !== '/' && path !== '' && !cityFromPath) {
+      const pathSegments = path.split('/').filter(Boolean);
+      if (pathSegments.length > 0) {
+        // В URL есть город, но он не найден в списке - определяем ближайший
+        detectNearestCity().then((nearestCity) => {
+          if (nearestCity !== currentCity) {
+            setCurrentCityState(nearestCity);
+            localStorage.setItem('selectedCity', nearestCity);
+            navigate(`/${nearestCity}`, { replace: true });
+          }
+        }).catch(() => {
+          // Если не удалось определить, используем текущий город или дефолт
+          if (!cities[currentCity]) {
+            setCurrentCityState('minsk');
+            localStorage.setItem('selectedCity', 'minsk');
+            navigate('/minsk', { replace: true });
+          }
+        });
+      }
+    }
+  }, [location.pathname, currentCity, isManualSwitch, navigate]);
 
   const setCity = (city: CityCode) => {
     // Проверяем валидность города

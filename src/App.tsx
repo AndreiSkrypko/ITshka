@@ -33,7 +33,14 @@ const App = () => (
               <Route path="/minsk" element={<Index />} />
               <Route path="/lida" element={<Index />} />
               <Route path="/warsaw" element={<Index />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/brest" element={<Index />} />
+              <Route path="/vitebsk" element={<Index />} />
+              <Route path="/gomel" element={<Index />} />
+              <Route path="/grodno" element={<Index />} />
+              <Route path="/mogilev" element={<Index />} />
+              {/* Обрабатываем любые другие пути с городами - показываем ближайший город */}
+              <Route path="/:cityName" element={<Index />} />
+              {/* Остальные несуществующие пути */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </CityProvider>

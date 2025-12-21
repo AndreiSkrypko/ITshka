@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SEOMeta from "@/components/SEOMeta";
@@ -155,6 +156,20 @@ const Index = () => {
         
         <HeroSection />
         
+        {/* Right - Services Badge */}
+        <div className="absolute bottom-[300px] right-[5%] w-[42%] px-8 z-20 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-lg">
+            <Sparkles className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
+            <span className="text-sm lg:text-base text-white/80 font-medium leading-relaxed">
+              {lang === 'ru' 
+                ? 'От простых лендингов до интернет-магазинов и сложных проектов'
+                : lang === 'en'
+                ? 'From simple landing pages to online stores and complex projects'
+                : 'Od prostych stron landingowych po sklepy internetowe i złożone projekty'}
+            </span>
+          </div>
+        </div>
+        
         {/* Right - Features */}
         <div className="absolute bottom-[145px] right-0 w-[50%] px-8">
           <Suspense fallback={<ComponentLoader />}>
@@ -162,15 +177,16 @@ const Index = () => {
           </Suspense>
         </div>
         
+        {/* Bonus Card */}
+        <div className="px-16 absolute bottom-[120px] left-0 w-full max-w-[45%]">
+          <Suspense fallback={<ComponentLoader />}>
+            <BonusCard />
+          </Suspense>
+        </div>
+        
         {/* Bottom Section */}
         <div className="px-16 pb-5 absolute bottom-0 left-0 right-0 h-[140px] flex flex-col justify-end">
-          <div className="w-full max-w-[45%]">
-            <Suspense fallback={<ComponentLoader />}>
-              <BonusCard />
-            </Suspense>
-          </div>
-          
-          <footer className="flex flex-row items-center justify-between mt-2 pt-2 border-t border-white/10">
+          <footer className="flex flex-row items-center justify-between pt-2 border-t border-white/10">
             <div className="flex items-center gap-4">
               <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
               <Suspense fallback={<div className="w-9 h-9 bg-white/5 rounded-xl animate-pulse" />}>
@@ -219,17 +235,17 @@ const Index = () => {
         </div>
         
         {/* Hero Section */}
-        <div className="relative z-10 pt-20 pb-8 px-4">
+        <div className="relative z-10 pt-16 pb-4 px-4">
           <HeroSection />
         </div>
         
         {/* Bonus Card */}
-        <div className="relative z-10 px-4 pb-6">
+        <div className="relative z-10 px-4 pb-3">
           <BonusCard />
         </div>
         
         {/* Footer */}
-        <footer className="relative z-10 px-4 pb-6 pt-4 border-t border-white/10">
+        <footer className="relative z-10 px-4 pb-4 pt-3 border-t border-white/10">
           <div className="flex flex-col items-center gap-3">
             <div className="flex items-center gap-4">
               <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>

@@ -6,6 +6,11 @@ Allow: /
 Allow: /minsk
 Allow: /lida
 Allow: /warsaw
+Allow: /brest
+Allow: /vitebsk
+Allow: /gomel
+Allow: /grodno
+Allow: /mogilev
 
 # Sitemap
 Sitemap: https://itshka.by/sitemap.xml
@@ -16,6 +21,11 @@ Allow: /
 Allow: /minsk
 Allow: /lida
 Allow: /warsaw
+Allow: /brest
+Allow: /vitebsk
+Allow: /gomel
+Allow: /grodno
+Allow: /mogilev
 Crawl-delay: 1
 
 # Google
@@ -24,6 +34,11 @@ Allow: /
 Allow: /minsk
 Allow: /lida
 Allow: /warsaw
+Allow: /brest
+Allow: /vitebsk
+Allow: /gomel
+Allow: /grodno
+Allow: /mogilev
 
 # Bing
 User-agent: Bingbot
@@ -31,6 +46,11 @@ Allow: /
 Allow: /minsk
 Allow: /lida
 Allow: /warsaw
+Allow: /brest
+Allow: /vitebsk
+Allow: /gomel
+Allow: /grodno
+Allow: /mogilev
 
 # Запрет индексации служебных файлов
 Disallow: /api/

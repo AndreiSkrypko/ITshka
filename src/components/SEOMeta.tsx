@@ -8,7 +8,11 @@ const SEOMeta = () => {
   const { i18n } = useTranslation();
   const lang = i18n.language as 'ru' | 'en' | 'pl';
 
-  const cityName = cityConfig.name[lang] || cityConfig.name.ru;
+  // Используем правильные склонения для русского языка
+  const cityName = lang === 'ru' 
+    ? cityConfig.nameLocative[lang] 
+    : cityConfig.name[lang] || cityConfig.name.ru;
+  const cityNameNominative = cityConfig.name[lang] || cityConfig.name.ru; // Для некоторых мест нужен именительный падеж
   const regionName = cityConfig.region[lang] || cityConfig.region.ru;
   const keywords = cityConfig.keywords[lang] || cityConfig.keywords.ru;
   
@@ -22,8 +26,8 @@ const SEOMeta = () => {
     const base = lang === 'ru' 
       ? `Сделать сайт в ${cityName} | Создание сайтов под ключ недорого — ITshka`
       : lang === 'en'
-      ? `Make a Website in ${cityName} | Website Development — ITshka`
-      : `Zrobić stronę w ${cityName} | Tworzenie stron internetowych — ITshka`;
+      ? `Make a Website in ${cityNameNominative} | Website Development — ITshka`
+      : `Zrobić stronę w ${cityNameNominative} | Tworzenie stron internetowych — ITshka`;
     return base;
   };
 
@@ -31,8 +35,8 @@ const SEOMeta = () => {
     const base = lang === 'ru'
       ? `🚀 Создание сайтов в ${cityName} и ${regionName}. Сначала делаем сайт — потом платите! ✅ Без предоплаты ✅ Гарантия результата ✅ От 3 дней. Звоните: ${currentPhone.display}`
       : lang === 'en'
-      ? `🚀 Website development in ${cityName} and ${regionName}. Website first — pay later! ✅ No prepayment ✅ Result guarantee ✅ From 3 days. Call: ${currentPhone.display}`
-      : `🚀 Tworzenie stron internetowych w ${cityName} i ${regionName}. Najpierw strona — potem płatność! ✅ Bez przedpłaty ✅ Gwarancja wyniku ✅ Od 3 dni. Zadzwoń: ${currentPhone.display}`;
+      ? `🚀 Website development in ${cityNameNominative} and ${regionName}. Website first — pay later! ✅ No prepayment ✅ Result guarantee ✅ From 3 days. Call: ${currentPhone.display}`
+      : `🚀 Tworzenie stron internetowych w ${cityNameNominative} i ${regionName}. Najpierw strona — potem płatność! ✅ Bez przedpłaty ✅ Gwarancja wyniku ✅ Od 3 dni. Zadzwoń: ${currentPhone.display}`;
     return base;
   };
 
@@ -57,7 +61,7 @@ const SEOMeta = () => {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": cityName,
+        "addressLocality": cityNameNominative,
         "addressRegion": regionName,
         "addressCountry": cityConfig.countryCode
       },
@@ -68,7 +72,7 @@ const SEOMeta = () => {
       },
       "areaServed": {
         "@type": "City",
-        "name": cityName
+        "name": cityNameNominative
       },
       "serviceArea": {
         "@type": "GeoCircle",
@@ -80,30 +84,32 @@ const SEOMeta = () => {
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": `Услуги веб-разработки в ${cityName}`,
+        "name": lang === 'ru' 
+          ? `Услуги веб-разработки в ${cityName}` 
+          : `Web development services in ${cityNameNominative}`,
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": lang === 'ru' ? `Создание лендингов в ${cityName}` : `Landing page creation in ${cityName}`,
-              "description": lang === 'ru' ? `Разработка одностраничных сайтов для рекламных кампаний в ${cityName}` : `Single-page website development for advertising campaigns in ${cityName}`
+              "name": lang === 'ru' ? `Создание лендингов в ${cityName}` : `Landing page creation in ${cityNameNominative}`,
+              "description": lang === 'ru' ? `Разработка одностраничных сайтов для рекламных кампаний в ${cityName}` : `Single-page website development for advertising campaigns in ${cityNameNominative}`
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": lang === 'ru' ? `Разработка интернет-магазинов в ${cityName}` : `Online store development in ${cityName}`,
-              "description": lang === 'ru' ? `Создание полнофункциональных интернет-магазинов в ${cityName}` : `Full-featured online store development in ${cityName}`
+              "name": lang === 'ru' ? `Разработка интернет-магазинов в ${cityName}` : `Online store development in ${cityNameNominative}`,
+              "description": lang === 'ru' ? `Создание полнофункциональных интернет-магазинов в ${cityName}` : `Full-featured online store development in ${cityNameNominative}`
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": lang === 'ru' ? `Корпоративные сайты в ${cityName}` : `Corporate websites in ${cityName}`,
-              "description": lang === 'ru' ? `Разработка многостраничных корпоративных сайтов в ${cityName}` : `Multi-page corporate website development in ${cityName}`
+              "name": lang === 'ru' ? `Корпоративные сайты в ${cityName}` : `Corporate websites in ${cityNameNominative}`,
+              "description": lang === 'ru' ? `Разработка многостраничных корпоративных сайтов в ${cityName}` : `Multi-page corporate website development in ${cityNameNominative}`
             }
           }
         ]
@@ -151,7 +157,7 @@ const SEOMeta = () => {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": cityName,
+          "name": cityNameNominative,
           "item": canonicalUrl
         }
       ]
@@ -232,8 +238,8 @@ const SEOMeta = () => {
       {/* Дополнительные SEO мета-теги */}
       <meta name="theme-color" content="#1DA79E" />
       <meta name="msapplication-TileColor" content="#1DA79E" />
-      <meta name="application-name" content={`ITshka ${cityName}`} />
-      <meta name="apple-mobile-web-app-title" content={`ITshka ${cityName}`} />
+      <meta name="application-name" content={`ITshka ${cityNameNominative}`} />
+      <meta name="apple-mobile-web-app-title" content={`ITshka ${cityNameNominative}`} />
       
       {/* Geo Tags */}
       <meta name="geo.region" content={cityConfig.geo.region} />
@@ -251,9 +257,9 @@ const SEOMeta = () => {
       <meta property="og:image" content={`${baseUrl}/og-image.jpg`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={`ITshka — Создание сайтов в ${cityName}`} />
+      <meta property="og:image:alt" content={lang === 'ru' ? `ITshka — Создание сайтов в ${cityName}` : `ITshka — Website Development in ${cityNameNominative}`} />
       <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : lang === 'en' ? 'en_US' : 'pl_PL'} />
-      <meta property="og:site_name" content={`ITshka — Создание сайтов в ${cityName}`} />
+      <meta property="og:site_name" content={lang === 'ru' ? `ITshka — Создание сайтов в ${cityName}` : `ITshka — Website Development in ${cityNameNominative}`} />
       <meta property="og:phone_number" content={currentPhone.tel} />
       
       {/* Twitter Card */}
@@ -262,7 +268,7 @@ const SEOMeta = () => {
       <meta name="twitter:title" content={getTitle()} />
       <meta name="twitter:description" content={getDescription()} />
       <meta name="twitter:image" content={`${baseUrl}/og-image.jpg`} />
-      <meta name="twitter:image:alt" content={`ITshka — Создание сайтов в ${cityName}`} />
+      <meta name="twitter:image:alt" content={lang === 'ru' ? `ITshka — Создание сайтов в ${cityName}` : `ITshka — Website Development in ${cityNameNominative}`} />
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />

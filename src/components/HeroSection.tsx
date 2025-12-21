@@ -1,7 +1,7 @@
 import { useState, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Code2, Layers, Zap } from "lucide-react";
+import { ArrowRight, Code2, Layers, Zap, Sparkles } from "lucide-react";
 import { useCity } from "@/contexts/CityContext";
 
 // Lazy load heavy modal component
@@ -12,28 +12,12 @@ const HeroSection = () => {
   const { t, i18n } = useTranslation();
   const { cityConfig } = useCity();
   const lang = i18n.language as 'ru' | 'en' | 'pl';
-  const badgeText = lang === 'ru' 
-    ? 'От простых лендингов до интернет-магазинов и сложных проектов'
-    : lang === 'en'
-    ? 'From simple landing pages to online stores and complex projects'
-    : 'Od prostych stron landingowych po sklepy internetowe i złożone projekty';
 
   return (
-    <section className="relative flex mt-0 lg:mt-16 mb-0 h-auto lg:h-[calc(100vh-180px)] flex-shrink-0">
+    <section className="relative flex mt-0 lg:mt-16 mb-0 h-auto flex-shrink-0" style={{ maxHeight: 'calc(100vh - 320px)' }}>
       {/* Left Content */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-center px-0 lg:px-16 z-10">
+      <div className="w-full lg:w-[55%] flex flex-col justify-center px-0 lg:px-16 z-10 py-8 lg:py-8">
         <div className="max-w-2xl">
-          {/* Badge */}
-          <div 
-            className="inline-flex items-center gap-2 px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 lg:mb-7 animate-fade-in"
-            role="status"
-          >
-            <Sparkles className="w-4 h-4 lg:w-5 lg:h-5 text-primary" aria-hidden="true" />
-            <span className="text-xs lg:text-sm uppercase tracking-[0.15em] lg:tracking-[0.2em] text-white/70 font-medium">
-              {badgeText}
-            </span>
-          </div>
-          
           {/* Main heading */}
           <h1 
             className="text-4xl lg:text-[4rem] xl:text-[4.5rem] font-black text-white leading-[1.1] mb-5 lg:mb-6 animate-fade-in" 
@@ -55,19 +39,17 @@ const HeroSection = () => {
             </span>
           </h1>
           
-          {/* Subtitle */}
+          {/* Subtitle - уникальное описание для каждого города */}
           <p 
-            className="text-lg lg:text-xl text-white/60 mb-7 lg:mb-8 leading-relaxed animate-fade-in" 
+            className="text-lg lg:text-xl text-white/60 mb-5 lg:mb-6 leading-relaxed animate-fade-in" 
             style={{ animationDelay: '0.1s' }}
           >
-            <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
-            <br />
-            {t('hero.subtitleText2')}
+            <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {cityConfig.uniqueContent.heroDescription[lang]}
           </p>
           
           {/* CTA Button */}
           <div 
-            className="flex flex-col items-start gap-4 animate-fade-in w-full" 
+            className="flex flex-col items-start gap-4 animate-fade-in w-full mb-8 lg:mb-12" 
             style={{ animationDelay: '0.15s' }}
           >
             <Button 

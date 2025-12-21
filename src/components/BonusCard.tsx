@@ -7,20 +7,9 @@ const BonusCard = () => {
   const { cityConfig } = useCity();
   const lang = i18n.language as 'ru' | 'en' | 'pl';
   
-  // Динамическое описание с текущим городом
+  // Уникальное описание для каждого города (избегаем дублирования контента)
   const getDescription = () => {
-    const cityName = lang === 'ru' 
-      ? cityConfig.nameLocative[lang] 
-      : cityConfig.name[lang] || cityConfig.name.ru;
-    const regionName = cityConfig.region[lang] || cityConfig.region.ru;
-    
-    if (lang === 'ru') {
-      return `Работаем с бизнесом в ${cityName} и ${regionName}. Подберём решение под вас`;
-    } else if (lang === 'en') {
-      return `We work with businesses in ${cityName} and ${regionName}. We'll find a solution for you`;
-    } else {
-      return `Pracujemy z firmami w ${cityName} i ${regionName}. Znajdziemy rozwiązanie dla Ciebie`;
-    }
+    return cityConfig.uniqueContent.bonusDescription[lang];
   };
   
   return (
