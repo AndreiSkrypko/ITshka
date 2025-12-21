@@ -54,6 +54,16 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     if (citySegment === 'gomel') return 'gomel';
     if (citySegment === 'grodno') return 'grodno';
     if (citySegment === 'mogilev') return 'mogilev';
+    if (citySegment === 'baranovichi') return 'baranovichi';
+    if (citySegment === 'bobruisk') return 'bobruisk';
+    if (citySegment === 'pinsk') return 'pinsk';
+    if (citySegment === 'orsha') return 'orsha';
+    if (citySegment === 'maladzyechna') return 'maladzyechna';
+    if (citySegment === 'salihorsk') return 'salihorsk';
+    if (citySegment === 'navapolatsk') return 'navapolatsk';
+    if (citySegment === 'polatsk') return 'polatsk';
+    if (citySegment === 'mazyr') return 'mazyr';
+    if (citySegment === 'slutsk') return 'slutsk';
     
     // Если город не найден, возвращаем null (будет определен ближайший)
     return null;
@@ -162,6 +172,46 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                       }
                       if (cityName.includes('mogilev') || cityName.includes('могилев') || cityName.includes('могилёв') || cityName.includes('mohylew')) {
                         resolve({ city: 'mogilev', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('baranovichi') || cityName.includes('барановичи') || cityName.includes('baranavichy')) {
+                        resolve({ city: 'baranovichi', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('bobruisk') || cityName.includes('бобруйск') || cityName.includes('babruysk')) {
+                        resolve({ city: 'bobruisk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('pinsk') || cityName.includes('пинск')) {
+                        resolve({ city: 'pinsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('orsha') || cityName.includes('орша')) {
+                        resolve({ city: 'orsha', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('maladzyechna') || cityName.includes('молодечно')) {
+                        resolve({ city: 'maladzyechna', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('salihorsk') || cityName.includes('солигорск') || cityName.includes('soligorsk')) {
+                        resolve({ city: 'salihorsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('navapolatsk') || cityName.includes('новополоцк')) {
+                        resolve({ city: 'navapolatsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('polatsk') || cityName.includes('полоцк') || cityName.includes('polotsk')) {
+                        resolve({ city: 'polatsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('mazyr') || cityName.includes('мозырь')) {
+                        resolve({ city: 'mazyr', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('slutsk') || cityName.includes('слуцк')) {
+                        resolve({ city: 'slutsk', isInCity: true });
                         return;
                       }
                     }
@@ -275,6 +325,36 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         }
         if (cityName.includes('mogilev') || cityName.includes('могилев') || cityName.includes('могилёв') || cityName.includes('mohylew')) {
           return { city: 'mogilev', isInCity: true };
+        }
+        if (cityName.includes('baranovichi') || cityName.includes('барановичи') || cityName.includes('baranavichy')) {
+          return { city: 'baranovichi', isInCity: true };
+        }
+        if (cityName.includes('bobruisk') || cityName.includes('бобруйск') || cityName.includes('babruysk')) {
+          return { city: 'bobruisk', isInCity: true };
+        }
+        if (cityName.includes('pinsk') || cityName.includes('пинск')) {
+          return { city: 'pinsk', isInCity: true };
+        }
+        if (cityName.includes('orsha') || cityName.includes('орша')) {
+          return { city: 'orsha', isInCity: true };
+        }
+        if (cityName.includes('maladzyechna') || cityName.includes('молодечно')) {
+          return { city: 'maladzyechna', isInCity: true };
+        }
+        if (cityName.includes('salihorsk') || cityName.includes('солигорск') || cityName.includes('soligorsk')) {
+          return { city: 'salihorsk', isInCity: true };
+        }
+        if (cityName.includes('navapolatsk') || cityName.includes('новополоцк')) {
+          return { city: 'navapolatsk', isInCity: true };
+        }
+        if (cityName.includes('polatsk') || cityName.includes('полоцк') || cityName.includes('polotsk')) {
+          return { city: 'polatsk', isInCity: true };
+        }
+        if (cityName.includes('mazyr') || cityName.includes('мозырь')) {
+          return { city: 'mazyr', isInCity: true };
+        }
+        if (cityName.includes('slutsk') || cityName.includes('слуцк')) {
+          return { city: 'slutsk', isInCity: true };
         }
       }
       

@@ -104,5 +104,115 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/mogilev" />
   </url>
   
+  <!-- Барановичи -->
+  <url>
+    <loc>https://itshka.by/baranovichi</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/baranovichi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/baranovichi" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/baranovichi" />
+  </url>
+  
+  <!-- Бобруйск -->
+  <url>
+    <loc>https://itshka.by/bobruisk</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/bobruisk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/bobruisk" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/bobruisk" />
+  </url>
+  
+  <!-- Пинск -->
+  <url>
+    <loc>https://itshka.by/pinsk</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/pinsk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/pinsk" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/pinsk" />
+  </url>
+  
+  <!-- Орша -->
+  <url>
+    <loc>https://itshka.by/orsha</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/orsha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/orsha" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/orsha" />
+  </url>
+  
+  <!-- Молодечно -->
+  <url>
+    <loc>https://itshka.by/maladzyechna</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/maladzyechna" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/maladzyechna" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/maladzyechna" />
+  </url>
+  
+  <!-- Солигорск -->
+  <url>
+    <loc>https://itshka.by/salihorsk</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/salihorsk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/salihorsk" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/salihorsk" />
+  </url>
+  
+  <!-- Новополоцк -->
+  <url>
+    <loc>https://itshka.by/navapolatsk</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/navapolatsk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/navapolatsk" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/navapolatsk" />
+  </url>
+  
+  <!-- Полоцк -->
+  <url>
+    <loc>https://itshka.by/polatsk</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/polatsk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/polatsk" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/polatsk" />
+  </url>
+  
+  <!-- Мозырь -->
+  <url>
+    <loc>https://itshka.by/mazyr</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/mazyr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/mazyr" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/mazyr" />
+  </url>
+  
+  <!-- Слуцк -->
+  <url>
+    <loc>https://itshka.by/slutsk</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://itshka.by/slutsk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://itshka.by/slutsk" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://itshka.by/slutsk" />
+  </url>
+  
 </urlset>
 

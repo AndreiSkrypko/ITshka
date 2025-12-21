@@ -9,7 +9,17 @@ const cityCoordinates: Record<CityCode, { lat: number; lon: number }> = {
   vitebsk: { lat: 55.1904, lon: 30.2049 },
   gomel: { lat: 52.4345, lon: 30.9754 },
   grodno: { lat: 53.6884, lon: 23.8258 },
-  mogilev: { lat: 53.8945, lon: 30.3307 }
+  mogilev: { lat: 53.8945, lon: 30.3307 },
+  baranovichi: { lat: 53.1303, lon: 26.0134 },
+  bobruisk: { lat: 53.1500, lon: 29.2333 },
+  pinsk: { lat: 52.1167, lon: 26.1000 },
+  orsha: { lat: 54.5083, lon: 30.4172 },
+  maladzyechna: { lat: 54.3167, lon: 26.8500 },
+  salihorsk: { lat: 52.7833, lon: 27.5333 },
+  navapolatsk: { lat: 55.5333, lon: 28.6667 },
+  polatsk: { lat: 55.4833, lon: 28.8000 },
+  mazyr: { lat: 52.0500, lon: 29.2333 },
+  slutsk: { lat: 53.0167, lon: 27.5500 }
 };
 
 /**

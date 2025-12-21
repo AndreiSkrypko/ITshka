@@ -11,6 +11,16 @@ Allow: /vitebsk
 Allow: /gomel
 Allow: /grodno
 Allow: /mogilev
+Allow: /baranovichi
+Allow: /bobruisk
+Allow: /pinsk
+Allow: /orsha
+Allow: /maladzyechna
+Allow: /salihorsk
+Allow: /navapolatsk
+Allow: /polatsk
+Allow: /mazyr
+Allow: /slutsk
 
 # Sitemap
 Sitemap: https://itshka.by/sitemap.xml
@@ -26,6 +36,16 @@ Allow: /vitebsk
 Allow: /gomel
 Allow: /grodno
 Allow: /mogilev
+Allow: /baranovichi
+Allow: /bobruisk
+Allow: /pinsk
+Allow: /orsha
+Allow: /maladzyechna
+Allow: /salihorsk
+Allow: /navapolatsk
+Allow: /polatsk
+Allow: /mazyr
+Allow: /slutsk
 Crawl-delay: 1
 
 # Google
@@ -39,6 +59,16 @@ Allow: /vitebsk
 Allow: /gomel
 Allow: /grodno
 Allow: /mogilev
+Allow: /baranovichi
+Allow: /bobruisk
+Allow: /pinsk
+Allow: /orsha
+Allow: /maladzyechna
+Allow: /salihorsk
+Allow: /navapolatsk
+Allow: /polatsk
+Allow: /mazyr
+Allow: /slutsk
 
 # Bing
 User-agent: Bingbot
@@ -51,6 +81,16 @@ Allow: /vitebsk
 Allow: /gomel
 Allow: /grodno
 Allow: /mogilev
+Allow: /baranovichi
+Allow: /bobruisk
+Allow: /pinsk
+Allow: /orsha
+Allow: /maladzyechna
+Allow: /salihorsk
+Allow: /navapolatsk
+Allow: /polatsk
+Allow: /mazyr
+Allow: /slutsk
 
 # Запрет индексации служебных файлов
 Disallow: /api/
