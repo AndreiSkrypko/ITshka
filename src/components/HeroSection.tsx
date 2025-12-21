@@ -11,7 +11,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex mt-20 md:mt-24 mb-8 lg:mt-16 lg:mb-0 lg:h-[calc(100vh-180px)] lg:flex-shrink-0">
+    <section className="relative flex mt-16 md:mt-20 mb-0 h-[calc(100vh-180px)] flex-shrink-0">
       {/* Left Content */}
       <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 md:px-12 lg:px-16 z-10">
         <div className="max-w-2xl">
@@ -24,6 +24,19 @@ const HeroSection = () => {
             <span className="text-xs uppercase tracking-[0.2em] text-white/70 font-medium">
               {t('hero.badge')}
             </span>
+          </div>
+          
+          {/* Stats - moved up for better visibility */}
+          <div className="flex items-center gap-6 mb-6 animate-fade-in z-10 relative" style={{ animationDelay: '0.03s' }}>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-black text-primary">100+</p>
+              <p className="text-xs text-white/50 mt-1">{t('hero.projectsCount')}</p>
+            </div>
+            <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-black text-primary">5+</p>
+              <p className="text-xs text-white/50 mt-1">{t('hero.yearsExp')}</p>
+            </div>
           </div>
           
           {/* Main heading */}
@@ -176,18 +189,6 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Stats - bottom left of the right section */}
-          <div className="absolute bottom-[10%] left-[10%] flex items-center gap-8 pointer-events-auto">
-            <div className="text-center">
-              <p className="text-4xl font-black text-primary">100+</p>
-              <p className="text-xs text-white/50 mt-1">{t('hero.projectsCount')}</p>
-            </div>
-            <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-            <div className="text-center">
-              <p className="text-4xl font-black text-primary">5+</p>
-              <p className="text-xs text-white/50 mt-1">{t('hero.yearsExp')}</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
