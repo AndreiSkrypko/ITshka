@@ -26,11 +26,11 @@ const FeatureCards = () => {
   ];
 
   return (
-    <div className="flex gap-3 w-full">
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full">
       {features.map((feature, index) => (
         <div 
           key={index}
-          className="group relative flex-1 overflow-hidden rounded-2xl animate-fade-in"
+          className="group relative flex-1 overflow-hidden rounded-xl sm:rounded-2xl animate-fade-in"
           style={{ animationDelay: `${0.2 + index * 0.05}s` }}
         >
           {/* Background */}
@@ -38,25 +38,25 @@ const FeatureCards = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Border */}
-          <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-primary/30 transition-colors duration-300" />
+          <div className="absolute inset-0 rounded-xl sm:rounded-2xl border border-white/10 group-hover:border-primary/30 transition-colors duration-300" />
           
           {/* Content */}
-          <div className="relative px-4 py-5 flex items-center gap-3">
+          <div className="relative px-3 sm:px-4 py-3 sm:py-4 md:py-5 flex items-center gap-2 sm:gap-3">
             {/* Icon */}
             <div className="relative flex-shrink-0" aria-hidden="true">
-              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center border border-primary/20 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className="w-5 h-5 text-primary" />
+              <div className={`w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-lg sm:rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center border border-primary/20 group-hover:scale-110 transition-transform duration-300`}>
+                <feature.icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-primary" />
               </div>
               {/* Glow */}
-              <div className="absolute inset-0 rounded-xl bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             
             {/* Text */}
-            <div className="min-w-0">
-              <p className="font-bold text-white text-sm group-hover:text-primary transition-colors duration-300">
+            <div className="min-w-0 flex-1">
+              <p className="font-bold text-white text-xs sm:text-sm group-hover:text-primary transition-colors duration-300">
                 {feature.title}
               </p>
-              <p className="text-xs text-white/60 truncate">
+              <p className="text-[10px] sm:text-xs text-white/60 line-clamp-2 sm:truncate">
                 {feature.description}
               </p>
             </div>

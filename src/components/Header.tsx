@@ -18,20 +18,20 @@ const Header = () => {
     : `Studio Internetowe w ${cityName}`;
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 py-5">
+    <header className="absolute top-0 left-0 right-0 z-[100] flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 sm:py-4 md:py-5">
       {/* Logo */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         <div className="relative">
           <div className="flex items-center gap-0.5">
-            <span className="text-2xl md:text-3xl font-black text-primary drop-shadow-[0_0_20px_hsl(174_72%_38%/0.4)]">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black text-primary drop-shadow-[0_0_20px_hsl(174_72%_38%/0.4)]">
               IT
             </span>
-            <span className="text-2xl md:text-3xl font-black text-white">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black text-white">
               shka
             </span>
           </div>
           {/* Glow effect under logo */}
-          <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-full h-[1.5px] sm:h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
         </div>
         <div className="hidden md:block h-8 w-px bg-white/10" />
         <span className="hidden md:inline text-sm text-white/40 font-medium">
@@ -40,7 +40,7 @@ const Header = () => {
       </div>
       
       {/* Right side */}
-      <div className="flex items-center gap-2 sm:gap-4">
+      <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
         {/* City Switcher */}
         <CitySwitcher />
         

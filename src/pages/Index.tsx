@@ -136,39 +136,44 @@ const Index = () => {
         
         <Header />
         
-        {/* Stats - centered at top */}
-        <div className="absolute top-[100px] right-[15%] flex items-center gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
+        {/* Stats - responsive positioning */}
+        <div className="absolute top-[80px] sm:top-[100px] right-4 sm:right-[10%] lg:right-[15%] flex items-center gap-4 sm:gap-6 lg:gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
           <div className="text-center">
-            <p className="text-5xl md:text-6xl font-black text-primary leading-none">100+</p>
-            <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.projectsCount')}</p>
+            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">100+</p>
+            <p className="text-xs sm:text-sm md:text-base text-white/70 mt-1 sm:mt-2 font-medium">{t('hero.projectsCount')}</p>
           </div>
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="w-px h-12 sm:h-14 lg:h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
           <div className="text-center">
-            <p className="text-5xl md:text-6xl font-black text-primary leading-none">5+</p>
-            <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.yearsExp')}</p>
+            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">5+</p>
+            <p className="text-xs sm:text-sm md:text-base text-white/70 mt-1 sm:mt-2 font-medium">{t('hero.yearsExp')}</p>
           </div>
         </div>
         
         <HeroSection />
         
-        {/* Right - Features (aligned with image) */}
+        {/* Right - Features (desktop) */}
         <div className="hidden lg:block absolute bottom-[145px] right-0 w-[50%] px-8">
           <FeatureCards />
         </div>
         
-        {/* Bottom Section */}
-        <div className="px-6 md:px-12 lg:px-16 pb-5 absolute bottom-0 left-0 right-0 h-[140px] flex flex-col justify-end">
-          <div className="w-full lg:max-w-[45%]">
+        {/* Mobile Features - показать на мобильных после HeroSection */}
+        <div className="lg:hidden absolute top-[65%] sm:top-[60%] md:top-[55%] left-0 right-0 px-4 sm:px-6 z-10">
+          <FeatureCards />
+        </div>
+        
+        {/* Bottom Section - улучшенная адаптация */}
+        <div className="px-4 sm:px-6 md:px-12 lg:px-16 pb-4 sm:pb-5 absolute bottom-0 left-0 right-0 min-h-[120px] sm:min-h-[140px] flex flex-col justify-end">
+          <div className="w-full lg:max-w-[45%] mb-3 sm:mb-0">
             <BonusCard />
           </div>
           
           {/* Footer */}
-          <footer className="flex flex-col sm:flex-row items-center justify-between mt-4 lg:mt-2 pt-4 lg:pt-2 border-t border-white/10">
-            <div className="flex items-center gap-4 mb-2 sm:mb-0">
-              <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
+          <footer className="flex flex-col sm:flex-row items-center justify-between mt-3 sm:mt-4 lg:mt-2 pt-3 sm:pt-4 lg:pt-2 border-t border-white/10 gap-2 sm:gap-0">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="text-[9px] sm:text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
               <SocialLinks />
             </div>
-            <span className="text-[10px] text-white/50 tracking-wide">
+            <span className="text-[9px] sm:text-[10px] text-white/50 tracking-wide text-center sm:text-left">
               {t("footer.tagline")}
             </span>
           </footer>
