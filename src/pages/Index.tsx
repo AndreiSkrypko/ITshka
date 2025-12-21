@@ -91,7 +91,8 @@ const Index = () => {
   return (
     <>
       <SEOMeta />
-      <div className="h-screen overflow-hidden relative bg-[#050809] overflow-x-hidden">
+      {/* Desktop version - fixed layout */}
+      <div className="hidden lg:block h-screen overflow-hidden relative bg-[#050809] overflow-x-hidden">
         {/* SEO Content - видимый для поисковиков, скрыт для пользователей */}
         <div className="sr-only" aria-hidden="false">
           <h2>{seoContent.h2}</h2>
@@ -119,65 +120,110 @@ const Index = () => {
         
         {/* Decorative background elements */}
         <div aria-hidden="true">
-          {/* Optimized gradient orbs - GPU accelerated, reduced blur */}
           <div className="absolute top-[-30%] left-[-10%] w-[600px] h-[600px] bg-primary/12 rounded-full blur-[100px] pointer-events-none will-change-transform transform-gpu" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-primary/8 rounded-full blur-[80px] pointer-events-none will-change-transform transform-gpu" />
           <div className="absolute top-[40%] right-[20%] w-[300px] h-[300px] bg-primary/6 rounded-full blur-[60px] pointer-events-none will-change-transform transform-gpu" />
-
-          {/* Radial gradient overlay - combined for performance */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(29,167,158,0.12),transparent),radial-gradient(ellipse_50%_50%_at_100%_100%,rgba(29,167,158,0.06),transparent)] pointer-events-none" />
-
-          {/* Simplified spotlight */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-primary/8 to-transparent blur-[40px] pointer-events-none transform-gpu" />
-          
-          {/* Vignette */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
         </div>
         
         <Header />
         
-        {/* Stats - hidden on mobile, visible from sm breakpoint */}
-        <div className="hidden sm:flex absolute top-[100px] right-[10%] lg:right-[15%] items-center gap-6 lg:gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
+        {/* Stats */}
+        <div className="absolute top-[100px] right-[15%] flex items-center gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
           <div className="text-center">
-            <p className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">100+</p>
-            <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.projectsCount')}</p>
+            <p className="text-6xl font-black text-primary leading-none">100+</p>
+            <p className="text-base text-white/70 mt-2 font-medium">{t('hero.projectsCount')}</p>
           </div>
-          <div className="w-px h-14 lg:h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
           <div className="text-center">
-            <p className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">5+</p>
-            <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.yearsExp')}</p>
+            <p className="text-6xl font-black text-primary leading-none">5+</p>
+            <p className="text-base text-white/70 mt-2 font-medium">{t('hero.yearsExp')}</p>
           </div>
         </div>
         
         <HeroSection />
         
-        {/* Right - Features (desktop) */}
-        <div className="hidden lg:block absolute bottom-[145px] right-0 w-[50%] px-8">
+        {/* Right - Features */}
+        <div className="absolute bottom-[145px] right-0 w-[50%] px-8">
           <FeatureCards />
         </div>
         
-        {/* Mobile Features - показать на мобильных после HeroSection */}
-        <div className="lg:hidden absolute top-[65%] sm:top-[60%] md:top-[55%] left-0 right-0 px-4 sm:px-6 z-10">
-          <FeatureCards />
-        </div>
-        
-        {/* Bottom Section - улучшенная адаптация */}
-        <div className="px-4 sm:px-6 md:px-12 lg:px-16 pb-4 sm:pb-5 absolute bottom-0 left-0 right-0 min-h-[120px] sm:min-h-[140px] flex flex-col justify-end">
-          <div className="w-full lg:max-w-[45%] mb-3 sm:mb-0">
+        {/* Bottom Section */}
+        <div className="px-16 pb-5 absolute bottom-0 left-0 right-0 h-[140px] flex flex-col justify-end">
+          <div className="w-full max-w-[45%]">
             <BonusCard />
           </div>
           
-          {/* Footer */}
-          <footer className="flex flex-col sm:flex-row items-center justify-between mt-3 sm:mt-4 lg:mt-2 pt-3 sm:pt-4 lg:pt-2 border-t border-white/10 gap-2 sm:gap-0">
-            <div className="flex items-center gap-3 sm:gap-4">
-              <span className="text-[9px] sm:text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
+          <footer className="flex flex-row items-center justify-between mt-2 pt-2 border-t border-white/10">
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
               <SocialLinks />
             </div>
-            <span className="text-[9px] sm:text-[10px] text-white/50 tracking-wide text-center sm:text-left">
+            <span className="text-[10px] text-white/50 tracking-wide">
               {t("footer.tagline")}
             </span>
           </footer>
         </div>
+      </div>
+
+      {/* Mobile version - scrollable layout */}
+      <div className="lg:hidden min-h-screen relative bg-[#050809] overflow-x-hidden">
+        {/* SEO Content */}
+        <div className="sr-only" aria-hidden="false">
+          <h2>{seoContent.h2}</h2>
+          <p>{seoContent.intro}</p>
+          <h3>{seoContent.h3_1}</h3>
+          <p>{seoContent.p1}</p>
+          <h3>{seoContent.h3_2}</h3>
+          <ul>
+            {seoContent.services.map((service, index) => (
+              <li key={index}>{service}</li>
+            ))}
+          </ul>
+          <h3>{seoContent.h3_3}</h3>
+          <p>{seoContent.p2}</p>
+          <h3>{seoContent.h3_4}</h3>
+          <p>{seoContent.p3}</p>
+          <h3>{seoContent.h3_5}</h3>
+          <p>{seoContent.p4}</p>
+        </div>
+        
+        {/* Background */}
+        <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-[-20%] left-[-10%] w-[400px] h-[400px] bg-primary/12 rounded-full blur-[80px]" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] bg-primary/8 rounded-full blur-[60px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(29,167,158,0.1),transparent)]" />
+        </div>
+        
+        {/* Header */}
+        <div className="relative z-10">
+          <Header />
+        </div>
+        
+        {/* Hero Section */}
+        <div className="relative z-10 pt-20 pb-8 px-4">
+          <HeroSection />
+        </div>
+        
+        {/* Bonus Card */}
+        <div className="relative z-10 px-4 pb-6">
+          <BonusCard />
+        </div>
+        
+        {/* Footer */}
+        <footer className="relative z-10 px-4 pb-6 pt-4 border-t border-white/10">
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] text-white/60 font-medium tracking-wide">© 2024 ITshka</span>
+              <SocialLinks />
+            </div>
+            <span className="text-[10px] text-white/50 tracking-wide text-center">
+              {t("footer.tagline")}
+            </span>
+          </div>
+        </footer>
       </div>
     </>
   );

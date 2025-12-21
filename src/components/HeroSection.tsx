@@ -21,37 +21,37 @@ const HeroSection = () => {
     : `Studio Internetowe w ${cityName}`;
 
   return (
-    <section className="relative flex mt-16 sm:mt-20 md:mt-16 mb-0 h-[calc(100vh-140px)] sm:h-[calc(100vh-160px)] md:h-[calc(100vh-180px)] flex-shrink-0">
+    <section className="relative flex mt-0 lg:mt-16 mb-0 h-auto lg:h-[calc(100vh-180px)] flex-shrink-0">
       {/* Left Content */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 z-10">
+      <div className="w-full lg:w-[55%] flex flex-col justify-center px-0 lg:px-16 z-10">
         <div className="max-w-2xl">
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-7 animate-fade-in"
+            className="inline-flex items-center gap-2 px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 lg:mb-7 animate-fade-in"
             role="status"
           >
-            <Sparkles className="w-5 h-5 text-primary" aria-hidden="true" />
-            <span className="text-sm uppercase tracking-[0.2em] text-white/70 font-medium">
+            <Sparkles className="w-4 h-4 lg:w-5 lg:h-5 text-primary" aria-hidden="true" />
+            <span className="text-xs lg:text-sm uppercase tracking-[0.15em] lg:tracking-[0.2em] text-white/70 font-medium">
               {badgeText}
             </span>
           </div>
           
           {/* Main heading */}
           <h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-black text-white leading-[1.1] mb-4 sm:mb-5 lg:mb-6 animate-fade-in" 
+            className="text-4xl lg:text-[4rem] xl:text-[4.5rem] font-black text-white leading-[1.1] mb-5 lg:mb-6 animate-fade-in" 
             style={{ animationDelay: '0.05s' }}
           >
             {t('hero.title1')}{' '}
             <span className="relative inline-block">
               <span className="text-primary">{t('hero.title2')}</span>
               {/* Underline effect */}
-              <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
+              <svg className="absolute -bottom-1 lg:-bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" aria-hidden="true">
                 <path 
                   d="M2 6C50 2 150 2 198 6" 
                   stroke="currentColor" 
                   strokeWidth="2.5" 
                   strokeLinecap="round"
-                  className="text-primary/40 sm:stroke-[3]"
+                  className="text-primary/40 lg:stroke-[3]"
                 />
               </svg>
             </span>
@@ -59,29 +59,29 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p 
-            className="text-base sm:text-lg md:text-xl lg:text-xl text-white/60 mb-6 sm:mb-7 lg:mb-8 leading-relaxed animate-fade-in max-w-lg" 
+            className="text-lg lg:text-xl text-white/60 mb-7 lg:mb-8 leading-relaxed animate-fade-in" 
             style={{ animationDelay: '0.1s' }}
           >
             <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
-            <br className="hidden sm:block" />
+            <br />
             {t('hero.subtitleText2')}
           </p>
           
           {/* CTA Button */}
           <div 
-            className="flex flex-col items-start gap-3 sm:gap-4 animate-fade-in w-full" 
+            className="flex flex-col items-start gap-4 animate-fade-in w-full" 
             style={{ animationDelay: '0.15s' }}
           >
             <Button 
               size="lg"
-              className="relative group text-lg sm:text-2xl md:text-3xl lg:text-3xl px-8 sm:px-12 md:px-14 lg:px-20 py-6 sm:py-8 md:py-10 lg:py-10 rounded-2xl sm:rounded-3xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_15px_50px_-10px_rgba(25,167,158,0.5)] sm:shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_20px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden w-full sm:w-auto"
+              className="relative group text-xl lg:text-3xl px-10 lg:px-20 py-7 lg:py-10 rounded-2xl lg:rounded-3xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden w-full lg:w-auto"
               onClick={() => setIsModalOpen(true)}
             >
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative flex items-center justify-center gap-3 sm:gap-5 lg:gap-6">
+              <span className="relative flex items-center justify-center gap-4 lg:gap-6">
                 {t('hero.cta')}
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </span>
             </Button>
           </div>
