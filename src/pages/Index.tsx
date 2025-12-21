@@ -77,6 +77,20 @@ const Index = () => {
       </div>
       
       <Header />
+      
+      {/* Stats - centered at top */}
+      <div className="absolute top-[100px] right-[15%] flex items-center gap-8 animate-fade-in z-20" style={{ animationDelay: '0.03s' }}>
+        <div className="text-center">
+          <p className="text-5xl md:text-6xl font-black text-primary leading-none">100+</p>
+          <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.projectsCount')}</p>
+        </div>
+        <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+        <div className="text-center">
+          <p className="text-5xl md:text-6xl font-black text-primary leading-none">5+</p>
+          <p className="text-sm md:text-base text-white/70 mt-2 font-medium">{t('hero.yearsExp')}</p>
+        </div>
+      </div>
+      
       <HeroSection />
       
       {/* Right - Features (aligned with image) */}

@@ -11,37 +11,24 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex mt-16 md:mt-20 mb-0 h-[calc(100vh-180px)] flex-shrink-0">
+    <section className="relative flex mt-12 md:mt-16 mb-0 h-[calc(100vh-180px)] flex-shrink-0">
       {/* Left Content */}
       <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 md:px-12 lg:px-16 z-10">
         <div className="max-w-2xl">
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 animate-fade-in"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-7 animate-fade-in"
             role="status"
           >
-            <Sparkles className="w-4 h-4 text-primary" aria-hidden="true" />
-            <span className="text-xs uppercase tracking-[0.2em] text-white/70 font-medium">
+            <Sparkles className="w-5 h-5 text-primary" aria-hidden="true" />
+            <span className="text-sm uppercase tracking-[0.2em] text-white/70 font-medium">
               {t('hero.badge')}
             </span>
           </div>
           
-          {/* Stats - moved up for better visibility */}
-          <div className="flex items-center gap-6 mb-6 animate-fade-in z-10 relative" style={{ animationDelay: '0.03s' }}>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-black text-primary">100+</p>
-              <p className="text-xs text-white/50 mt-1">{t('hero.projectsCount')}</p>
-            </div>
-            <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-black text-primary">5+</p>
-              <p className="text-xs text-white/50 mt-1">{t('hero.yearsExp')}</p>
-            </div>
-          </div>
-          
           {/* Main heading */}
           <h1 
-            className="text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.5rem] font-black text-white leading-[1.1] mb-4 lg:mb-5 animate-fade-in" 
+            className="text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-black text-white leading-[1.1] mb-5 lg:mb-6 animate-fade-in" 
             style={{ animationDelay: '0.05s' }}
           >
             {t('hero.title1')}{' '}
@@ -62,7 +49,7 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p 
-            className="text-lg md:text-xl lg:text-lg text-white/60 mb-6 lg:mb-7 leading-relaxed animate-fade-in max-w-lg" 
+            className="text-xl md:text-2xl lg:text-xl text-white/60 mb-7 lg:mb-8 leading-relaxed animate-fade-in max-w-lg" 
             style={{ animationDelay: '0.1s' }}
           >
             <span className="text-white/80 font-medium">{t('hero.subtitle')}</span> {t('hero.subtitleText')}
@@ -77,26 +64,26 @@ const HeroSection = () => {
           >
             <Button 
               size="lg"
-              className="relative group text-base sm:text-lg lg:text-base px-6 sm:px-10 lg:px-8 py-5 sm:py-6 lg:py-5 rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
+              className="relative group text-3xl sm:text-4xl lg:text-3xl px-14 sm:px-24 lg:px-20 py-10 sm:py-12 lg:py-10 rounded-3xl bg-primary hover:bg-primary/90 text-white font-bold shadow-[0_20px_60px_-15px_rgba(25,167,158,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(25,167,158,0.6)] transition-all duration-300 hover:scale-[1.02] overflow-hidden max-w-full"
               onClick={() => setIsModalOpen(true)}
             >
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative flex items-center gap-2 sm:gap-3">
+              <span className="relative flex items-center gap-5 sm:gap-6">
                 {t('hero.cta')}
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                <ArrowRight className="w-7 h-7 sm:w-8 sm:h-8 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </span>
             </Button>
             
             {/* Trust indicators */}
-            <div className="flex items-center gap-6 mt-2" role="list" aria-label="Преимущества">
+            <div className="flex items-center gap-8 mt-3" role="list" aria-label="Преимущества">
               <div className="flex items-center gap-2" role="listitem">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
-                <span className="text-xs text-white/60">{t('hero.response')}</span>
+                <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" aria-hidden="true" />
+                <span className="text-sm text-white/60">{t('hero.noPrepay')}</span>
               </div>
               <div className="flex items-center gap-2" role="listitem">
-                <div className="w-2 h-2 rounded-full bg-primary/60" aria-hidden="true" />
-                <span className="text-xs text-white/60">{t('hero.projects')}</span>
+                <div className="w-2.5 h-2.5 rounded-full bg-primary/60" aria-hidden="true" />
+                <span className="text-sm text-white/60">{t('hero.supportAfter')}</span>
               </div>
             </div>
           </div>
@@ -135,38 +122,41 @@ const HeroSection = () => {
           <div className="absolute top-[60%] right-[18%] w-2 h-2 bg-primary/35 rounded-full" />
           
           {/* Feature cards */}
-          <div className="absolute top-[8%] right-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.2s' }}>
+          <div className="absolute top-[18%] right-[12%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-float pointer-events-auto hover:bg-white/[0.06] hover:border-primary/30 hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(25,167,158,0.3)] transition-all duration-300 group z-30" style={{ animationDelay: '0.2s', animation: 'fade-in 0.6s ease-out 0.2s forwards, float 3s ease-in-out 0.2s infinite' }}>
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
-                <Code2 className="w-5 h-5 text-primary" />
+              <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center group-hover:from-primary/35 group-hover:to-primary/10 transition-all duration-300">
+                <div className="absolute inset-0 rounded-xl bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
+                <Code2 className="w-5 h-5 text-primary relative z-10 animate-icon-pulse" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">{t('hero.cleanCode')}</p>
-                <p className="text-[11px] text-white/50">{t('hero.modernTech')}</p>
+                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors duration-300">{t('hero.cleanCode')}</p>
+                <p className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors duration-300">{t('hero.modernTech')}</p>
               </div>
             </div>
           </div>
           
-          <div className="absolute top-[32%] left-[5%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.25s' }}>
+          <div className="absolute top-[32%] left-[12%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-float-slow pointer-events-auto hover:bg-white/[0.06] hover:border-primary/30 hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(25,167,158,0.3)] transition-all duration-300 group z-30" style={{ animationDelay: '0.25s', animation: 'fade-in 0.6s ease-out 0.25s forwards, float-slow 4s ease-in-out 0.75s infinite' }}>
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
-                <Layers className="w-5 h-5 text-primary" />
+              <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center group-hover:from-primary/35 group-hover:to-primary/10 transition-all duration-300">
+                <div className="absolute inset-0 rounded-xl bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
+                <Layers className="w-5 h-5 text-primary relative z-10 animate-icon-pulse" style={{ animationDelay: '0.3s' }} />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">{t('hero.adaptive')}</p>
-                <p className="text-[11px] text-white/50">{t('hero.anyDevice')}</p>
+                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors duration-300">{t('hero.adaptive')}</p>
+                <p className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors duration-300">{t('hero.anyDevice')}</p>
               </div>
             </div>
           </div>
           
-          <div className="absolute bottom-[22%] right-[8%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-fade-in pointer-events-auto hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-300" style={{ animationDelay: '0.3s' }}>
+          <div className="absolute bottom-[32%] right-[22%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-float-fast pointer-events-auto hover:bg-white/[0.06] hover:border-primary/30 hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(25,167,158,0.3)] transition-all duration-300 group z-30" style={{ animationDelay: '0.3s', animation: 'fade-in 0.6s ease-out 0.3s forwards, float-fast 2.5s ease-in-out 1.3s infinite' }}>
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-primary" />
+              <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center group-hover:from-primary/35 group-hover:to-primary/10 transition-all duration-300">
+                <div className="absolute inset-0 rounded-xl bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
+                <Zap className="w-5 h-5 text-primary relative z-10 animate-icon-pulse" style={{ animationDelay: '0.6s' }} />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">{t('hero.speed')}</p>
-                <p className="text-[11px] text-white/50">{t('hero.fastLoading')}</p>
+                <p className="text-sm font-bold text-white group-hover:text-primary transition-colors duration-300">{t('hero.speed')}</p>
+                <p className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors duration-300">{t('hero.fastLoading')}</p>
               </div>
             </div>
           </div>
