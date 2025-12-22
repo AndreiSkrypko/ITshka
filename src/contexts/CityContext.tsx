@@ -200,8 +200,8 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     // Считаем, что пользователь в городе, если расстояние меньше 30 км
     const isInCity = minDistance < 30;
     
-    // ВАЖНО: Если ближайший город найден по координатам, используем его (независимо от страны из IP)
-    // Это решает проблему, когда IP определяет страну как PL, но пользователь физически в Лиде
+    // ВАЖНО: Если ближайший город найден по координатам, используем его
+    // Но если IP определяет страну, а ближайший город в другой стране - используем столицу страны из IP
     return { city: closestCity, isInCity };
   };
 
@@ -236,15 +236,26 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                       setUserCountry(data.country_code);
                     }
                     
-                    // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
-                    // ВАЖНО: Координаты имеют абсолютный приоритет - если они указывают на белорусский город,
-                    // используем его, даже если IP определяет страну как PL
-                    if (data.latitude && data.longitude) {
-                      const result = await detectCityByCoordinates(data.latitude, data.longitude);
-                      // Если ближайший город найден по координатам, используем его (независимо от страны из IP)
-                      resolve(result);
-                      return;
-                    }
+              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
+              // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+              // Если ближайший город в другой стране - используем столицу страны из IP
+              if (data.latitude && data.longitude) {
+                const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                const detectedCityConfig = cities[result.city];
+                
+                // Если IP определяет страну, и ближайший город не в той же стране - используем столицу страны
+                if (data.country_code && detectedCityConfig && detectedCityConfig.countryCode !== data.country_code) {
+                  const countryCapital = countryToCity[data.country_code];
+                  if (countryCapital) {
+                    resolve({ city: countryCapital, isInCity: false });
+                    return;
+                  }
+                }
+                
+                // Если ближайший город в той же стране или страна не определена - используем ближайший
+                resolve(result);
+                return;
+              }
                     
                     // ПРИОРИТЕТ 2: Пытаемся определить по названию города из API
                     if (data.city) {
@@ -483,9 +494,23 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 setUserCountry(data.country_code);
               }
               
-              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
+              // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+              // Если ближайший город в другой стране - используем столицу страны из IP
               if (data.latitude && data.longitude) {
                 const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                const detectedCityConfig = cities[result.city];
+                
+                // Если IP определяет страну, и ближайший город не в той же стране - используем столицу страны
+                if (data.country_code && detectedCityConfig && detectedCityConfig.countryCode !== data.country_code) {
+                  const countryCapital = countryToCity[data.country_code];
+                  if (countryCapital) {
+                    resolve({ city: countryCapital, isInCity: false });
+                    return;
+                  }
+                }
+                
+                // Если ближайший город в той же стране или страна не определена - используем ближайший
                 resolve(result);
                 return;
               }
@@ -533,9 +558,23 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 setUserCountry(data.country_code);
               }
               
-              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
+              // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+              // Если ближайший город в другой стране - используем столицу страны из IP
               if (data.latitude && data.longitude) {
                 const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                const detectedCityConfig = cities[result.city];
+                
+                // Если IP определяет страну, и ближайший город не в той же стране - используем столицу страны
+                if (data.country_code && detectedCityConfig && detectedCityConfig.countryCode !== data.country_code) {
+                  const countryCapital = countryToCity[data.country_code];
+                  if (countryCapital) {
+                    resolve({ city: countryCapital, isInCity: false });
+                    return;
+                  }
+                }
+                
+                // Если ближайший город в той же стране или страна не определена - используем ближайший
                 resolve(result);
                 return;
               }
@@ -577,9 +616,23 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         setUserCountry(data.country_code);
       }
       
-      // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+      // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
+      // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+      // Если ближайший город в другой стране - используем столицу страны из IP
       if (data.latitude && data.longitude) {
-        return await detectCityByCoordinates(data.latitude, data.longitude);
+        const result = await detectCityByCoordinates(data.latitude, data.longitude);
+        const detectedCityConfig = cities[result.city];
+        
+        // Если IP определяет страну, и ближайший город не в той же стране - используем столицу страны
+        if (data.country_code && detectedCityConfig && detectedCityConfig.countryCode !== data.country_code) {
+          const countryCapital = countryToCity[data.country_code];
+          if (countryCapital) {
+            return { city: countryCapital, isInCity: false };
+          }
+        }
+        
+        // Если ближайший город в той же стране или страна не определена - используем ближайший
+        return result;
       }
       
       // ПРИОРИТЕТ 2: Пытаемся определить город по названию города из API
