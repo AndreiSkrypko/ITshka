@@ -208,7 +208,59 @@ export const CityProvider = ({ children }: CityProviderProps) => {
   // Автоопределение города по IP (только если нет в URL и localStorage)
   const detectCityByIP = async () => {
     try {
-      // Сначала пытаемся использовать геолокацию браузера (более точно)
+      // ВАЖНО: Сначала проверяем IP для определения страны
+      // Для европейских стран используем столицу, а не координаты браузера
+      const cacheKey = 'ipapi_cache';
+      let ipData: any = null;
+      
+      // Пытаемся получить данные из кэша или сделать запрос
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        try {
+          const cachedData = JSON.parse(cached);
+          const now = Date.now();
+          if (now - cachedData.timestamp < 3600000) {
+            ipData = cachedData.data;
+          }
+        } catch (e) {
+          // Игнорируем ошибки парсинга кэша
+        }
+      }
+      
+      // Если нет в кэше, делаем запрос
+      if (!ipData) {
+        try {
+          const response = await fetch('https://ipapi.co/json/', {
+            signal: AbortSignal.timeout(2000)
+          });
+          ipData = await response.json();
+          // Сохраняем в кэш
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify({
+              data: ipData,
+              timestamp: Date.now()
+            }));
+          } catch (e) {
+            // Игнорируем ошибки сохранения кэша
+          }
+        } catch (e) {
+          // Если запрос не удался, продолжаем с геолокацией
+        }
+      }
+      
+      // Если IP определяет европейскую страну - используем столицу, игнорируя координаты браузера
+      if (ipData && ipData.country_code && countryToCity[ipData.country_code]) {
+        const europeanCountries = ['DE', 'FR', 'GB', 'IT', 'ES', 'NL', 'BE', 'AT', 'CZ', 'SE', 'DK', 'FI', 'NO', 'IE', 'PT', 'GR', 'HU'];
+        if (europeanCountries.includes(ipData.country_code)) {
+          const countryCapital = countryToCity[ipData.country_code];
+          if (ipData.country_code) {
+            setUserCountry(ipData.country_code);
+          }
+          return { city: countryCapital, isInCity: false };
+        }
+      }
+      
+      // Если не европейская страна или IP не определен - используем геолокацию браузера
       if (navigator.geolocation) {
         return new Promise<{ city: CityCode; isInCity: boolean }>((resolve) => {
           navigator.geolocation.getCurrentPosition(
