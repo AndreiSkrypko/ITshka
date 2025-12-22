@@ -80,7 +80,32 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       vitebsk: { lat: 55.1904, lon: 30.2049 },
       gomel: { lat: 52.4345, lon: 30.9754 },
       grodno: { lat: 53.6884, lon: 23.8258 },
-      mogilev: { lat: 53.8945, lon: 30.3307 }
+      mogilev: { lat: 53.8945, lon: 30.3307 },
+      baranovichi: { lat: 53.1333, lon: 26.0167 },
+      bobruisk: { lat: 53.1500, lon: 29.2333 },
+      pinsk: { lat: 52.1167, lon: 26.1000 },
+      orsha: { lat: 54.5000, lon: 30.4167 },
+      maladzyechna: { lat: 54.3167, lon: 26.8500 },
+      salihorsk: { lat: 52.7833, lon: 27.5500 },
+      navapolatsk: { lat: 55.5333, lon: 28.6667 },
+      polatsk: { lat: 55.4833, lon: 28.7833 },
+      mazyr: { lat: 52.0500, lon: 29.2500 },
+      slutsk: { lat: 53.0167, lon: 27.5500 },
+      moscow: { lat: 55.7558, lon: 37.6173 },
+      spb: { lat: 59.9343, lon: 30.3351 },
+      novosibirsk: { lat: 55.0084, lon: 82.9357 },
+      ekaterinburg: { lat: 56.8380, lon: 60.6056 },
+      kazan: { lat: 55.7961, lon: 49.1089 },
+      'nizhny-novgorod': { lat: 56.3287, lon: 44.0020 },
+      chelyabinsk: { lat: 55.1540, lon: 61.4291 },
+      samara: { lat: 53.1959, lon: 50.1002 },
+      omsk: { lat: 54.9924, lon: 73.3686 },
+      'rostov-on-don': { lat: 47.2357, lon: 39.7015 },
+      ufa: { lat: 54.7352, lon: 55.9587 },
+      krasnoyarsk: { lat: 56.0184, lon: 92.8672 },
+      voronezh: { lat: 51.6608, lon: 39.2003 },
+      perm: { lat: 58.0105, lon: 56.2502 },
+      volgograd: { lat: 48.7071, lon: 44.5170 }
     };
 
     // Вычисляем расстояние до каждого города (используем формулу гаверсинуса для большей точности)
@@ -212,6 +237,66 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                       }
                       if (cityName.includes('slutsk') || cityName.includes('слуцк')) {
                         resolve({ city: 'slutsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('moscow') || cityName.includes('москва')) {
+                        resolve({ city: 'moscow', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('saint-petersburg') || cityName.includes('saint petersburg') || cityName.includes('санкт-петербург') || cityName.includes('санкт петербург') || cityName.includes('спб') || cityName.includes('st petersburg')) {
+                        resolve({ city: 'spb', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('novosibirsk') || cityName.includes('новосибирск')) {
+                        resolve({ city: 'novosibirsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('ekaterinburg') || cityName.includes('yekaterinburg') || cityName.includes('екатеринбург')) {
+                        resolve({ city: 'ekaterinburg', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('kazan') || cityName.includes('казань')) {
+                        resolve({ city: 'kazan', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('nizhny-novgorod') || cityName.includes('nizhny novgorod') || cityName.includes('нижний новгород') || cityName.includes('нижний-новгород')) {
+                        resolve({ city: 'nizhny-novgorod', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('chelyabinsk') || cityName.includes('челябинск')) {
+                        resolve({ city: 'chelyabinsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('samara') || cityName.includes('самара')) {
+                        resolve({ city: 'samara', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('omsk') || cityName.includes('омск')) {
+                        resolve({ city: 'omsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('rostov-on-don') || cityName.includes('rostov on don') || cityName.includes('ростов-на-дону') || cityName.includes('ростов на дону') || cityName.includes('ростов')) {
+                        resolve({ city: 'rostov-on-don', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('ufa') || cityName.includes('уфа')) {
+                        resolve({ city: 'ufa', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('krasnoyarsk') || cityName.includes('красноярск')) {
+                        resolve({ city: 'krasnoyarsk', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('voronezh') || cityName.includes('воронеж')) {
+                        resolve({ city: 'voronezh', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('perm') || cityName.includes('пермь')) {
+                        resolve({ city: 'perm', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
+                        resolve({ city: 'volgograd', isInCity: true });
                         return;
                       }
                     }
@@ -355,6 +440,51 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         }
         if (cityName.includes('slutsk') || cityName.includes('слуцк')) {
           return { city: 'slutsk', isInCity: true };
+        }
+        if (cityName.includes('moscow') || cityName.includes('москва')) {
+          return { city: 'moscow', isInCity: true };
+        }
+        if (cityName.includes('saint-petersburg') || cityName.includes('saint petersburg') || cityName.includes('санкт-петербург') || cityName.includes('санкт петербург') || cityName.includes('спб') || cityName.includes('st petersburg')) {
+          return { city: 'spb', isInCity: true };
+        }
+        if (cityName.includes('novosibirsk') || cityName.includes('новосибирск')) {
+          return { city: 'novosibirsk', isInCity: true };
+        }
+        if (cityName.includes('ekaterinburg') || cityName.includes('yekaterinburg') || cityName.includes('екатеринбург')) {
+          return { city: 'ekaterinburg', isInCity: true };
+        }
+        if (cityName.includes('kazan') || cityName.includes('казань')) {
+          return { city: 'kazan', isInCity: true };
+        }
+        if (cityName.includes('nizhny-novgorod') || cityName.includes('nizhny novgorod') || cityName.includes('нижний новгород') || cityName.includes('нижний-новгород')) {
+          return { city: 'nizhny-novgorod', isInCity: true };
+        }
+        if (cityName.includes('chelyabinsk') || cityName.includes('челябинск')) {
+          return { city: 'chelyabinsk', isInCity: true };
+        }
+        if (cityName.includes('samara') || cityName.includes('самара')) {
+          return { city: 'samara', isInCity: true };
+        }
+        if (cityName.includes('omsk') || cityName.includes('омск')) {
+          return { city: 'omsk', isInCity: true };
+        }
+        if (cityName.includes('rostov-on-don') || cityName.includes('rostov on don') || cityName.includes('ростов-на-дону') || cityName.includes('ростов на дону') || cityName.includes('ростов')) {
+          return { city: 'rostov-on-don', isInCity: true };
+        }
+        if (cityName.includes('ufa') || cityName.includes('уфа')) {
+          return { city: 'ufa', isInCity: true };
+        }
+        if (cityName.includes('krasnoyarsk') || cityName.includes('красноярск')) {
+          return { city: 'krasnoyarsk', isInCity: true };
+        }
+        if (cityName.includes('voronezh') || cityName.includes('воронеж')) {
+          return { city: 'voronezh', isInCity: true };
+        }
+        if (cityName.includes('perm') || cityName.includes('пермь')) {
+          return { city: 'perm', isInCity: true };
+        }
+        if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
+          return { city: 'volgograd', isInCity: true };
         }
       }
       

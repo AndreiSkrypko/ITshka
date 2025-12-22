@@ -1,4 +1,4 @@
-export type CityCode = 'minsk' | 'lida' | 'warsaw' | 'brest' | 'vitebsk' | 'gomel' | 'grodno' | 'mogilev' | 'baranovichi' | 'bobruisk' | 'pinsk' | 'orsha' | 'maladzyechna' | 'salihorsk' | 'navapolatsk' | 'polatsk' | 'mazyr' | 'slutsk';
+export type CityCode = 'minsk' | 'lida' | 'warsaw' | 'brest' | 'vitebsk' | 'gomel' | 'grodno' | 'mogilev' | 'baranovichi' | 'bobruisk' | 'pinsk' | 'orsha' | 'maladzyechna' | 'salihorsk' | 'navapolatsk' | 'polatsk' | 'mazyr' | 'slutsk' | 'moscow' | 'spb' | 'novosibirsk' | 'ekaterinburg' | 'kazan' | 'nizhny-novgorod' | 'chelyabinsk' | 'samara' | 'omsk' | 'rostov-on-don' | 'ufa' | 'krasnoyarsk' | 'voronezh' | 'perm' | 'volgograd';
 
 export interface CityConfig {
   code: CityCode;
@@ -1475,6 +1475,471 @@ export const cities: Record<CityCode, CityConfig> = {
         pl: ['Doświadczenie w regionie stołecznym', 'Zrozumienie kontekstu historycznego', 'Nowoczesne rozwiązania', 'Szybki rozwój']
       }
     }
+  },
+  moscow: {
+    code: 'moscow',
+    name: { ru: 'Москва', en: 'Moscow', pl: 'Moskwa' },
+    nameLocative: { ru: 'Москве', en: 'Moscow', pl: 'Moskwie' },
+    region: { ru: 'Московская область', en: 'Moscow Region', pl: 'Obwód moskiewski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-MOS', placename: 'Москва', position: '55.7558;37.6173', ICBM: '55.7558, 37.6173' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов москва', 'разработка сайтов москва', 'заказать сайт москва', 'сайт под ключ москва', 'веб студия москва', 'сделать сайт москва', 'лендинг москва', 'интернет магазин москва', 'корпоративный сайт москва', 'веб разработка москва', 'создать сайт москва', 'сайт дешево москва', 'сайт бесплатно москва', 'сайт на заказ москва', 'заказать сайт недорого москва', 'создать сайт самому москва', 'сайт под ключ недорого москва', 'itshka москва', 'сделать сайт в москве', 'создать сайт в москве'],
+      en: ['website development moscow', 'web development moscow', 'create website moscow', 'web studio moscow', 'itshka moscow'],
+      pl: ['tworzenie stron moskwa', 'strony www moskwa', 'itshka moskwa']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Москва — столица России и крупнейший деловой центр. Создаём современные сайты для московских компаний, используя передовые технологии и учитывая высокую конкуренцию столичного рынка.',
+        en: 'Moscow is the capital of Russia and the largest business center. We create modern websites for Moscow companies, using advanced technologies and considering the high competition of the capital market.',
+        pl: 'Moskwa to stolica Rosji i największe centrum biznesowe. Tworzymy nowoczesne strony internetowe dla firm moskiewskich, wykorzystując zaawansowane technologie i uwzględniając wysoką konkurencję rynku stołecznego.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Москве и Московской области. Понимаем специфику столичного рынка и создаём сайты, которые помогают компаниям выделиться среди конкурентов в условиях высокой конкуренции.',
+        en: 'We work with businesses in Moscow and Moscow Region. We understand the specifics of the capital market and create websites that help companies stand out among competitors in conditions of high competition.',
+        pl: 'Pracujemy z firmami w Moskwie i obwodzie moskiewskim. Rozumiemy specyfikę rynku stołecznego i tworzymy strony internetowe, które pomagają firmom wyróżnić się na tle konkurencji w warunkach wysokiej konkurencji.'
+      },
+      cityFeatures: {
+        ru: ['Столичный уровень качества', 'Опыт с крупными компаниями', 'Инновационные решения', 'Высокая конкурентоспособность'],
+        en: ['Capital level quality', 'Experience with large companies', 'Innovative solutions', 'High competitiveness'],
+        pl: ['Stołeczny poziom jakości', 'Doświadczenie z dużymi firmami', 'Innowacyjne rozwiązania', 'Wysoka konkurencyjność']
+      }
+    }
+  },
+  spb: {
+    code: 'spb',
+    name: { ru: 'Санкт-Петербург', en: 'Saint Petersburg', pl: 'Sankt Petersburg' },
+    nameLocative: { ru: 'Санкт-Петербурге', en: 'Saint Petersburg', pl: 'Sankt Petersburgu' },
+    region: { ru: 'Ленинградская область', en: 'Leningrad Region', pl: 'Obwód leningradzki' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-LEN', placename: 'Санкт-Петербург', position: '59.9343;30.3351', ICBM: '59.9343, 30.3351' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов санкт-петербург', 'разработка сайтов спб', 'заказать сайт спб', 'сайт под ключ спб', 'веб студия спб', 'сделать сайт спб', 'лендинг спб', 'интернет магазин спб', 'корпоративный сайт спб', 'веб разработка спб', 'создать сайт спб', 'сайт дешево спб', 'сайт бесплатно спб', 'сайт на заказ спб', 'заказать сайт недорого спб', 'создать сайт самому спб', 'сайт под ключ недорого спб', 'itshka спб', 'сделать сайт в спб', 'создать сайт в спб'],
+      en: ['website development saint petersburg', 'web development spb', 'create website spb', 'web studio spb', 'itshka spb'],
+      pl: ['tworzenie stron sankt petersburg', 'strony www sankt petersburg', 'itshka sankt petersburg']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Санкт-Петербург — культурная столица России с развитым IT-сектором. Создаём сайты для петербургских компаний, сочетая эстетику культурного наследия с современными технологиями.',
+        en: 'Saint Petersburg is the cultural capital of Russia with a developed IT sector. We create websites for Saint Petersburg companies, combining the aesthetics of cultural heritage with modern technologies.',
+        pl: 'Sankt Petersburg to kulturalna stolica Rosji z rozwiniętym sektorem IT. Tworzymy strony internetowe dla firm z Sankt Petersburga, łącząc estetykę dziedzictwa kulturalnego z nowoczesnymi technologiami.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Санкт-Петербурге и Ленинградской области. Понимаем важность эстетики и создаём сайты, которые отражают культурное наследие города и современные бизнес-задачи.',
+        en: 'We work with businesses in Saint Petersburg and Leningrad Region. We understand the importance of aesthetics and create websites that reflect the cultural heritage of the city and modern business tasks.',
+        pl: 'Pracujemy z firmami w Sankt Petersburgu i obwodzie leningradzkim. Rozumiemy wagę estetyki i tworzymy strony internetowe, które odzwierciedlają dziedzictwo kulturalne miasta i nowoczesne zadania biznesowe.'
+      },
+      cityFeatures: {
+        ru: ['Культурная эстетика', 'Опыт с IT-компаниями', 'Современные технологии', 'Уникальный дизайн'],
+        en: ['Cultural aesthetics', 'Experience with IT companies', 'Modern technologies', 'Unique design'],
+        pl: ['Estetyka kulturalna', 'Doświadczenie z firmami IT', 'Nowoczesne technologie', 'Unikalny design']
+      }
+    }
+  },
+  novosibirsk: {
+    code: 'novosibirsk',
+    name: { ru: 'Новосибирск', en: 'Novosibirsk', pl: 'Nowosybirsk' },
+    nameLocative: { ru: 'Новосибирске', en: 'Novosibirsk', pl: 'Nowosybirsku' },
+    region: { ru: 'Новосибирская область', en: 'Novosibirsk Region', pl: 'Obwód nowosybirski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-NVS', placename: 'Новосибирск', position: '55.0084;82.9357', ICBM: '55.0084, 82.9357' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов новосибирск', 'разработка сайтов новосибирск', 'заказать сайт новосибирск', 'сайт под ключ новосибирск', 'веб студия новосибирск', 'сделать сайт новосибирск', 'лендинг новосибирск', 'интернет магазин новосибирск', 'корпоративный сайт новосибирск', 'веб разработка новосибирск', 'создать сайт новосибирск', 'сайт дешево новосибирск', 'сайт бесплатно новосибирск', 'сайт на заказ новосибирск', 'заказать сайт недорого новосибирск', 'создать сайт самому новосибирск', 'сайт под ключ недорого новосибирск', 'itshka новосибирск', 'сделать сайт в новосибирске', 'создать сайт в новосибирске'],
+      en: ['website development novosibirsk', 'web development novosibirsk', 'create website novosibirsk', 'web studio novosibirsk', 'itshka novosibirsk'],
+      pl: ['tworzenie stron nowosybirsk', 'strony www nowosybirsk', 'itshka nowosybirsk']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Новосибирск — крупнейший город Сибири и важный научный центр. Создаём сайты для новосибирских компаний, учитывая специфику сибирского рынка и научно-технический потенциал региона.',
+        en: 'Novosibirsk is the largest city in Siberia and an important scientific center. We create websites for Novosibirsk companies, considering the specifics of the Siberian market and the scientific and technical potential of the region.',
+        pl: 'Nowosybirsk to największe miasto Syberii i ważne centrum naukowe. Tworzymy strony internetowe dla firm z Nowosybirska, uwzględniając specyfikę rynku syberyjskiego i potencjał naukowo-techniczny regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Новосибирске и Новосибирской области. Понимаем особенности сибирского рынка и создаём сайты, которые помогают компаниям эффективно работать в условиях Сибири.',
+        en: 'We work with businesses in Novosibirsk and Novosibirsk Region. We understand the specifics of the Siberian market and create websites that help companies work effectively in Siberian conditions.',
+        pl: 'Pracujemy z firmami w Nowosybirsku i obwodzie nowosybirskim. Rozumiemy specyfikę rynku syberyjskiego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach syberyjskich.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Сибири', 'Понимание регионального рынка', 'Научно-технический подход', 'Надёжные решения'],
+        en: ['Experience in Siberia', 'Understanding of regional market', 'Scientific and technical approach', 'Reliable solutions'],
+        pl: ['Doświadczenie w Syberii', 'Zrozumienie rynku regionalnego', 'Podejście naukowo-techniczne', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  ekaterinburg: {
+    code: 'ekaterinburg',
+    name: { ru: 'Екатеринбург', en: 'Yekaterinburg', pl: 'Jekaterynburg' },
+    nameLocative: { ru: 'Екатеринбурге', en: 'Yekaterinburg', pl: 'Jekaterynburgu' },
+    region: { ru: 'Свердловская область', en: 'Sverdlovsk Region', pl: 'Obwód swierdłowski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-SVE', placename: 'Екатеринбург', position: '56.8380;60.6056', ICBM: '56.8380, 60.6056' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов екатеринбург', 'разработка сайтов екатеринбург', 'заказать сайт екатеринбург', 'сайт под ключ екатеринбург', 'веб студия екатеринбург', 'сделать сайт екатеринбург', 'лендинг екатеринбург', 'интернет магазин екатеринбург', 'корпоративный сайт екатеринбург', 'веб разработка екатеринбург', 'создать сайт екатеринбург', 'сайт дешево екатеринбург', 'сайт бесплатно екатеринбург', 'сайт на заказ екатеринбург', 'заказать сайт недорого екатеринбург', 'создать сайт самому екатеринбург', 'сайт под ключ недорого екатеринбург', 'itshka екатеринбург', 'сделать сайт в екатеринбурге', 'создать сайт в екатеринбурге'],
+      en: ['website development yekaterinburg', 'web development yekaterinburg', 'create website yekaterinburg', 'web studio yekaterinburg', 'itshka yekaterinburg'],
+      pl: ['tworzenie stron jekaterynburg', 'strony www jekaterynburg', 'itshka jekaterynburg']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Екатеринбург — крупный промышленный и деловой центр Урала. Создаём сайты для екатеринбургских компаний с учётом промышленной специфики и деловой активности региона.',
+        en: 'Yekaterinburg is a major industrial and business center of the Urals. We create websites for Yekaterinburg companies considering industrial specifics and business activity of the region.',
+        pl: 'Jekaterynburg to ważne centrum przemysłowe i biznesowe Uralu. Tworzymy strony internetowe dla firm z Jekaterynburga, uwzględniając specyfikę przemysłową i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Екатеринбурге и Свердловской области. Понимаем особенности уральского рынка и создаём сайты, которые помогают компаниям развиваться в промышленном регионе.',
+        en: 'We work with businesses in Yekaterinburg and Sverdlovsk Region. We understand the specifics of the Ural market and create websites that help companies develop in an industrial region.',
+        pl: 'Pracujemy z firmami w Jekaterynburgu i obwodzie swierdłowskim. Rozumiemy specyfikę rynku uralskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w regionie przemysłowym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Урале', 'Понимание промышленного рынка', 'Деловые решения', 'Быстрая разработка'],
+        en: ['Experience in the Urals', 'Understanding of industrial market', 'Business solutions', 'Fast development'],
+        pl: ['Doświadczenie na Uralu', 'Zrozumienie rynku przemysłowego', 'Rozwiązania biznesowe', 'Szybki rozwój']
+      }
+    }
+  },
+  kazan: {
+    code: 'kazan',
+    name: { ru: 'Казань', en: 'Kazan', pl: 'Kazań' },
+    nameLocative: { ru: 'Казани', en: 'Kazan', pl: 'Kazaniu' },
+    region: { ru: 'Республика Татарстан', en: 'Republic of Tatarstan', pl: 'Republika Tatarstanu' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-TA', placename: 'Казань', position: '55.7961;49.1089', ICBM: '55.7961, 49.1089' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов казань', 'разработка сайтов казань', 'заказать сайт казань', 'сайт под ключ казань', 'веб студия казань', 'сделать сайт казань', 'лендинг казань', 'интернет магазин казань', 'корпоративный сайт казань', 'веб разработка казань', 'создать сайт казань', 'сайт дешево казань', 'сайт бесплатно казань', 'сайт на заказ казань', 'заказать сайт недорого казань', 'создать сайт самому казань', 'сайт под ключ недорого казань', 'itshka казань', 'сделать сайт в казани', 'создать сайт в казани'],
+      en: ['website development kazan', 'web development kazan', 'create website kazan', 'web studio kazan', 'itshka kazan'],
+      pl: ['tworzenie stron kazań', 'strony www kazań', 'itshka kazań']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Казань — столица Татарстана с богатым культурным наследием и развитой экономикой. Создаём сайты для казанских компаний, учитывая многонациональный характер города и деловую активность.',
+        en: 'Kazan is the capital of Tatarstan with rich cultural heritage and developed economy. We create websites for Kazan companies, considering the multinational character of the city and business activity.',
+        pl: 'Kazań to stolica Tatarstanu z bogatym dziedzictwem kulturalnym i rozwiniętą gospodarką. Tworzymy strony internetowe dla firm z Kazania, uwzględniając wielonarodowy charakter miasta i aktywność biznesową.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Казани и Республике Татарстан. Понимаем особенности многонационального региона и создаём сайты, которые помогают компаниям эффективно работать в условиях культурного разнообразия.',
+        en: 'We work with businesses in Kazan and the Republic of Tatarstan. We understand the specifics of a multinational region and create websites that help companies work effectively in conditions of cultural diversity.',
+        pl: 'Pracujemy z firmami w Kazaniu i Republice Tatarstanu. Rozumiemy specyfikę regionu wielonarodowego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach różnorodności kulturalnej.'
+      },
+      cityFeatures: {
+        ru: ['Многонациональный подход', 'Понимание культурного контекста', 'Деловые решения', 'Современные технологии'],
+        en: ['Multinational approach', 'Understanding of cultural context', 'Business solutions', 'Modern technologies'],
+        pl: ['Podejście wielonarodowe', 'Zrozumienie kontekstu kulturalnego', 'Rozwiązania biznesowe', 'Nowoczesne technologie']
+      }
+    }
+  },
+  'nizhny-novgorod': {
+    code: 'nizhny-novgorod',
+    name: { ru: 'Нижний Новгород', en: 'Nizhny Novgorod', pl: 'Niżny Nowogród' },
+    nameLocative: { ru: 'Нижнем Новгороде', en: 'Nizhny Novgorod', pl: 'Niżnym Nowogrodzie' },
+    region: { ru: 'Нижегородская область', en: 'Nizhny Novgorod Region', pl: 'Obwód niżnonowogrodzki' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-NIZ', placename: 'Нижний Новгород', position: '56.3287;44.0020', ICBM: '56.3287, 44.0020' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов нижний новгород', 'разработка сайтов нижний новгород', 'заказать сайт нижний новгород', 'сайт под ключ нижний новгород', 'веб студия нижний новгород', 'сделать сайт нижний новгород', 'лендинг нижний новгород', 'интернет магазин нижний новгород', 'корпоративный сайт нижний новгород', 'веб разработка нижний новгород', 'создать сайт нижний новгород', 'сайт дешево нижний новгород', 'сайт бесплатно нижний новгород', 'сайт на заказ нижний новгород', 'заказать сайт недорого нижний новгород', 'создать сайт самому нижний новгород', 'сайт под ключ недорого нижний новгород', 'itshka нижний новгород', 'сделать сайт в нижнем новгороде', 'создать сайт в нижнем новгороде'],
+      en: ['website development nizhny novgorod', 'web development nizhny novgorod', 'create website nizhny novgorod', 'web studio nizhny novgorod', 'itshka nizhny novgorod'],
+      pl: ['tworzenie stron niżny nowogród', 'strony www niżny nowogród', 'itshka niżny nowogród']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Нижний Новгород — крупный промышленный и культурный центр Поволжья. Создаём сайты для нижегородских компаний с учётом промышленной специфики и культурного наследия региона.',
+        en: 'Nizhny Novgorod is a major industrial and cultural center of the Volga region. We create websites for Nizhny Novgorod companies considering industrial specifics and cultural heritage of the region.',
+        pl: 'Niżny Nowogród to ważne centrum przemysłowe i kulturalne regionu Wołgi. Tworzymy strony internetowe dla firm z Niżnego Nowogrodu, uwzględniając specyfikę przemysłową i dziedzictwo kulturalne regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Нижнем Новгороде и Нижегородской области. Понимаем особенности поволжского рынка и создаём сайты, которые помогают компаниям развиваться в промышленном и культурном центре.',
+        en: 'We work with businesses in Nizhny Novgorod and Nizhny Novgorod Region. We understand the specifics of the Volga market and create websites that help companies develop in an industrial and cultural center.',
+        pl: 'Pracujemy z firmami w Niżnym Nowogrodzie i obwodzie niżnonowogrodzkim. Rozumiemy specyfikę rynku wołżańskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum przemysłowym i kulturalnym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Поволжье', 'Понимание промышленного рынка', 'Культурный контекст', 'Надёжные решения'],
+        en: ['Experience in the Volga region', 'Understanding of industrial market', 'Cultural context', 'Reliable solutions'],
+        pl: ['Doświadczenie w regionie Wołgi', 'Zrozumienie rynku przemysłowego', 'Kontekst kulturalny', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  chelyabinsk: {
+    code: 'chelyabinsk',
+    name: { ru: 'Челябинск', en: 'Chelyabinsk', pl: 'Czelabińsk' },
+    nameLocative: { ru: 'Челябинске', en: 'Chelyabinsk', pl: 'Czelabińsku' },
+    region: { ru: 'Челябинская область', en: 'Chelyabinsk Region', pl: 'Obwód czelabiński' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-CHE', placename: 'Челябинск', position: '55.1540;61.4291', ICBM: '55.1540, 61.4291' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов челябинск', 'разработка сайтов челябинск', 'заказать сайт челябинск', 'сайт под ключ челябинск', 'веб студия челябинск', 'сделать сайт челябинск', 'лендинг челябинск', 'интернет магазин челябинск', 'корпоративный сайт челябинск', 'веб разработка челябинск', 'создать сайт челябинск', 'сайт дешево челябинск', 'сайт бесплатно челябинск', 'сайт на заказ челябинск', 'заказать сайт недорого челябинск', 'создать сайт самому челябинск', 'сайт под ключ недорого челябинск', 'itshka челябинск', 'сделать сайт в челябинске', 'создать сайт в челябинске'],
+      en: ['website development chelyabinsk', 'web development chelyabinsk', 'create website chelyabinsk', 'web studio chelyabinsk', 'itshka chelyabinsk'],
+      pl: ['tworzenie stron czelabińsk', 'strony www czelabińsk', 'itshka czelabińsk']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Челябинск — крупный промышленный центр Урала с развитой металлургией. Создаём сайты для челябинских компаний с учётом промышленной специфики и деловой активности региона.',
+        en: 'Chelyabinsk is a major industrial center of the Urals with developed metallurgy. We create websites for Chelyabinsk companies considering industrial specifics and business activity of the region.',
+        pl: 'Czelabińsk to ważne centrum przemysłowe Uralu z rozwiniętą metalurgią. Tworzymy strony internetowe dla firm z Czelabińska, uwzględniając specyfikę przemysłową i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Челябинске и Челябинской области. Понимаем особенности уральского промышленного рынка и создаём сайты, которые помогают компаниям эффективно работать в условиях высокой конкуренции.',
+        en: 'We work with businesses in Chelyabinsk and Chelyabinsk Region. We understand the specifics of the Ural industrial market and create websites that help companies work effectively in conditions of high competition.',
+        pl: 'Pracujemy z firmami w Czelabińsku i obwodzie czelabińskim. Rozumiemy specyfikę rynku przemysłowego Uralu i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach wysokiej konkurencji.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Урале', 'Понимание промышленного рынка', 'Металлургическая специфика', 'Быстрая разработка'],
+        en: ['Experience in the Urals', 'Understanding of industrial market', 'Metallurgical specifics', 'Fast development'],
+        pl: ['Doświadczenie na Uralu', 'Zrozumienie rynku przemysłowego', 'Specyfika metalurgiczna', 'Szybki rozwój']
+      }
+    }
+  },
+  samara: {
+    code: 'samara',
+    name: { ru: 'Самара', en: 'Samara', pl: 'Samara' },
+    nameLocative: { ru: 'Самаре', en: 'Samara', pl: 'Samarze' },
+    region: { ru: 'Самарская область', en: 'Samara Region', pl: 'Obwód samarski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-SAM', placename: 'Самара', position: '53.1959;50.1002', ICBM: '53.1959, 50.1002' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов самара', 'разработка сайтов самара', 'заказать сайт самара', 'сайт под ключ самара', 'веб студия самара', 'сделать сайт самара', 'лендинг самара', 'интернет магазин самара', 'корпоративный сайт самара', 'веб разработка самара', 'создать сайт самара', 'сайт дешево самара', 'сайт бесплатно самара', 'сайт на заказ самара', 'заказать сайт недорого самара', 'создать сайт самому самара', 'сайт под ключ недорого самара', 'itshka самара', 'сделать сайт в самаре', 'создать сайт в самаре'],
+      en: ['website development samara', 'web development samara', 'create website samara', 'web studio samara', 'itshka samara'],
+      pl: ['tworzenie stron samara', 'strony www samara', 'itshka samara']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Самара — крупный промышленный и культурный центр Поволжья. Создаём сайты для самарских компаний с учётом промышленной специфики и культурного наследия региона.',
+        en: 'Samara is a major industrial and cultural center of the Volga region. We create websites for Samara companies considering industrial specifics and cultural heritage of the region.',
+        pl: 'Samara to ważne centrum przemysłowe i kulturalne regionu Wołgi. Tworzymy strony internetowe dla firm z Samary, uwzględniając specyfikę przemysłową i dziedzictwo kulturalne regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Самаре и Самарской области. Понимаем особенности поволжского рынка и создаём сайты, которые помогают компаниям развиваться в промышленном и культурном центре.',
+        en: 'We work with businesses in Samara and Samara Region. We understand the specifics of the Volga market and create websites that help companies develop in an industrial and cultural center.',
+        pl: 'Pracujemy z firmami w Samarze i obwodzie samarskim. Rozumiemy specyfikę rynku wołżańskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum przemysłowym i kulturalnym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Поволжье', 'Понимание промышленного рынка', 'Культурный контекст', 'Надёжные решения'],
+        en: ['Experience in the Volga region', 'Understanding of industrial market', 'Cultural context', 'Reliable solutions'],
+        pl: ['Doświadczenie w regionie Wołgi', 'Zrozumienie rynku przemysłowego', 'Kontekst kulturalny', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  omsk: {
+    code: 'omsk',
+    name: { ru: 'Омск', en: 'Omsk', pl: 'Omsk' },
+    nameLocative: { ru: 'Омске', en: 'Omsk', pl: 'Omsku' },
+    region: { ru: 'Омская область', en: 'Omsk Region', pl: 'Obwód omski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-OMS', placename: 'Омск', position: '54.9924;73.3686', ICBM: '54.9924, 73.3686' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов омск', 'разработка сайтов омск', 'заказать сайт омск', 'сайт под ключ омск', 'веб студия омск', 'сделать сайт омск', 'лендинг омск', 'интернет магазин омск', 'корпоративный сайт омск', 'веб разработка омск', 'создать сайт омск', 'сайт дешево омск', 'сайт бесплатно омск', 'сайт на заказ омск', 'заказать сайт недорого омск', 'создать сайт самому омск', 'сайт под ключ недорого омск', 'itshka омск', 'сделать сайт в омске', 'создать сайт в омске'],
+      en: ['website development omsk', 'web development omsk', 'create website omsk', 'web studio omsk', 'itshka omsk'],
+      pl: ['tworzenie stron omsk', 'strony www omsk', 'itshka omsk']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Омск — крупный промышленный и транспортный центр Сибири. Создаём сайты для омских компаний с учётом промышленной специфики и транспортной логистики региона.',
+        en: 'Omsk is a major industrial and transport center of Siberia. We create websites for Omsk companies considering industrial specifics and transport logistics of the region.',
+        pl: 'Omsk to ważne centrum przemysłowe i transportowe Syberii. Tworzymy strony internetowe dla firm z Omska, uwzględniając specyfikę przemysłową i logistykę transportową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Омске и Омской области. Понимаем особенности сибирского рынка и создаём сайты, которые помогают компаниям эффективно работать в условиях транспортной логистики Сибири.',
+        en: 'We work with businesses in Omsk and Omsk Region. We understand the specifics of the Siberian market and create websites that help companies work effectively in conditions of transport logistics in Siberia.',
+        pl: 'Pracujemy z firmami w Omsku i obwodzie omskim. Rozumiemy specyfikę rynku syberyjskiego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach logistyki transportowej w Syberii.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Сибири', 'Понимание транспортной логистики', 'Промышленные решения', 'Надёжная поддержка'],
+        en: ['Experience in Siberia', 'Understanding of transport logistics', 'Industrial solutions', 'Reliable support'],
+        pl: ['Doświadczenie w Syberii', 'Zrozumienie logistyki transportowej', 'Rozwiązania przemysłowe', 'Niezawodne wsparcie']
+      }
+    }
+  },
+  'rostov-on-don': {
+    code: 'rostov-on-don',
+    name: { ru: 'Ростов-на-Дону', en: 'Rostov-on-Don', pl: 'Rostów nad Donem' },
+    nameLocative: { ru: 'Ростове-на-Дону', en: 'Rostov-on-Don', pl: 'Rostowie nad Donem' },
+    region: { ru: 'Ростовская область', en: 'Rostov Region', pl: 'Obwód rostowski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-ROS', placename: 'Ростов-на-Дону', position: '47.2357;39.7015', ICBM: '47.2357, 39.7015' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов ростов-на-дону', 'разработка сайтов ростов', 'заказать сайт ростов', 'сайт под ключ ростов', 'веб студия ростов', 'сделать сайт ростов', 'лендинг ростов', 'интернет магазин ростов', 'корпоративный сайт ростов', 'веб разработка ростов', 'создать сайт ростов', 'сайт дешево ростов', 'сайт бесплатно ростов', 'сайт на заказ ростов', 'заказать сайт недорого ростов', 'создать сайт самому ростов', 'сайт под ключ недорого ростов', 'itshka ростов', 'сделать сайт в ростове-на-дону', 'создать сайт в ростове-на-дону'],
+      en: ['website development rostov-on-don', 'web development rostov', 'create website rostov', 'web studio rostov', 'itshka rostov'],
+      pl: ['tworzenie stron rostów nad donem', 'strony www rostów', 'itshka rostów']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Ростов-на-Дону — крупный деловой и культурный центр Юга России. Создаём сайты для ростовских компаний с учётом деловой активности и культурного наследия региона.',
+        en: 'Rostov-on-Don is a major business and cultural center of the South of Russia. We create websites for Rostov companies considering business activity and cultural heritage of the region.',
+        pl: 'Rostów nad Donem to ważne centrum biznesowe i kulturalne Południa Rosji. Tworzymy strony internetowe dla firm z Rostowa, uwzględniając aktywność biznesową i dziedzictwo kulturalne regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Ростове-на-Дону и Ростовской области. Понимаем особенности южного рынка и создаём сайты, которые помогают компаниям развиваться в деловом и культурном центре Юга России.',
+        en: 'We work with businesses in Rostov-on-Don and Rostov Region. We understand the specifics of the southern market and create websites that help companies develop in a business and cultural center of the South of Russia.',
+        pl: 'Pracujemy z firmami w Rostowie nad Donem i obwodzie rostowskim. Rozumiemy specyfikę rynku południowego i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum biznesowym i kulturalnym Południa Rosji.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Юге России', 'Понимание делового рынка', 'Культурный контекст', 'Современные решения'],
+        en: ['Experience in the South of Russia', 'Understanding of business market', 'Cultural context', 'Modern solutions'],
+        pl: ['Doświadczenie na Południu Rosji', 'Zrozumienie rynku biznesowego', 'Kontekst kulturalny', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  ufa: {
+    code: 'ufa',
+    name: { ru: 'Уфа', en: 'Ufa', pl: 'Ufa' },
+    nameLocative: { ru: 'Уфе', en: 'Ufa', pl: 'Ufie' },
+    region: { ru: 'Республика Башкортостан', en: 'Republic of Bashkortostan', pl: 'Republika Baszkortostanu' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-BA', placename: 'Уфа', position: '54.7352;55.9587', ICBM: '54.7352, 55.9587' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов уфа', 'разработка сайтов уфа', 'заказать сайт уфа', 'сайт под ключ уфа', 'веб студия уфа', 'сделать сайт уфа', 'лендинг уфа', 'интернет магазин уфа', 'корпоративный сайт уфа', 'веб разработка уфа', 'создать сайт уфа', 'сайт дешево уфа', 'сайт бесплатно уфа', 'сайт на заказ уфа', 'заказать сайт недорого уфа', 'создать сайт самому уфа', 'сайт под ключ недорого уфа', 'itshka уфа', 'сделать сайт в уфе', 'создать сайт в уфе'],
+      en: ['website development ufa', 'web development ufa', 'create website ufa', 'web studio ufa', 'itshka ufa'],
+      pl: ['tworzenie stron ufa', 'strony www ufa', 'itshka ufa']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Уфа — столица Башкортостана с развитой промышленностью и многонациональной культурой. Создаём сайты для уфимских компаний с учётом промышленной специфики и культурного разнообразия региона.',
+        en: 'Ufa is the capital of Bashkortostan with developed industry and multinational culture. We create websites for Ufa companies considering industrial specifics and cultural diversity of the region.',
+        pl: 'Ufa to stolica Baszkortostanu z rozwiniętym przemysłem i wielonarodową kulturą. Tworzymy strony internetowe dla firm z Ufy, uwzględniając specyfikę przemysłową i różnorodność kulturalną regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Уфе и Республике Башкортостан. Понимаем особенности многонационального региона и создаём сайты, которые помогают компаниям эффективно работать в условиях культурного разнообразия.',
+        en: 'We work with businesses in Ufa and the Republic of Bashkortostan. We understand the specifics of a multinational region and create websites that help companies work effectively in conditions of cultural diversity.',
+        pl: 'Pracujemy z firmami w Ufie i Republice Baszkortostanu. Rozumiemy specyfikę regionu wielonarodowego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach różnorodności kulturalnej.'
+      },
+      cityFeatures: {
+        ru: ['Многонациональный подход', 'Понимание промышленного рынка', 'Культурное разнообразие', 'Надёжные решения'],
+        en: ['Multinational approach', 'Understanding of industrial market', 'Cultural diversity', 'Reliable solutions'],
+        pl: ['Podejście wielonarodowe', 'Zrozumienie rynku przemysłowego', 'Różnorodność kulturalna', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  krasnoyarsk: {
+    code: 'krasnoyarsk',
+    name: { ru: 'Красноярск', en: 'Krasnoyarsk', pl: 'Krasnojarsk' },
+    nameLocative: { ru: 'Красноярске', en: 'Krasnoyarsk', pl: 'Krasnojarsku' },
+    region: { ru: 'Красноярский край', en: 'Krasnoyarsk Krai', pl: 'Kraj Krasnojarski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-KYA', placename: 'Красноярск', position: '56.0184;92.8672', ICBM: '56.0184, 92.8672' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов красноярск', 'разработка сайтов красноярск', 'заказать сайт красноярск', 'сайт под ключ красноярск', 'веб студия красноярск', 'сделать сайт красноярск', 'лендинг красноярск', 'интернет магазин красноярск', 'корпоративный сайт красноярск', 'веб разработка красноярск', 'создать сайт красноярск', 'сайт дешево красноярск', 'сайт бесплатно красноярск', 'сайт на заказ красноярск', 'заказать сайт недорого красноярск', 'создать сайт самому красноярск', 'сайт под ключ недорого красноярск', 'itshka красноярск', 'сделать сайт в красноярске', 'создать сайт в красноярске'],
+      en: ['website development krasnoyarsk', 'web development krasnoyarsk', 'create website krasnoyarsk', 'web studio krasnoyarsk', 'itshka krasnoyarsk'],
+      pl: ['tworzenie stron krasnojarsk', 'strony www krasnojarsk', 'itshka krasnojarsk']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Красноярск — крупный промышленный и научный центр Сибири. Создаём сайты для красноярских компаний с учётом промышленной специфики и научно-технического потенциала региона.',
+        en: 'Krasnoyarsk is a major industrial and scientific center of Siberia. We create websites for Krasnoyarsk companies considering industrial specifics and scientific and technical potential of the region.',
+        pl: 'Krasnojarsk to ważne centrum przemysłowe i naukowe Syberii. Tworzymy strony internetowe dla firm z Krasnojarska, uwzględniając specyfikę przemysłową i potencjał naukowo-techniczny regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Красноярске и Красноярском крае. Понимаем особенности сибирского рынка и создаём сайты, которые помогают компаниям эффективно работать в условиях промышленного и научного центра Сибири.',
+        en: 'We work with businesses in Krasnoyarsk and Krasnoyarsk Krai. We understand the specifics of the Siberian market and create websites that help companies work effectively in conditions of an industrial and scientific center in Siberia.',
+        pl: 'Pracujemy z firmami w Krasnojarsku i Kraju Krasnojarskim. Rozumiemy specyfikę rynku syberyjskiego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach centrum przemysłowego i naukowego w Syberii.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Сибири', 'Понимание промышленного рынка', 'Научно-технический подход', 'Надёжные решения'],
+        en: ['Experience in Siberia', 'Understanding of industrial market', 'Scientific and technical approach', 'Reliable solutions'],
+        pl: ['Doświadczenie w Syberii', 'Zrozumienie rynku przemysłowego', 'Podejście naukowo-techniczne', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  voronezh: {
+    code: 'voronezh',
+    name: { ru: 'Воронеж', en: 'Voronezh', pl: 'Woroneż' },
+    nameLocative: { ru: 'Воронеже', en: 'Voronezh', pl: 'Woroneżu' },
+    region: { ru: 'Воронежская область', en: 'Voronezh Region', pl: 'Obwód woroneski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-VOR', placename: 'Воронеж', position: '51.6608;39.2003', ICBM: '51.6608, 39.2003' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов воронеж', 'разработка сайтов воронеж', 'заказать сайт воронеж', 'сайт под ключ воронеж', 'веб студия воронеж', 'сделать сайт воронеж', 'лендинг воронеж', 'интернет магазин воронеж', 'корпоративный сайт воронеж', 'веб разработка воронеж', 'создать сайт воронеж', 'сайт дешево воронеж', 'сайт бесплатно воронеж', 'сайт на заказ воронеж', 'заказать сайт недорого воронеж', 'создать сайт самому воронеж', 'сайт под ключ недорого воронеж', 'itshka воронеж', 'сделать сайт в воронеже', 'создать сайт в воронеже'],
+      en: ['website development voronezh', 'web development voronezh', 'create website voronezh', 'web studio voronezh', 'itshka voronezh'],
+      pl: ['tworzenie stron woroneż', 'strony www woroneż', 'itshka woroneż']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Воронеж — крупный промышленный и научный центр Центральной России. Создаём сайты для воронежских компаний с учётом промышленной специфики и научно-технического потенциала региона.',
+        en: 'Voronezh is a major industrial and scientific center of Central Russia. We create websites for Voronezh companies considering industrial specifics and scientific and technical potential of the region.',
+        pl: 'Woroneż to ważne centrum przemysłowe i naukowe Centralnej Rosji. Tworzymy strony internetowe dla firm z Woroneża, uwzględniając specyfikę przemysłową i potencjał naukowo-techniczny regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Воронеже и Воронежской области. Понимаем особенности центрального рынка и создаём сайты, которые помогают компаниям эффективно работать в условиях промышленного и научного центра.',
+        en: 'We work with businesses in Voronezh and Voronezh Region. We understand the specifics of the central market and create websites that help companies work effectively in conditions of an industrial and scientific center.',
+        pl: 'Pracujemy z firmami w Woroneżu i obwodzie woroneskim. Rozumiemy specyfikę rynku centralnego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w warunkach centrum przemysłowego i naukowego.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Центральной России', 'Понимание промышленного рынка', 'Научно-технический подход', 'Современные решения'],
+        en: ['Experience in Central Russia', 'Understanding of industrial market', 'Scientific and technical approach', 'Modern solutions'],
+        pl: ['Doświadczenie w Centralnej Rosji', 'Zrozumienie rynku przemysłowego', 'Podejście naukowo-techniczne', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  perm: {
+    code: 'perm',
+    name: { ru: 'Пермь', en: 'Perm', pl: 'Perm' },
+    nameLocative: { ru: 'Перми', en: 'Perm', pl: 'Permie' },
+    region: { ru: 'Пермский край', en: 'Perm Krai', pl: 'Kraj Permski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-PER', placename: 'Пермь', position: '58.0105;56.2502', ICBM: '58.0105, 56.2502' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов пермь', 'разработка сайтов пермь', 'заказать сайт пермь', 'сайт под ключ пермь', 'веб студия пермь', 'сделать сайт пермь', 'лендинг пермь', 'интернет магазин пермь', 'корпоративный сайт пермь', 'веб разработка пермь', 'создать сайт пермь', 'сайт дешево пермь', 'сайт бесплатно пермь', 'сайт на заказ пермь', 'заказать сайт недорого пермь', 'создать сайт самому пермь', 'сайт под ключ недорого пермь', 'itshka пермь', 'сделать сайт в перми', 'создать сайт в перми'],
+      en: ['website development perm', 'web development perm', 'create website perm', 'web studio perm', 'itshka perm'],
+      pl: ['tworzenie stron perm', 'strony www perm', 'itshka perm']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Пермь — крупный промышленный и культурный центр Урала. Создаём сайты для пермских компаний с учётом промышленной специфики и культурного наследия региона.',
+        en: 'Perm is a major industrial and cultural center of the Urals. We create websites for Perm companies considering industrial specifics and cultural heritage of the region.',
+        pl: 'Perm to ważne centrum przemysłowe i kulturalne Uralu. Tworzymy strony internetowe dla firm z Permu, uwzględniając specyfikę przemysłową i dziedzictwo kulturalne regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Перми и Пермском крае. Понимаем особенности уральского рынка и создаём сайты, которые помогают компаниям развиваться в промышленном и культурном центре.',
+        en: 'We work with businesses in Perm and Perm Krai. We understand the specifics of the Ural market and create websites that help companies develop in an industrial and cultural center.',
+        pl: 'Pracujemy z firmami w Permie i Kraju Permskim. Rozumiemy specyfikę rynku uralskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum przemysłowym i kulturalnym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Урале', 'Понимание промышленного рынка', 'Культурный контекст', 'Надёжные решения'],
+        en: ['Experience in the Urals', 'Understanding of industrial market', 'Cultural context', 'Reliable solutions'],
+        pl: ['Doświadczenie na Uralu', 'Zrozumienie rynku przemysłowego', 'Kontekst kulturalny', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  volgograd: {
+    code: 'volgograd',
+    name: { ru: 'Волгоград', en: 'Volgograd', pl: 'Wołgograd' },
+    nameLocative: { ru: 'Волгограде', en: 'Volgograd', pl: 'Wołgogradzie' },
+    region: { ru: 'Волгоградская область', en: 'Volgograd Region', pl: 'Obwód wołgogradzki' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'RU-VGG', placename: 'Волгоград', position: '48.7071;44.5170', ICBM: '48.7071, 44.5170' },
+    countryCode: 'RU',
+    keywords: {
+      ru: ['создание сайтов волгоград', 'разработка сайтов волгоград', 'заказать сайт волгоград', 'сайт под ключ волгоград', 'веб студия волгоград', 'сделать сайт волгоград', 'лендинг волгоград', 'интернет магазин волгоград', 'корпоративный сайт волгоград', 'веб разработка волгоград', 'создать сайт волгоград', 'сайт дешево волгоград', 'сайт бесплатно волгоград', 'сайт на заказ волгоград', 'заказать сайт недорого волгоград', 'создать сайт самому волгоград', 'сайт под ключ недорого волгоград', 'itshka волгоград', 'сделать сайт в волгограде', 'создать сайт в волгограде'],
+      en: ['website development volgograd', 'web development volgograd', 'create website volgograd', 'web studio volgograd', 'itshka volgograd'],
+      pl: ['tworzenie stron wołgograd', 'strony www wołgograd', 'itshka wołgograd']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Волгоград — крупный промышленный и исторический центр Юга России. Создаём сайты для волгоградских компаний с учётом промышленной специфики и исторического наследия региона.',
+        en: 'Volgograd is a major industrial and historical center of the South of Russia. We create websites for Volgograd companies considering industrial specifics and historical heritage of the region.',
+        pl: 'Wołgograd to ważne centrum przemysłowe i historyczne Południa Rosji. Tworzymy strony internetowe dla firm z Wołgogradu, uwzględniając specyfikę przemysłową i dziedzictwo historyczne regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Волгограде и Волгоградской области. Понимаем особенности южного рынка и создаём сайты, которые помогают компаниям развиваться в промышленном и историческом центре Юга России.',
+        en: 'We work with businesses in Volgograd and Volgograd Region. We understand the specifics of the southern market and create websites that help companies develop in an industrial and historical center of the South of Russia.',
+        pl: 'Pracujemy z firmami w Wołgogradzie i obwodzie wołgogradzkim. Rozumiemy specyfikę rynku południowego i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum przemysłowym i historycznym Południa Rosji.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Юге России', 'Понимание промышленного рынка', 'Исторический контекст', 'Надёжные решения'],
+        en: ['Experience in the South of Russia', 'Understanding of industrial market', 'Historical context', 'Reliable solutions'],
+        pl: ['Doświadczenie na Południu Rosji', 'Zrozumienie rynku przemysłowego', 'Kontekst historyczny', 'Niezawodne rozwiązania']
+      }
+    }
   }
 };
 
@@ -1482,7 +1947,7 @@ export const cities: Record<CityCode, CityConfig> = {
 export const countryToCity: Record<string, CityCode> = {
   'BY': 'minsk', // По умолчанию Минск для Беларуси
   'PL': 'warsaw',
-  'RU': 'minsk',
+  'RU': 'moscow', // По умолчанию Москва для России
   'UA': 'minsk'
 };
 
@@ -1534,6 +1999,46 @@ export const cityNameToCode: Record<string, CityCode> = {
   'mazyr': 'mazyr',
   'мозырь': 'mazyr',
   'slutsk': 'slutsk',
-  'слуцк': 'slutsk'
+  'слуцк': 'slutsk',
+  'moscow': 'moscow',
+  'москва': 'moscow',
+  'spb': 'spb',
+  'saint-petersburg': 'spb',
+  'saint petersburg': 'spb',
+  'санкт-петербург': 'spb',
+  'санкт петербург': 'spb',
+  'спб': 'spb',
+  'novosibirsk': 'novosibirsk',
+  'новосибирск': 'novosibirsk',
+  'ekaterinburg': 'ekaterinburg',
+  'yekaterinburg': 'ekaterinburg',
+  'екатеринбург': 'ekaterinburg',
+  'kazan': 'kazan',
+  'казань': 'kazan',
+  'nizhny-novgorod': 'nizhny-novgorod',
+  'nizhny novgorod': 'nizhny-novgorod',
+  'нижний новгород': 'nizhny-novgorod',
+  'нижний-новгород': 'nizhny-novgorod',
+  'chelyabinsk': 'chelyabinsk',
+  'челябинск': 'chelyabinsk',
+  'samara': 'samara',
+  'самара': 'samara',
+  'omsk': 'omsk',
+  'омск': 'omsk',
+  'rostov-on-don': 'rostov-on-don',
+  'rostov on don': 'rostov-on-don',
+  'ростов-на-дону': 'rostov-on-don',
+  'ростов на дону': 'rostov-on-don',
+  'ростов': 'rostov-on-don',
+  'ufa': 'ufa',
+  'уфа': 'ufa',
+  'krasnoyarsk': 'krasnoyarsk',
+  'красноярск': 'krasnoyarsk',
+  'voronezh': 'voronezh',
+  'воронеж': 'voronezh',
+  'perm': 'perm',
+  'пермь': 'perm',
+  'volgograd': 'volgograd',
+  'волгоград': 'volgograd'
 };
 

@@ -48,6 +48,21 @@ const App = () => (
               <Route path="/polatsk" element={<Index />} />
               <Route path="/mazyr" element={<Index />} />
               <Route path="/slutsk" element={<Index />} />
+              <Route path="/moscow" element={<Index />} />
+              <Route path="/spb" element={<Index />} />
+              <Route path="/novosibirsk" element={<Index />} />
+              <Route path="/ekaterinburg" element={<Index />} />
+              <Route path="/kazan" element={<Index />} />
+              <Route path="/nizhny-novgorod" element={<Index />} />
+              <Route path="/chelyabinsk" element={<Index />} />
+              <Route path="/samara" element={<Index />} />
+              <Route path="/omsk" element={<Index />} />
+              <Route path="/rostov-on-don" element={<Index />} />
+              <Route path="/ufa" element={<Index />} />
+              <Route path="/krasnoyarsk" element={<Index />} />
+              <Route path="/voronezh" element={<Index />} />
+              <Route path="/perm" element={<Index />} />
+              <Route path="/volgograd" element={<Index />} />
               {/* Обрабатываем любые другие пути с городами - показываем ближайший город */}
               <Route path="/:cityName" element={<Index />} />
               {/* Остальные несуществующие пути */}

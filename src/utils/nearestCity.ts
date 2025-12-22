@@ -19,7 +19,22 @@ const cityCoordinates: Record<CityCode, { lat: number; lon: number }> = {
   navapolatsk: { lat: 55.5333, lon: 28.6667 },
   polatsk: { lat: 55.4833, lon: 28.8000 },
   mazyr: { lat: 52.0500, lon: 29.2333 },
-  slutsk: { lat: 53.0167, lon: 27.5500 }
+  slutsk: { lat: 53.0167, lon: 27.5500 },
+  moscow: { lat: 55.7558, lon: 37.6173 },
+  spb: { lat: 59.9343, lon: 30.3351 },
+  novosibirsk: { lat: 55.0084, lon: 82.9357 },
+  ekaterinburg: { lat: 56.8380, lon: 60.6056 },
+  kazan: { lat: 55.7961, lon: 49.1089 },
+  'nizhny-novgorod': { lat: 56.3287, lon: 44.0020 },
+  chelyabinsk: { lat: 55.1540, lon: 61.4291 },
+  samara: { lat: 53.1959, lon: 50.1002 },
+  omsk: { lat: 54.9924, lon: 73.3686 },
+  'rostov-on-don': { lat: 47.2357, lon: 39.7015 },
+  ufa: { lat: 54.7352, lon: 55.9587 },
+  krasnoyarsk: { lat: 56.0184, lon: 92.8672 },
+  voronezh: { lat: 51.6608, lon: 39.2003 },
+  perm: { lat: 58.0105, lon: 56.2502 },
+  volgograd: { lat: 48.7071, lon: 44.5170 }
 };
 
 /**
@@ -213,8 +228,11 @@ export const detectNearestCity = async (): Promise<CityCode> => {
       if (now - cachedData.timestamp < 3600000) {
         const data = cachedData.data;
         // Используем маппинг по стране
-        if (data.country_code === 'BY' || data.country_code === 'RU' || data.country_code === 'UA') {
+        if (data.country_code === 'BY' || data.country_code === 'UA') {
           return 'minsk';
+        }
+        if (data.country_code === 'RU') {
+          return 'moscow';
         }
         if (data.country_code === 'PL') {
           return 'warsaw';
@@ -237,8 +255,11 @@ export const detectNearestCity = async (): Promise<CityCode> => {
       // Ignore cache errors
     }
 
-    if (data.country_code === 'BY' || data.country_code === 'RU' || data.country_code === 'UA') {
+    if (data.country_code === 'BY' || data.country_code === 'UA') {
       return 'minsk';
+    }
+    if (data.country_code === 'RU') {
+      return 'moscow';
     }
     if (data.country_code === 'PL') {
       return 'warsaw';

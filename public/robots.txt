@@ -21,6 +21,21 @@ Allow: /navapolatsk
 Allow: /polatsk
 Allow: /mazyr
 Allow: /slutsk
+Allow: /moscow
+Allow: /spb
+Allow: /novosibirsk
+Allow: /ekaterinburg
+Allow: /kazan
+Allow: /nizhny-novgorod
+Allow: /chelyabinsk
+Allow: /samara
+Allow: /omsk
+Allow: /rostov-on-don
+Allow: /ufa
+Allow: /krasnoyarsk
+Allow: /voronezh
+Allow: /perm
+Allow: /volgograd
 
 # Sitemap
 Sitemap: https://itshka.by/sitemap.xml
@@ -46,6 +61,21 @@ Allow: /navapolatsk
 Allow: /polatsk
 Allow: /mazyr
 Allow: /slutsk
+Allow: /moscow
+Allow: /spb
+Allow: /novosibirsk
+Allow: /ekaterinburg
+Allow: /kazan
+Allow: /nizhny-novgorod
+Allow: /chelyabinsk
+Allow: /samara
+Allow: /omsk
+Allow: /rostov-on-don
+Allow: /ufa
+Allow: /krasnoyarsk
+Allow: /voronezh
+Allow: /perm
+Allow: /volgograd
 Crawl-delay: 1
 
 # Google
@@ -69,6 +99,21 @@ Allow: /navapolatsk
 Allow: /polatsk
 Allow: /mazyr
 Allow: /slutsk
+Allow: /moscow
+Allow: /spb
+Allow: /novosibirsk
+Allow: /ekaterinburg
+Allow: /kazan
+Allow: /nizhny-novgorod
+Allow: /chelyabinsk
+Allow: /samara
+Allow: /omsk
+Allow: /rostov-on-don
+Allow: /ufa
+Allow: /krasnoyarsk
+Allow: /voronezh
+Allow: /perm
+Allow: /volgograd
 
 # Bing
 User-agent: Bingbot
@@ -91,6 +136,21 @@ Allow: /navapolatsk
 Allow: /polatsk
 Allow: /mazyr
 Allow: /slutsk
+Allow: /moscow
+Allow: /spb
+Allow: /novosibirsk
+Allow: /ekaterinburg
+Allow: /kazan
+Allow: /nizhny-novgorod
+Allow: /chelyabinsk
+Allow: /samara
+Allow: /omsk
+Allow: /rostov-on-don
+Allow: /ufa
+Allow: /krasnoyarsk
+Allow: /voronezh
+Allow: /perm
+Allow: /volgograd
 
 # Запрет индексации служебных файлов
 Disallow: /api/
