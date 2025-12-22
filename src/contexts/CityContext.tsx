@@ -236,26 +236,38 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                       setUserCountry(data.country_code);
                     }
                     
-              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
-              // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
-              // Если ближайший город в другой стране - используем столицу страны из IP
-              if (data.latitude && data.longitude) {
-                const result = await detectCityByCoordinates(data.latitude, data.longitude);
-                const detectedCityConfig = cities[result.city];
-                
-                // Если IP определяет страну, и ближайший город не в той же стране - используем столицу страны
-                if (data.country_code && detectedCityConfig && detectedCityConfig.countryCode !== data.country_code) {
-                  const countryCapital = countryToCity[data.country_code];
-                  if (countryCapital) {
-                    resolve({ city: countryCapital, isInCity: false });
-                    return;
-                  }
-                }
-                
-                // Если ближайший город в той же стране или страна не определена - используем ближайший
-                resolve(result);
-                return;
-              }
+                    // ПРИОРИТЕТ 1: Для европейских стран (DE, FR, GB, IT, ES и т.д.) используем маппинг по стране
+                    // Это важно: если IP определяет страну как DE, используем Берлин, а не ближайший город по координатам
+                    if (data.country_code && countryToCity[data.country_code]) {
+                      const countryCapital = countryToCity[data.country_code];
+                      // Для европейских стран всегда используем столицу, если она есть в маппинге
+                      const europeanCountries = ['DE', 'FR', 'GB', 'IT', 'ES', 'NL', 'BE', 'AT', 'CZ', 'SE', 'DK', 'FI', 'NO', 'IE', 'PT', 'GR', 'HU'];
+                      if (europeanCountries.includes(data.country_code)) {
+                        resolve({ city: countryCapital, isInCity: false });
+                        return;
+                      }
+                    }
+                    
+                    // ПРИОРИТЕТ 2: Используем координаты из IP API для определения ближайшего города
+                    // ВАЖНО: Если IP определяет страну, проверяем, что ближайший город в той же стране
+                    // Если ближайший город в другой стране - используем столицу страны из IP
+                    if (data.latitude && data.longitude) {
+                      const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                      const detectedCityConfig = cities[result.city];
+                      
+                      // Если IP определяет страну, и ближайший город не в той же стране - используем столицу страны
+                      if (data.country_code && detectedCityConfig && detectedCityConfig.countryCode !== data.country_code) {
+                        const countryCapital = countryToCity[data.country_code];
+                        if (countryCapital) {
+                          resolve({ city: countryCapital, isInCity: false });
+                          return;
+                        }
+                      }
+                      
+                      // Если ближайший город в той же стране или страна не определена - используем ближайший
+                      resolve(result);
+                      return;
+                    }
                     
                     // ПРИОРИТЕТ 2: Пытаемся определить по названию города из API
                     if (data.city) {
@@ -494,8 +506,20 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 setUserCountry(data.country_code);
               }
               
-              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
-              // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+              // ПРИОРИТЕТ 1: Для европейских стран используем маппинг по стране (столицу)
+              // Это важно: если IP определяет страну как DE, используем Берлин, а не ближайший город по координатам
+              if (data.country_code && countryToCity[data.country_code]) {
+                const countryCapital = countryToCity[data.country_code];
+                // Для европейских стран всегда используем столицу, если она есть в маппинге
+                const europeanCountries = ['DE', 'FR', 'GB', 'IT', 'ES', 'NL', 'BE', 'AT', 'CZ', 'SE', 'DK', 'FI', 'NO', 'IE', 'PT', 'GR', 'HU'];
+                if (europeanCountries.includes(data.country_code)) {
+                  resolve({ city: countryCapital, isInCity: false });
+                  return;
+                }
+              }
+              
+              // ПРИОРИТЕТ 2: Используем координаты из IP API для определения ближайшего города
+              // ВАЖНО: Если IP определяет страну, проверяем, что ближайший город в той же стране
               // Если ближайший город в другой стране - используем столицу страны из IP
               if (data.latitude && data.longitude) {
                 const result = await detectCityByCoordinates(data.latitude, data.longitude);
@@ -558,8 +582,20 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 setUserCountry(data.country_code);
               }
               
-              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
-              // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+              // ПРИОРИТЕТ 1: Для европейских стран используем маппинг по стране (столицу)
+              // Это важно: если IP определяет страну как DE, используем Берлин, а не ближайший город по координатам
+              if (data.country_code && countryToCity[data.country_code]) {
+                const countryCapital = countryToCity[data.country_code];
+                // Для европейских стран всегда используем столицу, если она есть в маппинге
+                const europeanCountries = ['DE', 'FR', 'GB', 'IT', 'ES', 'NL', 'BE', 'AT', 'CZ', 'SE', 'DK', 'FI', 'NO', 'IE', 'PT', 'GR', 'HU'];
+                if (europeanCountries.includes(data.country_code)) {
+                  resolve({ city: countryCapital, isInCity: false });
+                  return;
+                }
+              }
+              
+              // ПРИОРИТЕТ 2: Используем координаты из IP API для определения ближайшего города
+              // ВАЖНО: Если IP определяет страну, проверяем, что ближайший город в той же стране
               // Если ближайший город в другой стране - используем столицу страны из IP
               if (data.latitude && data.longitude) {
                 const result = await detectCityByCoordinates(data.latitude, data.longitude);
@@ -579,7 +615,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 return;
               }
               
-              // ПРИОРИТЕТ 2: Пытаемся определить город по названию города из API
+              // ПРИОРИТЕТ 3: Пытаемся определить город по названию города из API
               if (data.city) {
                 const cityName = data.city.toLowerCase();
                 if (cityName.includes('lida') || cityName.includes('лида')) {
@@ -596,7 +632,7 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 }
               }
               
-              // ПРИОРИТЕТ 3: Если город не определен, используем маппинг по стране (последний резерв)
+              // ПРИОРИТЕТ 4: Если город не определен, используем маппинг по стране (последний резерв)
               const detectedCity = countryToCity[data.country_code] || 'minsk';
               resolve({ city: detectedCity, isInCity: false });
             },
@@ -616,8 +652,19 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         setUserCountry(data.country_code);
       }
       
-      // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города
-      // ВАЖНО: Если IP определяет страну (например, DE), проверяем, что ближайший город в той же стране
+      // ПРИОРИТЕТ 1: Для европейских стран используем маппинг по стране (столицу)
+      // Это важно: если IP определяет страну как DE, используем Берлин, а не ближайший город по координатам
+      if (data.country_code && countryToCity[data.country_code]) {
+        const countryCapital = countryToCity[data.country_code];
+        // Для европейских стран всегда используем столицу, если она есть в маппинге
+        const europeanCountries = ['DE', 'FR', 'GB', 'IT', 'ES', 'NL', 'BE', 'AT', 'CZ', 'SE', 'DK', 'FI', 'NO', 'IE', 'PT', 'GR', 'HU'];
+        if (europeanCountries.includes(data.country_code)) {
+          return { city: countryCapital, isInCity: false };
+        }
+      }
+      
+      // ПРИОРИТЕТ 2: Используем координаты из IP API для определения ближайшего города
+      // ВАЖНО: Если IP определяет страну, проверяем, что ближайший город в той же стране
       // Если ближайший город в другой стране - используем столицу страны из IP
       if (data.latitude && data.longitude) {
         const result = await detectCityByCoordinates(data.latitude, data.longitude);
