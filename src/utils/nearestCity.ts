@@ -34,7 +34,17 @@ const cityCoordinates: Record<CityCode, { lat: number; lon: number }> = {
   krasnoyarsk: { lat: 56.0184, lon: 92.8672 },
   voronezh: { lat: 51.6608, lon: 39.2003 },
   perm: { lat: 58.0105, lon: 56.2502 },
-  volgograd: { lat: 48.7071, lon: 44.5170 }
+  volgograd: { lat: 48.7071, lon: 44.5170 },
+  almaty: { lat: 43.2220, lon: 76.8512 },
+  'nur-sultan': { lat: 51.1694, lon: 71.4491 },
+  shymkent: { lat: 42.3419, lon: 69.5901 },
+  karaganda: { lat: 49.8014, lon: 73.1024 },
+  aktobe: { lat: 50.2833, lon: 57.1667 },
+  taraz: { lat: 42.9000, lon: 71.3667 },
+  pavlodar: { lat: 52.2833, lon: 76.9667 },
+  oskemen: { lat: 49.9561, lon: 82.6144 },
+  semey: { lat: 50.4111, lon: 80.2275 },
+  atyrau: { lat: 47.1167, lon: 51.8833 }
 };
 
 /**
@@ -218,7 +228,7 @@ export const detectNearestCity = async (): Promise<CityCode> => {
     return result.city;
   }
 
-  // Если координаты не получены, используем IP для определения страны
+  // Если координаты не получены, используем IP для определения города
   try {
     const cacheKey = 'ipapi_cache';
     const cached = sessionStorage.getItem(cacheKey);
@@ -227,7 +237,14 @@ export const detectNearestCity = async (): Promise<CityCode> => {
       const now = Date.now();
       if (now - cachedData.timestamp < 3600000) {
         const data = cachedData.data;
-        // Используем маппинг по стране
+        
+        // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+        if (data.latitude && data.longitude) {
+          const result = findNearestCity(data.latitude, data.longitude);
+          return result.city;
+        }
+        
+        // ПРИОРИТЕТ 2: Используем маппинг по стране (только если нет координат)
         if (data.country_code === 'BY' || data.country_code === 'UA') {
           return 'minsk';
         }
@@ -236,6 +253,9 @@ export const detectNearestCity = async (): Promise<CityCode> => {
         }
         if (data.country_code === 'PL') {
           return 'warsaw';
+        }
+        if (data.country_code === 'KZ') {
+          return 'almaty';
         }
       }
     }
@@ -255,6 +275,13 @@ export const detectNearestCity = async (): Promise<CityCode> => {
       // Ignore cache errors
     }
 
+    // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+    if (data.latitude && data.longitude) {
+      const result = findNearestCity(data.latitude, data.longitude);
+      return result.city;
+    }
+
+    // ПРИОРИТЕТ 2: Используем маппинг по стране (только если нет координат)
     if (data.country_code === 'BY' || data.country_code === 'UA') {
       return 'minsk';
     }
@@ -263,6 +290,9 @@ export const detectNearestCity = async (): Promise<CityCode> => {
     }
     if (data.country_code === 'PL') {
       return 'warsaw';
+    }
+    if (data.country_code === 'KZ') {
+      return 'almaty';
     }
   } catch (error) {
     // Ignore errors

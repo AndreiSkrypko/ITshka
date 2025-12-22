@@ -64,6 +64,31 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     if (citySegment === 'polatsk') return 'polatsk';
     if (citySegment === 'mazyr') return 'mazyr';
     if (citySegment === 'slutsk') return 'slutsk';
+    if (citySegment === 'moscow') return 'moscow';
+    if (citySegment === 'spb') return 'spb';
+    if (citySegment === 'novosibirsk') return 'novosibirsk';
+    if (citySegment === 'ekaterinburg') return 'ekaterinburg';
+    if (citySegment === 'kazan') return 'kazan';
+    if (citySegment === 'nizhny-novgorod') return 'nizhny-novgorod';
+    if (citySegment === 'chelyabinsk') return 'chelyabinsk';
+    if (citySegment === 'samara') return 'samara';
+    if (citySegment === 'omsk') return 'omsk';
+    if (citySegment === 'rostov-on-don') return 'rostov-on-don';
+    if (citySegment === 'ufa') return 'ufa';
+    if (citySegment === 'krasnoyarsk') return 'krasnoyarsk';
+    if (citySegment === 'voronezh') return 'voronezh';
+    if (citySegment === 'perm') return 'perm';
+    if (citySegment === 'volgograd') return 'volgograd';
+    if (citySegment === 'almaty') return 'almaty';
+    if (citySegment === 'nur-sultan') return 'nur-sultan';
+    if (citySegment === 'shymkent') return 'shymkent';
+    if (citySegment === 'karaganda') return 'karaganda';
+    if (citySegment === 'aktobe') return 'aktobe';
+    if (citySegment === 'taraz') return 'taraz';
+    if (citySegment === 'pavlodar') return 'pavlodar';
+    if (citySegment === 'oskemen') return 'oskemen';
+    if (citySegment === 'semey') return 'semey';
+    if (citySegment === 'atyrau') return 'atyrau';
     
     // Если город не найден, возвращаем null (будет определен ближайший)
     return null;
@@ -105,7 +130,17 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       krasnoyarsk: { lat: 56.0184, lon: 92.8672 },
       voronezh: { lat: 51.6608, lon: 39.2003 },
       perm: { lat: 58.0105, lon: 56.2502 },
-      volgograd: { lat: 48.7071, lon: 44.5170 }
+      volgograd: { lat: 48.7071, lon: 44.5170 },
+      almaty: { lat: 43.2220, lon: 76.8512 },
+      'nur-sultan': { lat: 51.1694, lon: 71.4491 },
+      shymkent: { lat: 42.3419, lon: 69.5901 },
+      karaganda: { lat: 49.8014, lon: 73.1024 },
+      aktobe: { lat: 50.2833, lon: 57.1667 },
+      taraz: { lat: 42.9000, lon: 71.3667 },
+      pavlodar: { lat: 52.2833, lon: 76.9667 },
+      oskemen: { lat: 49.9561, lon: 82.6144 },
+      semey: { lat: 50.4111, lon: 80.2275 },
+      atyrau: { lat: 47.1167, lon: 51.8833 }
     };
 
     // Вычисляем расстояние до каждого города (используем формулу гаверсинуса для большей точности)
@@ -164,7 +199,15 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                     if (data.country_code) {
                       setUserCountry(data.country_code);
                     }
-                    // Продолжаем обработку с кэшированными данными
+                    
+                    // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+                    if (data.latitude && data.longitude) {
+                      const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                      resolve(result);
+                      return;
+                    }
+                    
+                    // ПРИОРИТЕТ 2: Пытаемся определить по названию города из API
                     if (data.city) {
                       const cityName = data.city.toLowerCase();
                       if (cityName.includes('lida') || cityName.includes('лида')) {
@@ -300,6 +343,8 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                         return;
                       }
                     }
+                    
+                    // ПРИОРИТЕТ 3: Если город не определен, используем маппинг по стране (последний резерв)
                     const detectedCity = countryToCity[data.country_code] || 'minsk';
                     resolve({ city: detectedCity, isInCity: false });
                     return;
@@ -325,7 +370,19 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 // Игнорируем ошибки сохранения кэша
               }
               
-              // Пытаемся определить город по названию города из API
+              // Сохраняем код страны пользователя
+              if (data.country_code) {
+                setUserCountry(data.country_code);
+              }
+              
+              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+              if (data.latitude && data.longitude) {
+                const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                resolve(result);
+                return;
+              }
+              
+              // ПРИОРИТЕТ 2: Пытаемся определить город по названию города из API
               if (data.city) {
                 const cityName = data.city.toLowerCase();
                 // Проверяем точные совпадения
@@ -368,7 +425,31 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                 setUserCountry(data.country_code);
               }
               
-              // Если город не определен, используем маппинг по стране
+              // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+              if (data.latitude && data.longitude) {
+                const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                resolve(result);
+                return;
+              }
+              
+              // ПРИОРИТЕТ 2: Пытаемся определить город по названию города из API
+              if (data.city) {
+                const cityName = data.city.toLowerCase();
+                if (cityName.includes('lida') || cityName.includes('лида')) {
+                  resolve({ city: 'lida', isInCity: true });
+                  return;
+                }
+                if (cityName.includes('minsk') || cityName.includes('минск') || cityName.includes('mińsk')) {
+                  resolve({ city: 'minsk', isInCity: true });
+                  return;
+                }
+                if (cityName.includes('warsaw') || cityName.includes('варшава') || cityName.includes('warszawa')) {
+                  resolve({ city: 'warsaw', isInCity: true });
+                  return;
+                }
+              }
+              
+              // ПРИОРИТЕТ 3: Если город не определен, используем маппинг по стране (последний резерв)
               const detectedCity = countryToCity[data.country_code] || 'minsk';
               resolve({ city: detectedCity, isInCity: false });
             },
@@ -383,7 +464,17 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       });
       const data = await response.json();
       
-      // Пытаемся определить город по названию города из API
+      // Сохраняем код страны пользователя
+      if (data.country_code) {
+        setUserCountry(data.country_code);
+      }
+      
+      // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+      if (data.latitude && data.longitude) {
+        return await detectCityByCoordinates(data.latitude, data.longitude);
+      }
+      
+      // ПРИОРИТЕТ 2: Пытаемся определить город по названию города из API
       if (data.city) {
         const cityName = data.city.toLowerCase();
         // Проверяем точные совпадения
@@ -483,19 +574,19 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         if (cityName.includes('perm') || cityName.includes('пермь')) {
           return { city: 'perm', isInCity: true };
         }
-        if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
-          return { city: 'volgograd', isInCity: true };
-        }
-      }
-      
-      // Сохраняем код страны пользователя
-      if (data.country_code) {
-        setUserCountry(data.country_code);
-      }
-      
-      // Если город не определен, используем маппинг по стране
-      const detectedCity = countryToCity[data.country_code] || 'minsk';
-      return { city: detectedCity, isInCity: false };
+                if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
+                  return { city: 'volgograd', isInCity: true };
+                }
+              }
+              
+              // Сохраняем код страны пользователя
+              if (data.country_code) {
+                setUserCountry(data.country_code);
+              }
+              
+              // ПРИОРИТЕТ 3: Если город не определен, используем маппинг по стране (последний резерв)
+              const detectedCity = countryToCity[data.country_code] || 'minsk';
+              return { city: detectedCity, isInCity: false };
     } catch {
       return { city: 'minsk', isInCity: false };
     }
