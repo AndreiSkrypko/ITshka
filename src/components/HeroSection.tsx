@@ -100,7 +100,7 @@ const HeroSection = () => {
           <div className="absolute top-[60%] right-[18%] w-2 h-2 bg-primary/35 rounded-full" />
           
           {/* Feature cards */}
-          <div className="absolute top-[18%] right-[12%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-float pointer-events-auto hover:bg-white/[0.06] hover:border-primary/30 hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(25,167,158,0.3)] transition-all duration-300 group z-30" style={{ animationDelay: '0.2s', animation: 'fade-in 0.6s ease-out 0.2s forwards, float 3s ease-in-out 0.2s infinite' }}>
+          <div className="absolute bottom-[25%] left-[18%] p-4 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] animate-float pointer-events-auto hover:bg-white/[0.06] hover:border-primary/30 hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(25,167,158,0.3)] transition-all duration-300 group z-30" style={{ animationDelay: '0.2s', animation: 'fade-in 0.6s ease-out 0.2s forwards, float 3s ease-in-out 0.2s infinite' }}>
             <div className="flex items-center gap-3">
               <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 flex items-center justify-center group-hover:from-primary/35 group-hover:to-primary/10 transition-all duration-300">
                 <div className="absolute inset-0 rounded-xl bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
