@@ -44,7 +44,24 @@ const cityCoordinates: Record<CityCode, { lat: number; lon: number }> = {
   pavlodar: { lat: 52.2833, lon: 76.9667 },
   oskemen: { lat: 49.9561, lon: 82.6144 },
   semey: { lat: 50.4111, lon: 80.2275 },
-  atyrau: { lat: 47.1167, lon: 51.8833 }
+  atyrau: { lat: 47.1167, lon: 51.8833 },
+  berlin: { lat: 52.5200, lon: 13.4050 },
+  paris: { lat: 48.8566, lon: 2.3522 },
+  london: { lat: 51.5074, lon: -0.1278 },
+  rome: { lat: 41.9028, lon: 12.4964 },
+  madrid: { lat: 40.4168, lon: -3.7038 },
+  amsterdam: { lat: 52.3676, lon: 4.9041 },
+  brussels: { lat: 50.8503, lon: 4.3517 },
+  vienna: { lat: 48.2082, lon: 16.3738 },
+  prague: { lat: 50.0755, lon: 14.4378 },
+  stockholm: { lat: 59.3293, lon: 18.0686 },
+  copenhagen: { lat: 55.6761, lon: 12.5683 },
+  helsinki: { lat: 60.1699, lon: 24.9384 },
+  oslo: { lat: 59.9139, lon: 10.7522 },
+  dublin: { lat: 53.3498, lon: -6.2603 },
+  lisbon: { lat: 38.7223, lon: -9.1393 },
+  athens: { lat: 37.9838, lon: 23.7275 },
+  budapest: { lat: 47.4979, lon: 19.0402 }
 };
 
 /**
@@ -257,6 +274,24 @@ export const detectNearestCity = async (): Promise<CityCode> => {
         if (data.country_code === 'KZ') {
           return 'almaty';
         }
+        // Европейские столицы
+        if (data.country_code === 'DE') return 'berlin';
+        if (data.country_code === 'FR') return 'paris';
+        if (data.country_code === 'GB') return 'london';
+        if (data.country_code === 'IT') return 'rome';
+        if (data.country_code === 'ES') return 'madrid';
+        if (data.country_code === 'NL') return 'amsterdam';
+        if (data.country_code === 'BE') return 'brussels';
+        if (data.country_code === 'AT') return 'vienna';
+        if (data.country_code === 'CZ') return 'prague';
+        if (data.country_code === 'SE') return 'stockholm';
+        if (data.country_code === 'DK') return 'copenhagen';
+        if (data.country_code === 'FI') return 'helsinki';
+        if (data.country_code === 'NO') return 'oslo';
+        if (data.country_code === 'IE') return 'dublin';
+        if (data.country_code === 'PT') return 'lisbon';
+        if (data.country_code === 'GR') return 'athens';
+        if (data.country_code === 'HU') return 'budapest';
       }
     }
 
@@ -294,6 +329,24 @@ export const detectNearestCity = async (): Promise<CityCode> => {
     if (data.country_code === 'KZ') {
       return 'almaty';
     }
+    // Европейские столицы
+    if (data.country_code === 'DE') return 'berlin';
+    if (data.country_code === 'FR') return 'paris';
+    if (data.country_code === 'GB') return 'london';
+    if (data.country_code === 'IT') return 'rome';
+    if (data.country_code === 'ES') return 'madrid';
+    if (data.country_code === 'NL') return 'amsterdam';
+    if (data.country_code === 'BE') return 'brussels';
+    if (data.country_code === 'AT') return 'vienna';
+    if (data.country_code === 'CZ') return 'prague';
+    if (data.country_code === 'SE') return 'stockholm';
+    if (data.country_code === 'DK') return 'copenhagen';
+    if (data.country_code === 'FI') return 'helsinki';
+    if (data.country_code === 'NO') return 'oslo';
+    if (data.country_code === 'IE') return 'dublin';
+    if (data.country_code === 'PT') return 'lisbon';
+    if (data.country_code === 'GR') return 'athens';
+    if (data.country_code === 'HU') return 'budapest';
   } catch (error) {
     // Ignore errors
   }

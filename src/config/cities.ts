@@ -1,4 +1,4 @@
-export type CityCode = 'minsk' | 'lida' | 'warsaw' | 'brest' | 'vitebsk' | 'gomel' | 'grodno' | 'mogilev' | 'baranovichi' | 'bobruisk' | 'pinsk' | 'orsha' | 'maladzyechna' | 'salihorsk' | 'navapolatsk' | 'polatsk' | 'mazyr' | 'slutsk' | 'moscow' | 'spb' | 'novosibirsk' | 'ekaterinburg' | 'kazan' | 'nizhny-novgorod' | 'chelyabinsk' | 'samara' | 'omsk' | 'rostov-on-don' | 'ufa' | 'krasnoyarsk' | 'voronezh' | 'perm' | 'volgograd' | 'almaty' | 'nur-sultan' | 'shymkent' | 'karaganda' | 'aktobe' | 'taraz' | 'pavlodar' | 'oskemen' | 'semey' | 'atyrau';
+export type CityCode = 'minsk' | 'lida' | 'warsaw' | 'brest' | 'vitebsk' | 'gomel' | 'grodno' | 'mogilev' | 'baranovichi' | 'bobruisk' | 'pinsk' | 'orsha' | 'maladzyechna' | 'salihorsk' | 'navapolatsk' | 'polatsk' | 'mazyr' | 'slutsk' | 'moscow' | 'spb' | 'novosibirsk' | 'ekaterinburg' | 'kazan' | 'nizhny-novgorod' | 'chelyabinsk' | 'samara' | 'omsk' | 'rostov-on-don' | 'ufa' | 'krasnoyarsk' | 'voronezh' | 'perm' | 'volgograd' | 'almaty' | 'nur-sultan' | 'shymkent' | 'karaganda' | 'aktobe' | 'taraz' | 'pavlodar' | 'oskemen' | 'semey' | 'atyrau' | 'berlin' | 'paris' | 'london' | 'rome' | 'madrid' | 'amsterdam' | 'brussels' | 'vienna' | 'prague' | 'stockholm' | 'copenhagen' | 'helsinki' | 'oslo' | 'dublin' | 'lisbon' | 'athens' | 'budapest';
 
 export interface CityConfig {
   code: CityCode;
@@ -2250,6 +2250,533 @@ export const cities: Record<CityCode, CityConfig> = {
         pl: ['Doświadczenie w przemyśle naftowo-gazowym', 'Podejście międzynarodowe', 'Specyfika energetyczna', 'Nowoczesne technologie']
       }
     }
+  },
+  berlin: {
+    code: 'berlin',
+    name: { ru: 'Берлин', en: 'Berlin', pl: 'Berlin' },
+    nameLocative: { ru: 'Берлине', en: 'Berlin', pl: 'Berlinie' },
+    region: { ru: 'Берлин', en: 'Berlin', pl: 'Berlin' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'DE-BE', placename: 'Berlin', position: '52.5200;13.4050', ICBM: '52.5200, 13.4050' },
+    countryCode: 'DE',
+    keywords: {
+      ru: ['создание сайтов берлин', 'разработка сайтов берлин', 'заказать сайт берлин', 'веб студия берлин', 'itshka берлин'],
+      en: ['website development berlin', 'web development berlin', 'create website berlin', 'web studio berlin', 'itshka berlin', 'website design berlin', 'web design berlin'],
+      pl: ['tworzenie stron berlin', 'strony www berlin', 'itshka berlin']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Берлин — столица Германии и крупный технологический хаб Европы. Создаём современные сайты для берлинских компаний с учётом международных стандартов и европейского рынка.',
+        en: 'Berlin is the capital of Germany and a major technology hub in Europe. We create modern websites for Berlin companies considering international standards and the European market.',
+        pl: 'Berlin to stolica Niemiec i ważne centrum technologiczne w Europie. Tworzymy nowoczesne strony internetowe dla firm z Berlina, uwzględniając międzynarodowe standardy i rynek europejski.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Берлине и Германии. Понимаем особенности европейского рынка и создаём сайты, которые помогают компаниям эффективно работать в технологическом центре Европы.',
+        en: 'We work with businesses in Berlin and Germany. We understand the specifics of the European market and create websites that help companies work effectively in Europe\'s technology center.',
+        pl: 'Pracujemy z firmami w Berlinie i Niemczech. Rozumiemy specyfikę rynku europejskiego i tworzymy strony internetowe, które pomagają firmom efektywnie działać w centrum technologicznym Europy.'
+      },
+      cityFeatures: {
+        ru: ['Международные стандарты', 'Европейский рынок', 'Технологический подход', 'Современные решения'],
+        en: ['International standards', 'European market', 'Technology approach', 'Modern solutions'],
+        pl: ['Standardy międzynarodowe', 'Rynek europejski', 'Podejście technologiczne', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  paris: {
+    code: 'paris',
+    name: { ru: 'Париж', en: 'Paris', pl: 'Paryż' },
+    nameLocative: { ru: 'Париже', en: 'Paris', pl: 'Paryżu' },
+    region: { ru: 'Иль-де-Франс', en: 'Île-de-France', pl: 'Île-de-France' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'FR-IDF', placename: 'Paris', position: '48.8566;2.3522', ICBM: '48.8566, 2.3522' },
+    countryCode: 'FR',
+    keywords: {
+      ru: ['создание сайтов париж', 'разработка сайтов париж', 'веб студия париж', 'itshka париж'],
+      en: ['website development paris', 'web development paris', 'create website paris', 'web studio paris', 'itshka paris', 'website design paris'],
+      pl: ['tworzenie stron paryż', 'strony www paryż', 'itshka paryż']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Париж — столица Франции и мировой центр моды и культуры. Создаём элегантные сайты для парижских компаний, сочетая эстетику с функциональностью.',
+        en: 'Paris is the capital of France and a global center of fashion and culture. We create elegant websites for Paris companies, combining aesthetics with functionality.',
+        pl: 'Paryż to stolica Francji i światowe centrum mody i kultury. Tworzymy eleganckie strony internetowe dla firm z Paryża, łącząc estetykę z funkcjonalnością.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Париже и Франции. Понимаем важность эстетики и создаём сайты, которые отражают французский стиль и современные бизнес-задачи.',
+        en: 'We work with businesses in Paris and France. We understand the importance of aesthetics and create websites that reflect French style and modern business tasks.',
+        pl: 'Pracujemy z firmami w Paryżu i Francji. Rozumiemy wagę estetyki i tworzymy strony internetowe, które odzwierciedlają francuski styl i nowoczesne zadania biznesowe.'
+      },
+      cityFeatures: {
+        ru: ['Эстетический подход', 'Французский стиль', 'Культурный контекст', 'Элегантные решения'],
+        en: ['Aesthetic approach', 'French style', 'Cultural context', 'Elegant solutions'],
+        pl: ['Podejście estetyczne', 'Styl francuski', 'Kontekst kulturalny', 'Eleganckie rozwiązania']
+      }
+    }
+  },
+  london: {
+    code: 'london',
+    name: { ru: 'Лондон', en: 'London', pl: 'Londyn' },
+    nameLocative: { ru: 'Лондоне', en: 'London', pl: 'Londynie' },
+    region: { ru: 'Англия', en: 'England', pl: 'Anglia' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'GB-ENG', placename: 'London', position: '51.5074;-0.1278', ICBM: '51.5074, -0.1278' },
+    countryCode: 'GB',
+    keywords: {
+      ru: ['создание сайтов лондон', 'разработка сайтов лондон', 'веб студия лондон', 'itshka лондон'],
+      en: ['website development london', 'web development london', 'create website london', 'web studio london', 'itshka london', 'website design london'],
+      pl: ['tworzenie stron londyn', 'strony www londyn', 'itshka londyn']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Лондон — столица Великобритании и крупный финансовый центр мира. Создаём профессиональные сайты для лондонских компаний с учётом международных стандартов бизнеса.',
+        en: 'London is the capital of the United Kingdom and a major financial center of the world. We create professional websites for London companies considering international business standards.',
+        pl: 'Londyn to stolica Wielkiej Brytanii i ważne centrum finansowe świata. Tworzymy profesjonalne strony internetowe dla firm z Londynu, uwzględniając międzynarodowe standardy biznesowe.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Лондоне и Великобритании. Понимаем особенности британского рынка и создаём сайты, которые помогают компаниям работать в условиях международной конкуренции.',
+        en: 'We work with businesses in London and the United Kingdom. We understand the specifics of the British market and create websites that help companies work in conditions of international competition.',
+        pl: 'Pracujemy z firmami w Londynie i Wielkiej Brytanii. Rozumiemy specyfikę rynku brytyjskiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach międzynarodowej konkurencji.'
+      },
+      cityFeatures: {
+        ru: ['Международные стандарты', 'Финансовый сектор', 'Профессиональный подход', 'Британское качество'],
+        en: ['International standards', 'Financial sector', 'Professional approach', 'British quality'],
+        pl: ['Standardy międzynarodowe', 'Sektor finansowy', 'Podejście profesjonalne', 'Brytyjska jakość']
+      }
+    }
+  },
+  rome: {
+    code: 'rome',
+    name: { ru: 'Рим', en: 'Rome', pl: 'Rzym' },
+    nameLocative: { ru: 'Риме', en: 'Rome', pl: 'Rzymie' },
+    region: { ru: 'Лацио', en: 'Lazio', pl: 'Lacjum' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'IT-LAZ', placename: 'Rome', position: '41.9028;12.4964', ICBM: '41.9028, 12.4964' },
+    countryCode: 'IT',
+    keywords: {
+      ru: ['создание сайтов рим', 'разработка сайтов рим', 'веб студия рим', 'itshka рим'],
+      en: ['website development rome', 'web development rome', 'create website rome', 'web studio rome', 'itshka rome', 'website design rome'],
+      pl: ['tworzenie stron rzym', 'strony www rzym', 'itshka rzym']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Рим — столица Италии с богатым историческим наследием. Создаём сайты для римских компаний, сочетая итальянскую эстетику с современными технологиями.',
+        en: 'Rome is the capital of Italy with rich historical heritage. We create websites for Rome companies, combining Italian aesthetics with modern technologies.',
+        pl: 'Rzym to stolica Włoch z bogatym dziedzictwem historycznym. Tworzymy strony internetowe dla firm z Rzymu, łącząc włoską estetykę z nowoczesnymi technologiami.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Риме и Италии. Понимаем особенности итальянского рынка и создаём сайты, которые отражают итальянский стиль и современные бизнес-задачи.',
+        en: 'We work with businesses in Rome and Italy. We understand the specifics of the Italian market and create websites that reflect Italian style and modern business tasks.',
+        pl: 'Pracujemy z firmami w Rzymie i Włoszech. Rozumiemy specyfikę rynku włoskiego i tworzymy strony internetowe, które odzwierciedlają włoski styl i nowoczesne zadania biznesowe.'
+      },
+      cityFeatures: {
+        ru: ['Итальянская эстетика', 'Исторический контекст', 'Современные технологии', 'Стильные решения'],
+        en: ['Italian aesthetics', 'Historical context', 'Modern technologies', 'Stylish solutions'],
+        pl: ['Estetyka włoska', 'Kontekst historyczny', 'Nowoczesne technologie', 'Stylowe rozwiązania']
+      }
+    }
+  },
+  madrid: {
+    code: 'madrid',
+    name: { ru: 'Мадрид', en: 'Madrid', pl: 'Madryt' },
+    nameLocative: { ru: 'Мадриде', en: 'Madrid', pl: 'Madrycie' },
+    region: { ru: 'Мадрид', en: 'Madrid', pl: 'Madryt' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'ES-MD', placename: 'Madrid', position: '40.4168;-3.7038', ICBM: '40.4168, -3.7038' },
+    countryCode: 'ES',
+    keywords: {
+      ru: ['создание сайтов мадрид', 'разработка сайтов мадрид', 'веб студия мадрид', 'itshka мадрид'],
+      en: ['website development madrid', 'web development madrid', 'create website madrid', 'web studio madrid', 'itshka madrid', 'website design madrid'],
+      pl: ['tworzenie stron madryt', 'strony www madryt', 'itshka madryt']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Мадрид — столица Испании и крупный деловой центр. Создаём современные сайты для мадридских компаний с учётом испанского рынка и международных стандартов.',
+        en: 'Madrid is the capital of Spain and a major business center. We create modern websites for Madrid companies considering the Spanish market and international standards.',
+        pl: 'Madryt to stolica Hiszpanii i ważne centrum biznesowe. Tworzymy nowoczesne strony internetowe dla firm z Madrytu, uwzględniając rynek hiszpański i standardy międzynarodowe.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Мадриде и Испании. Понимаем особенности испанского рынка и создаём сайты, которые помогают компаниям развиваться в условиях европейской конкуренции.',
+        en: 'We work with businesses in Madrid and Spain. We understand the specifics of the Spanish market and create websites that help companies develop in conditions of European competition.',
+        pl: 'Pracujemy z firmami w Madrycie i Hiszpanii. Rozumiemy specyfikę rynku hiszpańskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w warunkach konkurencji europejskiej.'
+      },
+      cityFeatures: {
+        ru: ['Испанский рынок', 'Европейские стандарты', 'Деловой подход', 'Современные решения'],
+        en: ['Spanish market', 'European standards', 'Business approach', 'Modern solutions'],
+        pl: ['Rynek hiszpański', 'Standardy europejskie', 'Podejście biznesowe', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  amsterdam: {
+    code: 'amsterdam',
+    name: { ru: 'Амстердам', en: 'Amsterdam', pl: 'Amsterdam' },
+    nameLocative: { ru: 'Амстердаме', en: 'Amsterdam', pl: 'Amsterdamie' },
+    region: { ru: 'Северная Голландия', en: 'North Holland', pl: 'Holandia Północna' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'NL-NH', placename: 'Amsterdam', position: '52.3676;4.9041', ICBM: '52.3676, 4.9041' },
+    countryCode: 'NL',
+    keywords: {
+      ru: ['создание сайтов амстердам', 'разработка сайтов амстердам', 'веб студия амстердам', 'itshka амстердам'],
+      en: ['website development amsterdam', 'web development amsterdam', 'create website amsterdam', 'web studio amsterdam', 'itshka amsterdam', 'website design amsterdam'],
+      pl: ['tworzenie stron amsterdam', 'strony www amsterdam', 'itshka amsterdam']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Амстердам — столица Нидерландов и крупный технологический хаб. Создаём инновационные сайты для амстердамских компаний с учётом голландского подхода к бизнесу.',
+        en: 'Amsterdam is the capital of the Netherlands and a major technology hub. We create innovative websites for Amsterdam companies considering the Dutch approach to business.',
+        pl: 'Amsterdam to stolica Holandii i ważne centrum technologiczne. Tworzymy innowacyjne strony internetowe dla firm z Amsterdamu, uwzględniając holenderskie podejście do biznesu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Амстердаме и Нидерландах. Понимаем особенности голландского рынка и создаём сайты, которые помогают компаниям работать в условиях высокой технологической конкуренции.',
+        en: 'We work with businesses in Amsterdam and the Netherlands. We understand the specifics of the Dutch market and create websites that help companies work in conditions of high technological competition.',
+        pl: 'Pracujemy z firmami w Amsterdamie i Holandii. Rozumiemy specyfikę rynku holenderskiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach wysokiej konkurencji technologicznej.'
+      },
+      cityFeatures: {
+        ru: ['Технологический подход', 'Голландский стиль', 'Инновационные решения', 'Высокая конкуренция'],
+        en: ['Technology approach', 'Dutch style', 'Innovative solutions', 'High competition'],
+        pl: ['Podejście technologiczne', 'Styl holenderski', 'Innowacyjne rozwiązania', 'Wysoka konkurencja']
+      }
+    }
+  },
+  brussels: {
+    code: 'brussels',
+    name: { ru: 'Брюссель', en: 'Brussels', pl: 'Bruksela' },
+    nameLocative: { ru: 'Брюсселе', en: 'Brussels', pl: 'Brukseli' },
+    region: { ru: 'Брюссельский столичный регион', en: 'Brussels-Capital Region', pl: 'Region Stołeczny Brukseli' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'BE-BRU', placename: 'Brussels', position: '50.8503;4.3517', ICBM: '50.8503, 4.3517' },
+    countryCode: 'BE',
+    keywords: {
+      ru: ['создание сайтов брюссель', 'разработка сайтов брюссель', 'веб студия брюссель', 'itshka брюссель'],
+      en: ['website development brussels', 'web development brussels', 'create website brussels', 'web studio brussels', 'itshka brussels', 'website design brussels'],
+      pl: ['tworzenie stron bruksela', 'strony www bruksela', 'itshka bruksela']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Брюссель — столица Бельгии и Европейского союза. Создаём многоязычные сайты для брюссельских компаний с учётом международного характера города.',
+        en: 'Brussels is the capital of Belgium and the European Union. We create multilingual websites for Brussels companies considering the international character of the city.',
+        pl: 'Bruksela to stolica Belgii i Unii Europejskiej. Tworzymy wielojęzyczne strony internetowe dla firm z Brukseli, uwzględniając międzynarodowy charakter miasta.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Брюсселе и Бельгии. Понимаем особенности европейского рынка и создаём сайты, которые помогают компаниям работать в столице ЕС.',
+        en: 'We work with businesses in Brussels and Belgium. We understand the specifics of the European market and create websites that help companies work in the EU capital.',
+        pl: 'Pracujemy z firmami w Brukseli i Belgii. Rozumiemy specyfikę rynku europejskiego i tworzymy strony internetowe, które pomagają firmom działać w stolicy UE.'
+      },
+      cityFeatures: {
+        ru: ['Многоязычность', 'Европейские стандарты', 'Международный подход', 'Столица ЕС'],
+        en: ['Multilingual', 'European standards', 'International approach', 'EU capital'],
+        pl: ['Wielojęzyczność', 'Standardy europejskie', 'Podejście międzynarodowe', 'Stolica UE']
+      }
+    }
+  },
+  vienna: {
+    code: 'vienna',
+    name: { ru: 'Вена', en: 'Vienna', pl: 'Wiedeń' },
+    nameLocative: { ru: 'Вене', en: 'Vienna', pl: 'Wiedniu' },
+    region: { ru: 'Вена', en: 'Vienna', pl: 'Wiedeń' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'AT-9', placename: 'Vienna', position: '48.2082;16.3738', ICBM: '48.2082, 16.3738' },
+    countryCode: 'AT',
+    keywords: {
+      ru: ['создание сайтов вена', 'разработка сайтов вена', 'веб студия вена', 'itshka вена'],
+      en: ['website development vienna', 'web development vienna', 'create website vienna', 'web studio vienna', 'itshka vienna', 'website design vienna'],
+      pl: ['tworzenie stron wiedeń', 'strony www wiedeń', 'itshka wiedeń']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Вена — столица Австрии и культурный центр Европы. Создаём элегантные сайты для венских компаний, сочетая австрийское качество с современными технологиями.',
+        en: 'Vienna is the capital of Austria and a cultural center of Europe. We create elegant websites for Vienna companies, combining Austrian quality with modern technologies.',
+        pl: 'Wiedeń to stolica Austrii i centrum kulturalne Europy. Tworzymy eleganckie strony internetowe dla firm z Wiednia, łącząc austriacką jakość z nowoczesnymi technologiami.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Вене и Австрии. Понимаем особенности австрийского рынка и создаём сайты, которые отражают австрийское качество и европейские стандарты.',
+        en: 'We work with businesses in Vienna and Austria. We understand the specifics of the Austrian market and create websites that reflect Austrian quality and European standards.',
+        pl: 'Pracujemy z firmami w Wiedniu i Austrii. Rozumiemy specyfikę rynku austriackiego i tworzymy strony internetowe, które odzwierciedlają austriacką jakość i standardy europejskie.'
+      },
+      cityFeatures: {
+        ru: ['Австрийское качество', 'Культурный контекст', 'Европейские стандарты', 'Элегантные решения'],
+        en: ['Austrian quality', 'Cultural context', 'European standards', 'Elegant solutions'],
+        pl: ['Austriacka jakość', 'Kontekst kulturalny', 'Standardy europejskie', 'Eleganckie rozwiązania']
+      }
+    }
+  },
+  prague: {
+    code: 'prague',
+    name: { ru: 'Прага', en: 'Prague', pl: 'Praga' },
+    nameLocative: { ru: 'Праге', en: 'Prague', pl: 'Pradze' },
+    region: { ru: 'Прага', en: 'Prague', pl: 'Praga' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'CZ-10', placename: 'Prague', position: '50.0755;14.4378', ICBM: '50.0755, 14.4378' },
+    countryCode: 'CZ',
+    keywords: {
+      ru: ['создание сайтов прага', 'разработка сайтов прага', 'веб студия прага', 'itshka прага'],
+      en: ['website development prague', 'web development prague', 'create website prague', 'web studio prague', 'itshka prague', 'website design prague'],
+      pl: ['tworzenie stron praga', 'strony www praga', 'itshka praga']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Прага — столица Чехии и красивейший город Европы. Создаём современные сайты для пражских компаний с учётом чешского рынка и европейских стандартов.',
+        en: 'Prague is the capital of the Czech Republic and one of the most beautiful cities in Europe. We create modern websites for Prague companies considering the Czech market and European standards.',
+        pl: 'Praga to stolica Czech i jedno z najpiękniejszych miast w Europie. Tworzymy nowoczesne strony internetowe dla firm z Pragi, uwzględniając rynek czeski i standardy europejskie.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Праге и Чехии. Понимаем особенности чешского рынка и создаём сайты, которые помогают компаниям развиваться в условиях европейской конкуренции.',
+        en: 'We work with businesses in Prague and the Czech Republic. We understand the specifics of the Czech market and create websites that help companies develop in conditions of European competition.',
+        pl: 'Pracujemy z firmami w Pradze i Czechach. Rozumiemy specyfikę rynku czeskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w warunkach konkurencji europejskiej.'
+      },
+      cityFeatures: {
+        ru: ['Чешский рынок', 'Европейские стандарты', 'Современный подход', 'Качественные решения'],
+        en: ['Czech market', 'European standards', 'Modern approach', 'Quality solutions'],
+        pl: ['Rynek czeski', 'Standardy europejskie', 'Nowoczesne podejście', 'Jakościowe rozwiązania']
+      }
+    }
+  },
+  stockholm: {
+    code: 'stockholm',
+    name: { ru: 'Стокгольм', en: 'Stockholm', pl: 'Sztokholm' },
+    nameLocative: { ru: 'Стокгольме', en: 'Stockholm', pl: 'Sztokholmie' },
+    region: { ru: 'Стокгольм', en: 'Stockholm', pl: 'Sztokholm' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'SE-AB', placename: 'Stockholm', position: '59.3293;18.0686', ICBM: '59.3293, 18.0686' },
+    countryCode: 'SE',
+    keywords: {
+      ru: ['создание сайтов стокгольм', 'разработка сайтов стокгольм', 'веб студия стокгольм', 'itshka стокгольм'],
+      en: ['website development stockholm', 'web development stockholm', 'create website stockholm', 'web studio stockholm', 'itshka stockholm', 'website design stockholm'],
+      pl: ['tworzenie stron sztokholm', 'strony www sztokholm', 'itshka sztokholm']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Стокгольм — столица Швеции и крупный технологический центр. Создаём инновационные сайты для стокгольмских компаний с учётом скандинавского подхода к бизнесу.',
+        en: 'Stockholm is the capital of Sweden and a major technology center. We create innovative websites for Stockholm companies considering the Scandinavian approach to business.',
+        pl: 'Sztokholm to stolica Szwecji i ważne centrum technologiczne. Tworzymy innowacyjne strony internetowe dla firm ze Sztokholmu, uwzględniając skandynawskie podejście do biznesu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Стокгольме и Швеции. Понимаем особенности скандинавского рынка и создаём сайты, которые помогают компаниям работать в условиях высокой технологической конкуренции.',
+        en: 'We work with businesses in Stockholm and Sweden. We understand the specifics of the Scandinavian market and create websites that help companies work in conditions of high technological competition.',
+        pl: 'Pracujemy z firmami w Sztokholmie i Szwecji. Rozumiemy specyfikę rynku skandynawskiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach wysokiej konkurencji technologicznej.'
+      },
+      cityFeatures: {
+        ru: ['Скандинавский подход', 'Технологические инновации', 'Высокое качество', 'Современные решения'],
+        en: ['Scandinavian approach', 'Technology innovations', 'High quality', 'Modern solutions'],
+        pl: ['Podejście skandynawskie', 'Innowacje technologiczne', 'Wysoka jakość', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  copenhagen: {
+    code: 'copenhagen',
+    name: { ru: 'Копенгаген', en: 'Copenhagen', pl: 'Kopenhaga' },
+    nameLocative: { ru: 'Копенгагене', en: 'Copenhagen', pl: 'Kopenhadze' },
+    region: { ru: 'Ховедстаден', en: 'Capital Region', pl: 'Region Stołeczny' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'DK-84', placename: 'Copenhagen', position: '55.6761;12.5683', ICBM: '55.6761, 12.5683' },
+    countryCode: 'DK',
+    keywords: {
+      ru: ['создание сайтов копенгаген', 'разработка сайтов копенгаген', 'веб студия копенгаген', 'itshka копенгаген'],
+      en: ['website development copenhagen', 'web development copenhagen', 'create website copenhagen', 'web studio copenhagen', 'itshka copenhagen', 'website design copenhagen'],
+      pl: ['tworzenie stron kopenhaga', 'strony www kopenhaga', 'itshka kopenhaga']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Копенгаген — столица Дании и один из самых счастливых городов мира. Создаём современные сайты для копенгагенских компаний с учётом датского подхода к бизнесу.',
+        en: 'Copenhagen is the capital of Denmark and one of the happiest cities in the world. We create modern websites for Copenhagen companies considering the Danish approach to business.',
+        pl: 'Kopenhaga to stolica Danii i jedno z najszczęśliwszych miast na świecie. Tworzymy nowoczesne strony internetowe dla firm z Kopenhagi, uwzględniając duńskie podejście do biznesu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Копенгагене и Дании. Понимаем особенности датского рынка и создаём сайты, которые помогают компаниям работать в условиях скандинавской конкуренции.',
+        en: 'We work with businesses in Copenhagen and Denmark. We understand the specifics of the Danish market and create websites that help companies work in conditions of Scandinavian competition.',
+        pl: 'Pracujemy z firmami w Kopenhadze i Danii. Rozumiemy specyfikę rynku duńskiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach konkurencji skandynawskiej.'
+      },
+      cityFeatures: {
+        ru: ['Датский подход', 'Скандинавские стандарты', 'Современный дизайн', 'Качественные решения'],
+        en: ['Danish approach', 'Scandinavian standards', 'Modern design', 'Quality solutions'],
+        pl: ['Podejście duńskie', 'Standardy skandynawskie', 'Nowoczesny design', 'Jakościowe rozwiązania']
+      }
+    }
+  },
+  helsinki: {
+    code: 'helsinki',
+    name: { ru: 'Хельсинки', en: 'Helsinki', pl: 'Helsinki' },
+    nameLocative: { ru: 'Хельсинки', en: 'Helsinki', pl: 'Helsinkach' },
+    region: { ru: 'Уусимаа', en: 'Uusimaa', pl: 'Uusimaa' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'FI-18', placename: 'Helsinki', position: '60.1699;24.9384', ICBM: '60.1699, 24.9384' },
+    countryCode: 'FI',
+    keywords: {
+      ru: ['создание сайтов хельсинки', 'разработка сайтов хельсинки', 'веб студия хельсинки', 'itshka хельсинки'],
+      en: ['website development helsinki', 'web development helsinki', 'create website helsinki', 'web studio helsinki', 'itshka helsinki', 'website design helsinki'],
+      pl: ['tworzenie stron helsinki', 'strony www helsinki', 'itshka helsinki']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Хельсинки — столица Финляндии и технологический центр Северной Европы. Создаём инновационные сайты для хельсинкских компаний с учётом финского подхода к инновациям.',
+        en: 'Helsinki is the capital of Finland and a technology center of Northern Europe. We create innovative websites for Helsinki companies considering the Finnish approach to innovation.',
+        pl: 'Helsinki to stolica Finlandii i centrum technologiczne Europy Północnej. Tworzymy innowacyjne strony internetowe dla firm z Helsinek, uwzględniając fińskie podejście do innowacji.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Хельсинки и Финляндии. Понимаем особенности финского рынка и создаём сайты, которые помогают компаниям работать в условиях высокой технологической конкуренции.',
+        en: 'We work with businesses in Helsinki and Finland. We understand the specifics of the Finnish market and create websites that help companies work in conditions of high technological competition.',
+        pl: 'Pracujemy z firmami w Helsinkach i Finlandii. Rozumiemy specyfikę rynku fińskiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach wysokiej konkurencji technologicznej.'
+      },
+      cityFeatures: {
+        ru: ['Финские инновации', 'Технологический подход', 'Высокое качество', 'Современные решения'],
+        en: ['Finnish innovations', 'Technology approach', 'High quality', 'Modern solutions'],
+        pl: ['Fińskie innowacje', 'Podejście technologiczne', 'Wysoka jakość', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  oslo: {
+    code: 'oslo',
+    name: { ru: 'Осло', en: 'Oslo', pl: 'Oslo' },
+    nameLocative: { ru: 'Осло', en: 'Oslo', pl: 'Oslo' },
+    region: { ru: 'Осло', en: 'Oslo', pl: 'Oslo' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'NO-03', placename: 'Oslo', position: '59.9139;10.7522', ICBM: '59.9139, 10.7522' },
+    countryCode: 'NO',
+    keywords: {
+      ru: ['создание сайтов осло', 'разработка сайтов осло', 'веб студия осло', 'itshka осло'],
+      en: ['website development oslo', 'web development oslo', 'create website oslo', 'web studio oslo', 'itshka oslo', 'website design oslo'],
+      pl: ['tworzenie stron oslo', 'strony www oslo', 'itshka oslo']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Осло — столица Норвегии и один из самых дорогих городов мира. Создаём качественные сайты для ословских компаний с учётом норвежского подхода к бизнесу.',
+        en: 'Oslo is the capital of Norway and one of the most expensive cities in the world. We create quality websites for Oslo companies considering the Norwegian approach to business.',
+        pl: 'Oslo to stolica Norwegii i jedno z najdroższych miast na świecie. Tworzymy jakościowe strony internetowe dla firm z Oslo, uwzględniając norweskie podejście do biznesu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Осло и Норвегии. Понимаем особенности норвежского рынка и создаём сайты, которые помогают компаниям работать в условиях скандинавской конкуренции.',
+        en: 'We work with businesses in Oslo and Norway. We understand the specifics of the Norwegian market and create websites that help companies work in conditions of Scandinavian competition.',
+        pl: 'Pracujemy z firmami w Oslo i Norwegii. Rozumiemy specyfikę rynku norweskiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach konkurencji skandynawskiej.'
+      },
+      cityFeatures: {
+        ru: ['Норвежский подход', 'Скандинавские стандарты', 'Высокое качество', 'Премиум решения'],
+        en: ['Norwegian approach', 'Scandinavian standards', 'High quality', 'Premium solutions'],
+        pl: ['Podejście norweskie', 'Standardy skandynawskie', 'Wysoka jakość', 'Rozwiązania premium']
+      }
+    }
+  },
+  dublin: {
+    code: 'dublin',
+    name: { ru: 'Дублин', en: 'Dublin', pl: 'Dublin' },
+    nameLocative: { ru: 'Дублине', en: 'Dublin', pl: 'Dublinie' },
+    region: { ru: 'Ленстер', en: 'Leinster', pl: 'Leinster' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'IE-D', placename: 'Dublin', position: '53.3498;-6.2603', ICBM: '53.3498, -6.2603' },
+    countryCode: 'IE',
+    keywords: {
+      ru: ['создание сайтов дублин', 'разработка сайтов дублин', 'веб студия дублин', 'itshka дублин'],
+      en: ['website development dublin', 'web development dublin', 'create website dublin', 'web studio dublin', 'itshka dublin', 'website design dublin'],
+      pl: ['tworzenie stron dublin', 'strony www dublin', 'itshka dublin']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Дублин — столица Ирландии и крупный технологический хаб Европы. Создаём современные сайты для дублинских компаний с учётом ирландского подхода к бизнесу.',
+        en: 'Dublin is the capital of Ireland and a major technology hub in Europe. We create modern websites for Dublin companies considering the Irish approach to business.',
+        pl: 'Dublin to stolica Irlandii i ważne centrum technologiczne w Europie. Tworzymy nowoczesne strony internetowe dla firm z Dublina, uwzględniając irlandzkie podejście do biznesu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Дублине и Ирландии. Понимаем особенности ирландского рынка и создаём сайты, которые помогают компаниям работать в условиях европейской конкуренции.',
+        en: 'We work with businesses in Dublin and Ireland. We understand the specifics of the Irish market and create websites that help companies work in conditions of European competition.',
+        pl: 'Pracujemy z firmami w Dublinie i Irlandii. Rozumiemy specyfikę rynku irlandzkiego i tworzymy strony internetowe, które pomagają firmom działać w warunkach konkurencji europejskiej.'
+      },
+      cityFeatures: {
+        ru: ['Ирландский подход', 'Технологический хаб', 'Европейские стандарты', 'Современные решения'],
+        en: ['Irish approach', 'Technology hub', 'European standards', 'Modern solutions'],
+        pl: ['Podejście irlandzkie', 'Centrum technologiczne', 'Standardy europejskie', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  lisbon: {
+    code: 'lisbon',
+    name: { ru: 'Лиссабон', en: 'Lisbon', pl: 'Lizbona' },
+    nameLocative: { ru: 'Лиссабоне', en: 'Lisbon', pl: 'Lizbonie' },
+    region: { ru: 'Лиссабон', en: 'Lisbon', pl: 'Lizbona' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'PT-11', placename: 'Lisbon', position: '38.7223;-9.1393', ICBM: '38.7223, -9.1393' },
+    countryCode: 'PT',
+    keywords: {
+      ru: ['создание сайтов лиссабон', 'разработка сайтов лиссабон', 'веб студия лиссабон', 'itshka лиссабон'],
+      en: ['website development lisbon', 'web development lisbon', 'create website lisbon', 'web studio lisbon', 'itshka lisbon', 'website design lisbon'],
+      pl: ['tworzenie stron lizbona', 'strony www lizbona', 'itshka lizbona']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Лиссабон — столица Португалии и один из самых красивых городов Европы. Создаём современные сайты для лиссабонских компаний с учётом португальского рынка.',
+        en: 'Lisbon is the capital of Portugal and one of the most beautiful cities in Europe. We create modern websites for Lisbon companies considering the Portuguese market.',
+        pl: 'Lizbona to stolica Portugalii i jedno z najpiękniejszych miast w Europie. Tworzymy nowoczesne strony internetowe dla firm z Lizbony, uwzględniając rynek portugalski.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Лиссабоне и Португалии. Понимаем особенности португальского рынка и создаём сайты, которые помогают компаниям развиваться в условиях европейской конкуренции.',
+        en: 'We work with businesses in Lisbon and Portugal. We understand the specifics of the Portuguese market and create websites that help companies develop in conditions of European competition.',
+        pl: 'Pracujemy z firmami w Lizbonie i Portugalii. Rozumiemy specyfikę rynku portugalskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w warunkach konkurencji europejskiej.'
+      },
+      cityFeatures: {
+        ru: ['Португальский рынок', 'Европейские стандарты', 'Современный подход', 'Качественные решения'],
+        en: ['Portuguese market', 'European standards', 'Modern approach', 'Quality solutions'],
+        pl: ['Rynek portugalski', 'Standardy europejskie', 'Nowoczesne podejście', 'Jakościowe rozwiązania']
+      }
+    }
+  },
+  athens: {
+    code: 'athens',
+    name: { ru: 'Афины', en: 'Athens', pl: 'Ateny' },
+    nameLocative: { ru: 'Афинах', en: 'Athens', pl: 'Atenach' },
+    region: { ru: 'Аттика', en: 'Attica', pl: 'Attyka' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'GR-I', placename: 'Athens', position: '37.9838;23.7275', ICBM: '37.9838, 23.7275' },
+    countryCode: 'GR',
+    keywords: {
+      ru: ['создание сайтов афины', 'разработка сайтов афины', 'веб студия афины', 'itshka афины'],
+      en: ['website development athens', 'web development athens', 'create website athens', 'web studio athens', 'itshka athens', 'website design athens'],
+      pl: ['tworzenie stron aten', 'strony www aten', 'itshka aten']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Афины — столица Греции с богатым историческим наследием. Создаём современные сайты для афинских компаний, сочетая греческую эстетику с современными технологиями.',
+        en: 'Athens is the capital of Greece with rich historical heritage. We create modern websites for Athens companies, combining Greek aesthetics with modern technologies.',
+        pl: 'Ateny to stolica Grecji z bogatym dziedzictwem historycznym. Tworzymy nowoczesne strony internetowe dla firm z Aten, łącząc grecką estetykę z nowoczesnymi technologiami.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Афинах и Греции. Понимаем особенности греческого рынка и создаём сайты, которые помогают компаниям развиваться в условиях европейской конкуренции.',
+        en: 'We work with businesses in Athens and Greece. We understand the specifics of the Greek market and create websites that help companies develop in conditions of European competition.',
+        pl: 'Pracujemy z firmami w Atenach i Grecji. Rozumiemy specyfikę rynku greckiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w warunkach konkurencji europejskiej.'
+      },
+      cityFeatures: {
+        ru: ['Греческий рынок', 'Исторический контекст', 'Европейские стандарты', 'Современные решения'],
+        en: ['Greek market', 'Historical context', 'European standards', 'Modern solutions'],
+        pl: ['Rynek grecki', 'Kontekst historyczny', 'Standardy europejskie', 'Nowoczesne rozwiązania']
+      }
+    }
+  },
+  budapest: {
+    code: 'budapest',
+    name: { ru: 'Будапешт', en: 'Budapest', pl: 'Budapeszt' },
+    nameLocative: { ru: 'Будапеште', en: 'Budapest', pl: 'Budapeszcie' },
+    region: { ru: 'Будапешт', en: 'Budapest', pl: 'Budapeszt' },
+    phone: { display: '+48 502 420 839', tel: '+48502420839' },
+    geo: { region: 'HU-BU', placename: 'Budapest', position: '47.4979;19.0402', ICBM: '47.4979, 19.0402' },
+    countryCode: 'HU',
+    keywords: {
+      ru: ['создание сайтов будапешт', 'разработка сайтов будапешт', 'веб студия будапешт', 'itshka будапешт'],
+      en: ['website development budapest', 'web development budapest', 'create website budapest', 'web studio budapest', 'itshka budapest', 'website design budapest'],
+      pl: ['tworzenie stron budapeszt', 'strony www budapeszt', 'itshka budapeszt']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Будапешт — столица Венгрии и один из красивейших городов Европы. Создаём современные сайты для будапештских компаний с учётом венгерского рынка и европейских стандартов.',
+        en: 'Budapest is the capital of Hungary and one of the most beautiful cities in Europe. We create modern websites for Budapest companies considering the Hungarian market and European standards.',
+        pl: 'Budapeszt to stolica Węgier i jedno z najpiękniejszych miast w Europie. Tworzymy nowoczesne strony internetowe dla firm z Budapesztu, uwzględniając rynek węgierski i standardy europejskie.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Будапеште и Венгрии. Понимаем особенности венгерского рынка и создаём сайты, которые помогают компаниям развиваться в условиях европейской конкуренции.',
+        en: 'We work with businesses in Budapest and Hungary. We understand the specifics of the Hungarian market and create websites that help companies develop in conditions of European competition.',
+        pl: 'Pracujemy z firmami w Budapeszcie i na Węgrzech. Rozumiemy specyfikę rynku węgierskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w warunkach konkurencji europejskiej.'
+      },
+      cityFeatures: {
+        ru: ['Венгерский рынок', 'Европейские стандарты', 'Современный подход', 'Качественные решения'],
+        en: ['Hungarian market', 'European standards', 'Modern approach', 'Quality solutions'],
+        pl: ['Rynek węgierski', 'Standardy europejskie', 'Nowoczesne podejście', 'Jakościowe rozwiązania']
+      }
+    }
   }
 };
 
@@ -2259,7 +2786,12 @@ export const countryToCity: Record<string, CityCode> = {
   'PL': 'warsaw',
   'RU': 'moscow', // По умолчанию Москва для России
   'UA': 'minsk',
-  'KZ': 'almaty' // По умолчанию Алматы для Казахстана
+  'KZ': 'almaty', // По умолчанию Алматы для Казахстана
+  // Европейские столицы
+  'DE': 'berlin', 'FR': 'paris', 'GB': 'london', 'IT': 'rome', 'ES': 'madrid',
+  'NL': 'amsterdam', 'BE': 'brussels', 'AT': 'vienna', 'CZ': 'prague',
+  'SE': 'stockholm', 'DK': 'copenhagen', 'FI': 'helsinki', 'NO': 'oslo',
+  'IE': 'dublin', 'PT': 'lisbon', 'GR': 'athens', 'HU': 'budapest'
 };
 
 // Маппинг городов по названию (для более точного определения)
@@ -2380,6 +2912,40 @@ export const cityNameToCode: Record<string, CityCode> = {
   'semipalatinsk': 'semey',
   'семипалатинск': 'semey',
   'atyrau': 'atyrau',
-  'атырау': 'atyrau'
+  'атырау': 'atyrau',
+  'berlin': 'berlin',
+  'берлин': 'berlin',
+  'paris': 'paris',
+  'париж': 'paris',
+  'london': 'london',
+  'лондон': 'london',
+  'rome': 'rome',
+  'рим': 'rome',
+  'madrid': 'madrid',
+  'мадрид': 'madrid',
+  'amsterdam': 'amsterdam',
+  'амстердам': 'amsterdam',
+  'brussels': 'brussels',
+  'брюссель': 'brussels',
+  'vienna': 'vienna',
+  'вена': 'vienna',
+  'prague': 'prague',
+  'прага': 'prague',
+  'stockholm': 'stockholm',
+  'стокгольм': 'stockholm',
+  'copenhagen': 'copenhagen',
+  'копенгаген': 'copenhagen',
+  'helsinki': 'helsinki',
+  'хельсинки': 'helsinki',
+  'oslo': 'oslo',
+  'осло': 'oslo',
+  'dublin': 'dublin',
+  'дублин': 'dublin',
+  'lisbon': 'lisbon',
+  'лиссабон': 'lisbon',
+  'athens': 'athens',
+  'афины': 'athens',
+  'budapest': 'budapest',
+  'будапешт': 'budapest'
 };
 

@@ -47,7 +47,24 @@ const CitySwitcher = () => {
     { code: 'pavlodar', name: cities.pavlodar.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.pavlodar.name.ru, flag: '🇰🇿' },
     { code: 'oskemen', name: cities.oskemen.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.oskemen.name.ru, flag: '🇰🇿' },
     { code: 'semey', name: cities.semey.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.semey.name.ru, flag: '🇰🇿' },
-    { code: 'atyrau', name: cities.atyrau.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.atyrau.name.ru, flag: '🇰🇿' }
+    { code: 'atyrau', name: cities.atyrau.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.atyrau.name.ru, flag: '🇰🇿' },
+    { code: 'berlin', name: cities.berlin.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.berlin.name.ru, flag: '🇩🇪' },
+    { code: 'paris', name: cities.paris.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.paris.name.ru, flag: '🇫🇷' },
+    { code: 'london', name: cities.london.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.london.name.ru, flag: '🇬🇧' },
+    { code: 'rome', name: cities.rome.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.rome.name.ru, flag: '🇮🇹' },
+    { code: 'madrid', name: cities.madrid.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.madrid.name.ru, flag: '🇪🇸' },
+    { code: 'amsterdam', name: cities.amsterdam.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.amsterdam.name.ru, flag: '🇳🇱' },
+    { code: 'brussels', name: cities.brussels.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.brussels.name.ru, flag: '🇧🇪' },
+    { code: 'vienna', name: cities.vienna.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.vienna.name.ru, flag: '🇦🇹' },
+    { code: 'prague', name: cities.prague.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.prague.name.ru, flag: '🇨🇿' },
+    { code: 'stockholm', name: cities.stockholm.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.stockholm.name.ru, flag: '🇸🇪' },
+    { code: 'copenhagen', name: cities.copenhagen.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.copenhagen.name.ru, flag: '🇩🇰' },
+    { code: 'helsinki', name: cities.helsinki.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.helsinki.name.ru, flag: '🇫🇮' },
+    { code: 'oslo', name: cities.oslo.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.oslo.name.ru, flag: '🇳🇴' },
+    { code: 'dublin', name: cities.dublin.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.dublin.name.ru, flag: '🇮🇪' },
+    { code: 'lisbon', name: cities.lisbon.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.lisbon.name.ru, flag: '🇵🇹' },
+    { code: 'athens', name: cities.athens.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.athens.name.ru, flag: '🇬🇷' },
+    { code: 'budapest', name: cities.budapest.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.budapest.name.ru, flag: '🇭🇺' }
   ];
 
   return (

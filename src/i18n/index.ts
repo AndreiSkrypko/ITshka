@@ -16,6 +16,10 @@ const countryToLanguage: Record<string, string> = {
   'BY': 'ru', 'RU': 'ru', 'KZ': 'ru', 'UA': 'ru', 
   'KG': 'ru', 'UZ': 'ru', 'TJ': 'ru', 'MD': 'ru', 
   'AM': 'ru', 'AZ': 'ru', 'GE': 'ru', 'PL': 'pl',
+  // Европейские страны - английский язык
+  'DE': 'en', 'FR': 'en', 'GB': 'en', 'IT': 'en', 'ES': 'en', 'NL': 'en', 'BE': 'en',
+  'AT': 'en', 'CZ': 'en', 'SE': 'en', 'DK': 'en', 'FI': 'en', 'NO': 'en', 'IE': 'en',
+  'PT': 'en', 'GR': 'en', 'HU': 'en',
 };
 
 // Получаем начальный язык синхронно (без блокирующих запросов)

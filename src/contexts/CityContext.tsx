@@ -89,6 +89,23 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     if (citySegment === 'oskemen') return 'oskemen';
     if (citySegment === 'semey') return 'semey';
     if (citySegment === 'atyrau') return 'atyrau';
+    if (citySegment === 'berlin') return 'berlin';
+    if (citySegment === 'paris') return 'paris';
+    if (citySegment === 'london') return 'london';
+    if (citySegment === 'rome') return 'rome';
+    if (citySegment === 'madrid') return 'madrid';
+    if (citySegment === 'amsterdam') return 'amsterdam';
+    if (citySegment === 'brussels') return 'brussels';
+    if (citySegment === 'vienna') return 'vienna';
+    if (citySegment === 'prague') return 'prague';
+    if (citySegment === 'stockholm') return 'stockholm';
+    if (citySegment === 'copenhagen') return 'copenhagen';
+    if (citySegment === 'helsinki') return 'helsinki';
+    if (citySegment === 'oslo') return 'oslo';
+    if (citySegment === 'dublin') return 'dublin';
+    if (citySegment === 'lisbon') return 'lisbon';
+    if (citySegment === 'athens') return 'athens';
+    if (citySegment === 'budapest') return 'budapest';
     
     // Если город не найден, возвращаем null (будет определен ближайший)
     return null;
@@ -140,7 +157,24 @@ export const CityProvider = ({ children }: CityProviderProps) => {
       pavlodar: { lat: 52.2833, lon: 76.9667 },
       oskemen: { lat: 49.9561, lon: 82.6144 },
       semey: { lat: 50.4111, lon: 80.2275 },
-      atyrau: { lat: 47.1167, lon: 51.8833 }
+      atyrau: { lat: 47.1167, lon: 51.8833 },
+      berlin: { lat: 52.5200, lon: 13.4050 },
+      paris: { lat: 48.8566, lon: 2.3522 },
+      london: { lat: 51.5074, lon: -0.1278 },
+      rome: { lat: 41.9028, lon: 12.4964 },
+      madrid: { lat: 40.4168, lon: -3.7038 },
+      amsterdam: { lat: 52.3676, lon: 4.9041 },
+      brussels: { lat: 50.8503, lon: 4.3517 },
+      vienna: { lat: 48.2082, lon: 16.3738 },
+      prague: { lat: 50.0755, lon: 14.4378 },
+      stockholm: { lat: 59.3293, lon: 18.0686 },
+      copenhagen: { lat: 55.6761, lon: 12.5683 },
+      helsinki: { lat: 60.1699, lon: 24.9384 },
+      oslo: { lat: 59.9139, lon: 10.7522 },
+      dublin: { lat: 53.3498, lon: -6.2603 },
+      lisbon: { lat: 38.7223, lon: -9.1393 },
+      athens: { lat: 37.9838, lon: 23.7275 },
+      budapest: { lat: 47.4979, lon: 19.0402 }
     };
 
     // Вычисляем расстояние до каждого города (используем формулу гаверсинуса для большей точности)
@@ -345,6 +379,75 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                       }
                       if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
                         resolve({ city: 'volgograd', isInCity: true });
+                        return;
+                      }
+                      // Европейские столицы
+                      if (cityName.includes('berlin')) {
+                        resolve({ city: 'berlin', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('paris')) {
+                        resolve({ city: 'paris', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('london')) {
+                        resolve({ city: 'london', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('rome') || cityName.includes('roma')) {
+                        resolve({ city: 'rome', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('madrid')) {
+                        resolve({ city: 'madrid', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('amsterdam')) {
+                        resolve({ city: 'amsterdam', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('brussels') || cityName.includes('bruxelles')) {
+                        resolve({ city: 'brussels', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('vienna') || cityName.includes('wien')) {
+                        resolve({ city: 'vienna', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('prague') || cityName.includes('praha')) {
+                        resolve({ city: 'prague', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('stockholm')) {
+                        resolve({ city: 'stockholm', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('copenhagen') || cityName.includes('kobenhavn')) {
+                        resolve({ city: 'copenhagen', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('helsinki') || cityName.includes('helsingfors')) {
+                        resolve({ city: 'helsinki', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('oslo')) {
+                        resolve({ city: 'oslo', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('dublin') || cityName.includes('baile atha cliath')) {
+                        resolve({ city: 'dublin', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('lisbon') || cityName.includes('lisboa')) {
+                        resolve({ city: 'lisbon', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('athens') || cityName.includes('athina')) {
+                        resolve({ city: 'athens', isInCity: true });
+                        return;
+                      }
+                      if (cityName.includes('budapest')) {
+                        resolve({ city: 'budapest', isInCity: true });
                         return;
                       }
                     }
@@ -579,19 +682,71 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         if (cityName.includes('perm') || cityName.includes('пермь')) {
           return { city: 'perm', isInCity: true };
         }
-                if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
-                  return { city: 'volgograd', isInCity: true };
-                }
-              }
-              
-              // Сохраняем код страны пользователя
-              if (data.country_code) {
-                setUserCountry(data.country_code);
-              }
-              
-              // ПРИОРИТЕТ 3: Если город не определен, используем маппинг по стране (последний резерв)
-              const detectedCity = countryToCity[data.country_code] || 'minsk';
-              return { city: detectedCity, isInCity: false };
+        if (cityName.includes('volgograd') || cityName.includes('волгоград')) {
+          return { city: 'volgograd', isInCity: true };
+        }
+        // Европейские столицы
+        if (cityName.includes('berlin')) {
+          return { city: 'berlin', isInCity: true };
+        }
+        if (cityName.includes('paris')) {
+          return { city: 'paris', isInCity: true };
+        }
+        if (cityName.includes('london')) {
+          return { city: 'london', isInCity: true };
+        }
+        if (cityName.includes('rome') || cityName.includes('roma')) {
+          return { city: 'rome', isInCity: true };
+        }
+        if (cityName.includes('madrid')) {
+          return { city: 'madrid', isInCity: true };
+        }
+        if (cityName.includes('amsterdam')) {
+          return { city: 'amsterdam', isInCity: true };
+        }
+        if (cityName.includes('brussels') || cityName.includes('bruxelles')) {
+          return { city: 'brussels', isInCity: true };
+        }
+        if (cityName.includes('vienna') || cityName.includes('wien')) {
+          return { city: 'vienna', isInCity: true };
+        }
+        if (cityName.includes('prague') || cityName.includes('praha')) {
+          return { city: 'prague', isInCity: true };
+        }
+        if (cityName.includes('stockholm')) {
+          return { city: 'stockholm', isInCity: true };
+        }
+        if (cityName.includes('copenhagen') || cityName.includes('kobenhavn')) {
+          return { city: 'copenhagen', isInCity: true };
+        }
+        if (cityName.includes('helsinki') || cityName.includes('helsingfors')) {
+          return { city: 'helsinki', isInCity: true };
+        }
+        if (cityName.includes('oslo')) {
+          return { city: 'oslo', isInCity: true };
+        }
+        if (cityName.includes('dublin') || cityName.includes('baile atha cliath')) {
+          return { city: 'dublin', isInCity: true };
+        }
+        if (cityName.includes('lisbon') || cityName.includes('lisboa')) {
+          return { city: 'lisbon', isInCity: true };
+        }
+        if (cityName.includes('athens') || cityName.includes('athina')) {
+          return { city: 'athens', isInCity: true };
+        }
+        if (cityName.includes('budapest')) {
+          return { city: 'budapest', isInCity: true };
+        }
+      }
+      
+      // Сохраняем код страны пользователя
+      if (data.country_code) {
+        setUserCountry(data.country_code);
+      }
+      
+      // ПРИОРИТЕТ 3: Если город не определен, используем маппинг по стране (последний резерв)
+      const detectedCity = countryToCity[data.country_code] || 'minsk';
+      return { city: detectedCity, isInCity: false };
     } catch {
       return { city: 'minsk', isInCity: false };
     }
