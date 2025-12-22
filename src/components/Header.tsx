@@ -8,9 +8,10 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const { cityConfig, userCountry } = useCity();
   
-  // Выбираем телефон в зависимости от региона пользователя
-  const currentPhone = userCountry 
-    ? getPhoneByCountry(userCountry)
+  // Выбираем телефон в зависимости от страны города (не пользователя!)
+  // Это важно: если город в Беларуси - белорусский номер, если в Польше - польский
+  const currentPhone = cityConfig.countryCode === 'PL' 
+    ? getPhoneByCountry('PL')
     : cityConfig.phone;
   const lang = i18n.language as 'ru' | 'en' | 'pl';
   // Всегда используем склонение для русского языка

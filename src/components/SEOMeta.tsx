@@ -16,9 +16,10 @@ const SEOMeta = () => {
   const regionName = cityConfig.region[lang] || cityConfig.region.ru;
   const keywords = cityConfig.keywords[lang] || cityConfig.keywords.ru;
   
-  // Выбираем телефон в зависимости от региона пользователя
-  const currentPhone = userCountry 
-    ? getPhoneByCountry(userCountry)
+  // Выбираем телефон в зависимости от страны города (не пользователя!)
+  // Это важно: если город в Беларуси - белорусский номер, если в Польше - польский
+  const currentPhone = cityConfig.countryCode === 'PL' 
+    ? getPhoneByCountry('PL')
     : cityConfig.phone;
 
   // Генерируем title и description в зависимости от города и языка

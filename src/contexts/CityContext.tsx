@@ -166,6 +166,8 @@ export const CityProvider = ({ children }: CityProviderProps) => {
     // Считаем, что пользователь в городе, если расстояние меньше 30 км
     const isInCity = minDistance < 30;
     
+    // ВАЖНО: Если ближайший город найден по координатам, используем его (независимо от страны из IP)
+    // Это решает проблему, когда IP определяет страну как PL, но пользователь физически в Лиде
     return { city: closestCity, isInCity };
   };
 
@@ -201,8 +203,11 @@ export const CityProvider = ({ children }: CityProviderProps) => {
                     }
                     
                     // ПРИОРИТЕТ 1: Используем координаты из IP API для определения ближайшего города (самый точный способ)
+                    // ВАЖНО: Координаты имеют абсолютный приоритет - если они указывают на белорусский город,
+                    // используем его, даже если IP определяет страну как PL
                     if (data.latitude && data.longitude) {
                       const result = await detectCityByCoordinates(data.latitude, data.longitude);
+                      // Если ближайший город найден по координатам, используем его (независимо от страны из IP)
                       resolve(result);
                       return;
                     }
