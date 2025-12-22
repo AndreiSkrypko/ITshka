@@ -37,7 +37,17 @@ const CitySwitcher = () => {
   const cityList: Array<{ code: CityCode; name: string; flag: string }> = [
     { code: 'minsk', name: cities.minsk.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.minsk.name.ru, flag: '🇧🇾' },
     { code: 'lida', name: cities.lida.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.lida.name.ru, flag: '🇧🇾' },
-    { code: 'warsaw', name: cities.warsaw.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.warsaw.name.ru, flag: '🇵🇱' }
+    { code: 'warsaw', name: cities.warsaw.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.warsaw.name.ru, flag: '🇵🇱' },
+    { code: 'almaty', name: cities.almaty.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.almaty.name.ru, flag: '🇰🇿' },
+    { code: 'nur-sultan', name: cities['nur-sultan'].name[i18n.language as 'ru' | 'en' | 'pl'] || cities['nur-sultan'].name.ru, flag: '🇰🇿' },
+    { code: 'shymkent', name: cities.shymkent.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.shymkent.name.ru, flag: '🇰🇿' },
+    { code: 'karaganda', name: cities.karaganda.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.karaganda.name.ru, flag: '🇰🇿' },
+    { code: 'aktobe', name: cities.aktobe.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.aktobe.name.ru, flag: '🇰🇿' },
+    { code: 'taraz', name: cities.taraz.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.taraz.name.ru, flag: '🇰🇿' },
+    { code: 'pavlodar', name: cities.pavlodar.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.pavlodar.name.ru, flag: '🇰🇿' },
+    { code: 'oskemen', name: cities.oskemen.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.oskemen.name.ru, flag: '🇰🇿' },
+    { code: 'semey', name: cities.semey.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.semey.name.ru, flag: '🇰🇿' },
+    { code: 'atyrau', name: cities.atyrau.name[i18n.language as 'ru' | 'en' | 'pl'] || cities.atyrau.name.ru, flag: '🇰🇿' }
   ];
 
   return (

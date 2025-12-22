@@ -1,4 +1,4 @@
-export type CityCode = 'minsk' | 'lida' | 'warsaw' | 'brest' | 'vitebsk' | 'gomel' | 'grodno' | 'mogilev' | 'baranovichi' | 'bobruisk' | 'pinsk' | 'orsha' | 'maladzyechna' | 'salihorsk' | 'navapolatsk' | 'polatsk' | 'mazyr' | 'slutsk' | 'moscow' | 'spb' | 'novosibirsk' | 'ekaterinburg' | 'kazan' | 'nizhny-novgorod' | 'chelyabinsk' | 'samara' | 'omsk' | 'rostov-on-don' | 'ufa' | 'krasnoyarsk' | 'voronezh' | 'perm' | 'volgograd';
+export type CityCode = 'minsk' | 'lida' | 'warsaw' | 'brest' | 'vitebsk' | 'gomel' | 'grodno' | 'mogilev' | 'baranovichi' | 'bobruisk' | 'pinsk' | 'orsha' | 'maladzyechna' | 'salihorsk' | 'navapolatsk' | 'polatsk' | 'mazyr' | 'slutsk' | 'moscow' | 'spb' | 'novosibirsk' | 'ekaterinburg' | 'kazan' | 'nizhny-novgorod' | 'chelyabinsk' | 'samara' | 'omsk' | 'rostov-on-don' | 'ufa' | 'krasnoyarsk' | 'voronezh' | 'perm' | 'volgograd' | 'almaty' | 'nur-sultan' | 'shymkent' | 'karaganda' | 'aktobe' | 'taraz' | 'pavlodar' | 'oskemen' | 'semey' | 'atyrau';
 
 export interface CityConfig {
   code: CityCode;
@@ -1940,6 +1940,316 @@ export const cities: Record<CityCode, CityConfig> = {
         pl: ['Doświadczenie na Południu Rosji', 'Zrozumienie rynku przemysłowego', 'Kontekst historyczny', 'Niezawodne rozwiązania']
       }
     }
+  },
+  almaty: {
+    code: 'almaty',
+    name: { ru: 'Алматы', en: 'Almaty', pl: 'Ałmaty' },
+    nameLocative: { ru: 'Алматы', en: 'Almaty', pl: 'Ałmatach' },
+    region: { ru: 'Алматинская область', en: 'Almaty Region', pl: 'Obwód ałmacki' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-ALM', placename: 'Алматы', position: '43.2220;76.8512', ICBM: '43.2220, 76.8512' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов алматы', 'разработка сайтов алматы', 'заказать сайт алматы', 'сайт под ключ алматы', 'веб студия алматы', 'сделать сайт алматы', 'лендинг алматы', 'интернет магазин алматы', 'корпоративный сайт алматы', 'веб разработка алматы', 'создать сайт алматы', 'сайт дешево алматы', 'сайт бесплатно алматы', 'сайт на заказ алматы', 'заказать сайт недорого алматы', 'создать сайт самому алматы', 'сайт под ключ недорого алматы', 'itshka алматы', 'сделать сайт в алматы', 'создать сайт в алматы'],
+      en: ['website development almaty', 'web development almaty', 'create website almaty', 'web studio almaty', 'itshka almaty'],
+      pl: ['tworzenie stron ałmaty', 'strony www ałmaty', 'itshka ałmaty']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Алматы — крупнейший мегаполис Казахстана и деловой центр Центральной Азии. Создаём сайты для алматинских компаний с учётом динамичного развития города и международного бизнес-климата.',
+        en: 'Almaty is the largest metropolis of Kazakhstan and the business center of Central Asia. We create websites for Almaty companies considering the dynamic development of the city and international business climate.',
+        pl: 'Ałmaty to największa metropolia Kazachstanu i centrum biznesowe Azji Środkowej. Tworzymy strony internetowe dla firm z Ałmat, uwzględniając dynamiczny rozwój miasta i międzynarodowy klimat biznesowy.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Алматы и Алматинской области. Понимаем особенности казахстанского рынка и создаём сайты, которые помогают компаниям развиваться в крупнейшем экономическом центре страны.',
+        en: 'We work with businesses in Almaty and Almaty Region. We understand the specifics of the Kazakhstani market and create websites that help companies develop in the largest economic center of the country.',
+        pl: 'Pracujemy z firmami w Ałmatach i obwodzie ałmackim. Rozumiemy specyfikę rynku kazachstańskiego i tworzymy strony internetowe, które pomagają firmom rozwijać się w największym centrum gospodarczym kraju.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Казахстане', 'Понимание центральноазиатского рынка', 'Международный подход', 'Современные технологии'],
+        en: ['Experience in Kazakhstan', 'Understanding of Central Asian market', 'International approach', 'Modern technologies'],
+        pl: ['Doświadczenie w Kazachstanie', 'Zrozumienie rynku środkowoazjatyckiego', 'Podejście międzynarodowe', 'Nowoczesne technologie']
+      }
+    }
+  },
+  'nur-sultan': {
+    code: 'nur-sultan',
+    name: { ru: 'Нур-Султан', en: 'Nur-Sultan', pl: 'Nur-Sułtan' },
+    nameLocative: { ru: 'Нур-Султане', en: 'Nur-Sultan', pl: 'Nur-Sułtanie' },
+    region: { ru: 'Акмолинская область', en: 'Akmola Region', pl: 'Obwód akmolski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-AKM', placename: 'Нур-Султан', position: '51.1694;71.4491', ICBM: '51.1694, 71.4491' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов нур-султан', 'разработка сайтов астана', 'заказать сайт нур-султан', 'сайт под ключ астана', 'веб студия нур-султан', 'сделать сайт астана', 'лендинг нур-султан', 'интернет магазин астана', 'корпоративный сайт нур-султан', 'веб разработка астана', 'создать сайт астана', 'сайт дешево нур-султан', 'сайт бесплатно астана', 'сайт на заказ нур-султан', 'заказать сайт недорого астана', 'создать сайт самому нур-султан', 'сайт под ключ недорого астана', 'itshka нур-султан', 'сделать сайт в нур-султане', 'создать сайт в астане'],
+      en: ['website development nur-sultan', 'web development astana', 'create website nur-sultan', 'web studio nur-sultan', 'itshka nur-sultan'],
+      pl: ['tworzenie stron nur-sułtan', 'strony www nur-sułtan', 'itshka nur-sułtan']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Нур-Султан — столица Казахстана и современный административный центр. Создаём сайты для столичных компаний с учётом государственного сектора и инновационных проектов.',
+        en: 'Nur-Sultan is the capital of Kazakhstan and a modern administrative center. We create websites for capital companies considering the public sector and innovative projects.',
+        pl: 'Nur-Sułtan to stolica Kazachstanu i nowoczesne centrum administracyjne. Tworzymy strony internetowe dla firm stołecznych, uwzględniając sektor publiczny i projekty innowacyjne.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Нур-Султане и Акмолинской области. Понимаем специфику столичного рынка и создаём сайты, которые помогают компаниям работать с государственными структурами и крупными проектами.',
+        en: 'We work with businesses in Nur-Sultan and Akmola Region. We understand the specifics of the capital market and create websites that help companies work with government structures and large projects.',
+        pl: 'Pracujemy z firmami w Nur-Sułtanie i obwodzie akmolskim. Rozumiemy specyfikę rynku stołecznego i tworzymy strony internetowe, które pomagają firmom współpracować ze strukturami rządowymi i dużymi projektami.'
+      },
+      cityFeatures: {
+        ru: ['Столичный уровень', 'Опыт с госсектором', 'Инновационные решения', 'Административный контекст'],
+        en: ['Capital level', 'Experience with public sector', 'Innovative solutions', 'Administrative context'],
+        pl: ['Poziom stołeczny', 'Doświadczenie z sektorem publicznym', 'Innowacyjne rozwiązania', 'Kontekst administracyjny']
+      }
+    }
+  },
+  shymkent: {
+    code: 'shymkent',
+    name: { ru: 'Шымкент', en: 'Shymkent', pl: 'Szymkent' },
+    nameLocative: { ru: 'Шымкенте', en: 'Shymkent', pl: 'Szymkencie' },
+    region: { ru: 'Туркестанская область', en: 'Turkestan Region', pl: 'Obwód turkiestański' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-TUR', placename: 'Шымкент', position: '42.3419;69.5901', ICBM: '42.3419, 69.5901' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов шымкент', 'разработка сайтов шымкент', 'заказать сайт шымкент', 'сайт под ключ шымкент', 'веб студия шымкент', 'сделать сайт шымкент', 'лендинг шымкент', 'интернет магазин шымкент', 'корпоративный сайт шымкент', 'веб разработка шымкент', 'создать сайт шымкент', 'сайт дешево шымкент', 'сайт бесплатно шымкент', 'сайт на заказ шымкент', 'заказать сайт недорого шымкент', 'создать сайт самому шымкент', 'сайт под ключ недорого шымкент', 'itshka шымкент', 'сделать сайт в шымкенте', 'создать сайт в шымкенте'],
+      en: ['website development shymkent', 'web development shymkent', 'create website shymkent', 'web studio shymkent', 'itshka shymkent'],
+      pl: ['tworzenie stron szymkent', 'strony www szymkent', 'itshka szymkent']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Шымкент — третий по величине город Казахстана с богатой историей и развитой промышленностью. Создаём сайты для шымкентских компаний с учётом промышленной специфики и культурного наследия региона.',
+        en: 'Shymkent is the third largest city in Kazakhstan with rich history and developed industry. We create websites for Shymkent companies considering industrial specifics and cultural heritage of the region.',
+        pl: 'Szymkent to trzecie co do wielkości miasto w Kazachstanie z bogatą historią i rozwiniętym przemysłem. Tworzymy strony internetowe dla firm z Szymkentu, uwzględniając specyfikę przemysłową i dziedzictwo kulturalne regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Шымкенте и Туркестанской области. Понимаем особенности южного рынка Казахстана и создаём сайты, которые помогают компаниям развиваться в промышленном и культурном центре.',
+        en: 'We work with businesses in Shymkent and Turkestan Region. We understand the specifics of the southern market of Kazakhstan and create websites that help companies develop in an industrial and cultural center.',
+        pl: 'Pracujemy z firmami w Szymkencie i obwodzie turkiestańskim. Rozumiemy specyfikę rynku południowego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum przemysłowym i kulturalnym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Юге Казахстана', 'Понимание промышленного рынка', 'Культурный контекст', 'Надёжные решения'],
+        en: ['Experience in South Kazakhstan', 'Understanding of industrial market', 'Cultural context', 'Reliable solutions'],
+        pl: ['Doświadczenie na Południu Kazachstanu', 'Zrozumienie rynku przemysłowego', 'Kontekst kulturalny', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  karaganda: {
+    code: 'karaganda',
+    name: { ru: 'Караганда', en: 'Karaganda', pl: 'Karaganda' },
+    nameLocative: { ru: 'Караганде', en: 'Karaganda', pl: 'Karagandzie' },
+    region: { ru: 'Карагандинская область', en: 'Karaganda Region', pl: 'Obwód karagandyjski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-KAR', placename: 'Караганда', position: '49.8014;73.1024', ICBM: '49.8014, 73.1024' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов караганда', 'разработка сайтов караганда', 'заказать сайт караганда', 'сайт под ключ караганда', 'веб студия караганда', 'сделать сайт караганда', 'лендинг караганда', 'интернет магазин караганда', 'корпоративный сайт караганда', 'веб разработка караганда', 'создать сайт караганда', 'сайт дешево караганда', 'сайт бесплатно караганда', 'сайт на заказ караганда', 'заказать сайт недорого караганда', 'создать сайт самому караганда', 'сайт под ключ недорого караганда', 'itshka караганда', 'сделать сайт в караганде', 'создать сайт в караганде'],
+      en: ['website development karaganda', 'web development karaganda', 'create website karaganda', 'web studio karaganda', 'itshka karaganda'],
+      pl: ['tworzenie stron karaganda', 'strony www karaganda', 'itshka karaganda']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Караганда — крупный промышленный центр Казахстана с развитой угольной и металлургической отраслью. Создаём сайты для карагандинских компаний с учётом промышленной специфики и деловой активности региона.',
+        en: 'Karaganda is a major industrial center of Kazakhstan with developed coal and metallurgical industry. We create websites for Karaganda companies considering industrial specifics and business activity of the region.',
+        pl: 'Karaganda to ważne centrum przemysłowe Kazachstanu z rozwiniętym przemysłem węglowym i metalurgicznym. Tworzymy strony internetowe dla firm z Karagandy, uwzględniając specyfikę przemysłową i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Караганде и Карагандинской области. Понимаем особенности промышленного рынка Центрального Казахстана и создаём сайты, которые помогают компаниям эффективно работать в условиях промышленного региона.',
+        en: 'We work with businesses in Karaganda and Karaganda Region. We understand the specifics of the industrial market of Central Kazakhstan and create websites that help companies work effectively in an industrial region.',
+        pl: 'Pracujemy z firmami w Karagandzie i obwodzie karagandyjskim. Rozumiemy specyfikę rynku przemysłowego Centralnego Kazachstanu i tworzymy strony internetowe, które pomagają firmom efektywnie działać w regionie przemysłowym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в Центральном Казахстане', 'Понимание промышленного рынка', 'Металлургическая специфика', 'Быстрая разработка'],
+        en: ['Experience in Central Kazakhstan', 'Understanding of industrial market', 'Metallurgical specifics', 'Fast development'],
+        pl: ['Doświadczenie w Centralnym Kazachstanie', 'Zrozumienie rynku przemysłowego', 'Specyfika metalurgiczna', 'Szybki rozwój']
+      }
+    }
+  },
+  aktobe: {
+    code: 'aktobe',
+    name: { ru: 'Актобе', en: 'Aktobe', pl: 'Aktobe' },
+    nameLocative: { ru: 'Актобе', en: 'Aktobe', pl: 'Aktobe' },
+    region: { ru: 'Актюбинская область', en: 'Aktobe Region', pl: 'Obwód aktobijski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-AKT', placename: 'Актобе', position: '50.2833;57.1667', ICBM: '50.2833, 57.1667' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов актобе', 'разработка сайтов актобе', 'заказать сайт актобе', 'сайт под ключ актобе', 'веб студия актобе', 'сделать сайт актобе', 'лендинг актобе', 'интернет магазин актобе', 'корпоративный сайт актобе', 'веб разработка актобе', 'создать сайт актобе', 'сайт дешево актобе', 'сайт бесплатно актобе', 'сайт на заказ актобе', 'заказать сайт недорого актобе', 'создать сайт самому актобе', 'сайт под ключ недорого актобе', 'itshka актобе', 'сделать сайт в актобе', 'создать сайт в актобе'],
+      en: ['website development aktobe', 'web development aktobe', 'create website aktobe', 'web studio aktobe', 'itshka aktobe'],
+      pl: ['tworzenie stron aktobe', 'strony www aktobe', 'itshka aktobe']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Актобе — крупный промышленный центр Западного Казахстана с развитой нефтегазовой отраслью. Создаём сайты для актюбинских компаний с учётом энергетической специфики и деловой активности региона.',
+        en: 'Aktobe is a major industrial center of Western Kazakhstan with developed oil and gas industry. We create websites for Aktobe companies considering energy specifics and business activity of the region.',
+        pl: 'Aktobe to ważne centrum przemysłowe Zachodniego Kazachstanu z rozwiniętym przemysłem naftowo-gazowym. Tworzymy strony internetowe dla firm z Aktobe, uwzględniając specyfikę energetyczną i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Актобе и Актюбинской области. Понимаем особенности энергетического рынка Западного Казахстана и создаём сайты, которые помогают компаниям развиваться в нефтегазовом регионе.',
+        en: 'We work with businesses in Aktobe and Aktobe Region. We understand the specifics of the energy market of Western Kazakhstan and create websites that help companies develop in an oil and gas region.',
+        pl: 'Pracujemy z firmami w Aktobe i obwodzie aktobijskim. Rozumiemy specyfikę rynku energetycznego Zachodniego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w regionie naftowo-gazowym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Западе Казахстана', 'Понимание энергетического рынка', 'Нефтегазовая специфика', 'Надёжные решения'],
+        en: ['Experience in Western Kazakhstan', 'Understanding of energy market', 'Oil and gas specifics', 'Reliable solutions'],
+        pl: ['Doświadczenie na Zachodzie Kazachstanu', 'Zrozumienie rynku energetycznego', 'Specyfika naftowo-gazowa', 'Niezawodne rozwiązania']
+      }
+    }
+  },
+  taraz: {
+    code: 'taraz',
+    name: { ru: 'Тараз', en: 'Taraz', pl: 'Taraz' },
+    nameLocative: { ru: 'Таразе', en: 'Taraz', pl: 'Tarazie' },
+    region: { ru: 'Жамбылская область', en: 'Zhambyl Region', pl: 'Obwód żambylski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-ZHA', placename: 'Тараз', position: '42.9000;71.3667', ICBM: '42.9000, 71.3667' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов тараз', 'разработка сайтов тараз', 'заказать сайт тараз', 'сайт под ключ тараз', 'веб студия тараз', 'сделать сайт тараз', 'лендинг тараз', 'интернет магазин тараз', 'корпоративный сайт тараз', 'веб разработка тараз', 'создать сайт тараз', 'сайт дешево тараз', 'сайт бесплатно тараз', 'сайт на заказ тараз', 'заказать сайт недорого тараз', 'создать сайт самому тараз', 'сайт под ключ недорого тараз', 'itshka тараз', 'сделать сайт в таразе', 'создать сайт в таразе'],
+      en: ['website development taraz', 'web development taraz', 'create website taraz', 'web studio taraz', 'itshka taraz'],
+      pl: ['tworzenie stron taraz', 'strony www taraz', 'itshka taraz']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Тараз — древний город с богатой историей и развитой промышленностью. Создаём сайты для таразских компаний с учётом исторического наследия и промышленной специфики региона.',
+        en: 'Taraz is an ancient city with rich history and developed industry. We create websites for Taraz companies considering historical heritage and industrial specifics of the region.',
+        pl: 'Taraz to starożytne miasto z bogatą historią i rozwiniętym przemysłem. Tworzymy strony internetowe dla firm z Tarazu, uwzględniając dziedzictwo historyczne i specyfikę przemysłową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Таразе и Жамбылской области. Понимаем особенности южного рынка Казахстана и создаём сайты, которые помогают компаниям развиваться в историческом и промышленном центре.',
+        en: 'We work with businesses in Taraz and Zhambyl Region. We understand the specifics of the southern market of Kazakhstan and create websites that help companies develop in a historical and industrial center.',
+        pl: 'Pracujemy z firmami w Tarazie i obwodzie żambylskim. Rozumiemy specyfikę rynku południowego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum historycznym i przemysłowym.'
+      },
+      cityFeatures: {
+        ru: ['Исторический контекст', 'Понимание регионального рынка', 'Промышленная специфика', 'Культурное наследие'],
+        en: ['Historical context', 'Understanding of regional market', 'Industrial specifics', 'Cultural heritage'],
+        pl: ['Kontekst historyczny', 'Zrozumienie rynku regionalnego', 'Specyfika przemysłowa', 'Dziedzictwo kulturalne']
+      }
+    }
+  },
+  pavlodar: {
+    code: 'pavlodar',
+    name: { ru: 'Павлодар', en: 'Pavlodar', pl: 'Pawłodar' },
+    nameLocative: { ru: 'Павлодаре', en: 'Pavlodar', pl: 'Pawłodarze' },
+    region: { ru: 'Павлодарская область', en: 'Pavlodar Region', pl: 'Obwód pawłodarski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-PAV', placename: 'Павлодар', position: '52.2833;76.9667', ICBM: '52.2833, 76.9667' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов павлодар', 'разработка сайтов павлодар', 'заказать сайт павлодар', 'сайт под ключ павлодар', 'веб студия павлодар', 'сделать сайт павлодар', 'лендинг павлодар', 'интернет магазин павлодар', 'корпоративный сайт павлодар', 'веб разработка павлодар', 'создать сайт павлодар', 'сайт дешево павлодар', 'сайт бесплатно павлодар', 'сайт на заказ павлодар', 'заказать сайт недорого павлодар', 'создать сайт самому павлодар', 'сайт под ключ недорого павлодар', 'itshka павлодар', 'сделать сайт в павлодаре', 'создать сайт в павлодаре'],
+      en: ['website development pavlodar', 'web development pavlodar', 'create website pavlodar', 'web studio pavlodar', 'itshka pavlodar'],
+      pl: ['tworzenie stron pawłodar', 'strony www pawłodar', 'itshka pawłodar']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Павлодар — крупный промышленный центр Северного Казахстана с развитой энергетикой и машиностроением. Создаём сайты для павлодарских компаний с учётом промышленной специфики и деловой активности региона.',
+        en: 'Pavlodar is a major industrial center of Northern Kazakhstan with developed energy and engineering industries. We create websites for Pavlodar companies considering industrial specifics and business activity of the region.',
+        pl: 'Pawłodar to ważne centrum przemysłowe Północnego Kazachstanu z rozwiniętym przemysłem energetycznym i maszynowym. Tworzymy strony internetowe dla firm z Pawłodaru, uwzględniając specyfikę przemysłową i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Павлодаре и Павлодарской области. Понимаем особенности промышленного рынка Северного Казахстана и создаём сайты, которые помогают компаниям развиваться в энергетическом и машиностроительном центре.',
+        en: 'We work with businesses in Pavlodar and Pavlodar Region. We understand the specifics of the industrial market of Northern Kazakhstan and create websites that help companies develop in an energy and engineering center.',
+        pl: 'Pracujemy z firmami w Pawłodarze i obwodzie pawłodarskim. Rozumiemy specyfikę rynku przemysłowego Północnego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum energetycznym i maszynowym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Севере Казахстана', 'Понимание энергетического рынка', 'Машиностроительная специфика', 'Промышленные решения'],
+        en: ['Experience in Northern Kazakhstan', 'Understanding of energy market', 'Engineering specifics', 'Industrial solutions'],
+        pl: ['Doświadczenie na Północy Kazachstanu', 'Zrozumienie rynku energetycznego', 'Specyfika maszynowa', 'Rozwiązania przemysłowe']
+      }
+    }
+  },
+  oskemen: {
+    code: 'oskemen',
+    name: { ru: 'Оскемен', en: 'Oskemen', pl: 'Oskemen' },
+    nameLocative: { ru: 'Оскемене', en: 'Oskemen', pl: 'Oskemenie' },
+    region: { ru: 'Восточно-Казахстанская область', en: 'East Kazakhstan Region', pl: 'Obwód wschodniokazachstański' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-VOS', placename: 'Оскемен', position: '49.9561;82.6144', ICBM: '49.9561, 82.6144' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов оскемен', 'разработка сайтов усть-каменогорск', 'заказать сайт оскемен', 'сайт под ключ усть-каменогорск', 'веб студия оскемен', 'сделать сайт усть-каменогорск', 'лендинг оскемен', 'интернет магазин усть-каменогорск', 'корпоративный сайт оскемен', 'веб разработка усть-каменогорск', 'создать сайт оскемен', 'сайт дешево усть-каменогорск', 'сайт бесплатно оскемен', 'сайт на заказ усть-каменогорск', 'заказать сайт недорого оскемен', 'создать сайт самому усть-каменогорск', 'сайт под ключ недорого оскемен', 'itshka оскемен', 'сделать сайт в оскемене', 'создать сайт в усть-каменогорске'],
+      en: ['website development oskemen', 'web development ust-kamenogorsk', 'create website oskemen', 'web studio oskemen', 'itshka oskemen'],
+      pl: ['tworzenie stron oskemen', 'strony www oskemen', 'itshka oskemen']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Оскемен — крупный промышленный центр Восточного Казахстана с развитой цветной металлургией. Создаём сайты для оскеменских компаний с учётом промышленной специфики и деловой активности региона.',
+        en: 'Oskemen is a major industrial center of East Kazakhstan with developed non-ferrous metallurgy. We create websites for Oskemen companies considering industrial specifics and business activity of the region.',
+        pl: 'Oskemen to ważne centrum przemysłowe Wschodniego Kazachstanu z rozwiniętą metalurgią kolorową. Tworzymy strony internetowe dla firm z Oskemenu, uwzględniając specyfikę przemysłową i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Оскемене и Восточно-Казахстанской области. Понимаем особенности промышленного рынка Восточного Казахстана и создаём сайты, которые помогают компаниям развиваться в металлургическом центре.',
+        en: 'We work with businesses in Oskemen and East Kazakhstan Region. We understand the specifics of the industrial market of East Kazakhstan and create websites that help companies develop in a metallurgical center.',
+        pl: 'Pracujemy z firmami w Oskemenie i obwodzie wschodniokazachstańskim. Rozumiemy specyfikę rynku przemysłowego Wschodniego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum metalurgicznym.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы на Востоке Казахстана', 'Понимание металлургического рынка', 'Цветная металлургия', 'Промышленные решения'],
+        en: ['Experience in East Kazakhstan', 'Understanding of metallurgical market', 'Non-ferrous metallurgy', 'Industrial solutions'],
+        pl: ['Doświadczenie na Wschodzie Kazachstanu', 'Zrozumienie rynku metalurgicznego', 'Metalurgia kolorowa', 'Rozwiązania przemysłowe']
+      }
+    }
+  },
+  semey: {
+    code: 'semey',
+    name: { ru: 'Семей', en: 'Semey', pl: 'Semiej' },
+    nameLocative: { ru: 'Семее', en: 'Semey', pl: 'Semieju' },
+    region: { ru: 'Абайская область', en: 'Abai Region', pl: 'Obwód abajski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-ABA', placename: 'Семей', position: '50.4111;80.2275', ICBM: '50.4111, 80.2275' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов семей', 'разработка сайтов семипалатинск', 'заказать сайт семей', 'сайт под ключ семипалатинск', 'веб студия семей', 'сделать сайт семипалатинск', 'лендинг семей', 'интернет магазин семипалатинск', 'корпоративный сайт семей', 'веб разработка семипалатинск', 'создать сайт семей', 'сайт дешево семипалатинск', 'сайт бесплатно семей', 'сайт на заказ семипалатинск', 'заказать сайт недорого семей', 'создать сайт самому семипалатинск', 'сайт под ключ недорого семей', 'itshka семей', 'сделать сайт в семее', 'создать сайт в семипалатинске'],
+      en: ['website development semey', 'web development semipalatinsk', 'create website semey', 'web studio semey', 'itshka semey'],
+      pl: ['tworzenie stron semiej', 'strony www semiej', 'itshka semiej']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Семей — исторический город Восточного Казахстана с богатым культурным наследием. Создаём сайты для семейских компаний с учётом культурного контекста и деловой активности региона.',
+        en: 'Semey is a historical city of East Kazakhstan with rich cultural heritage. We create websites for Semey companies considering cultural context and business activity of the region.',
+        pl: 'Semiej to historyczne miasto Wschodniego Kazachstanu z bogatym dziedzictwem kulturalnym. Tworzymy strony internetowe dla firm z Semieju, uwzględniając kontekst kulturalny i aktywność biznesową regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Семее и Абайской области. Понимаем особенности культурного и делового рынка Восточного Казахстана и создаём сайты, которые помогают компаниям развиваться в историческом центре.',
+        en: 'We work with businesses in Semey and Abai Region. We understand the specifics of the cultural and business market of East Kazakhstan and create websites that help companies develop in a historical center.',
+        pl: 'Pracujemy z firmami w Semieju i obwodzie abajskim. Rozumiemy specyfikę rynku kulturalnego i biznesowego Wschodniego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum historycznym.'
+      },
+      cityFeatures: {
+        ru: ['Культурный контекст', 'Историческое наследие', 'Понимание регионального рынка', 'Деловые решения'],
+        en: ['Cultural context', 'Historical heritage', 'Understanding of regional market', 'Business solutions'],
+        pl: ['Kontekst kulturalny', 'Dziedzictwo historyczne', 'Zrozumienie rynku regionalnego', 'Rozwiązania biznesowe']
+      }
+    }
+  },
+  atyrau: {
+    code: 'atyrau',
+    name: { ru: 'Атырау', en: 'Atyrau', pl: 'Atyrau' },
+    nameLocative: { ru: 'Атырау', en: 'Atyrau', pl: 'Atyrau' },
+    region: { ru: 'Атырауская область', en: 'Atyrau Region', pl: 'Obwód atyrauski' },
+    phone: { display: '+375 29 121-09-08', tel: '+375291210908' },
+    geo: { region: 'KZ-ATY', placename: 'Атырау', position: '47.1167;51.8833', ICBM: '47.1167, 51.8833' },
+    countryCode: 'KZ',
+    keywords: {
+      ru: ['создание сайтов атырау', 'разработка сайтов атырау', 'заказать сайт атырау', 'сайт под ключ атырау', 'веб студия атырау', 'сделать сайт атырау', 'лендинг атырау', 'интернет магазин атырау', 'корпоративный сайт атырау', 'веб разработка атырау', 'создать сайт атырау', 'сайт дешево атырау', 'сайт бесплатно атырау', 'сайт на заказ атырау', 'заказать сайт недорого атырау', 'создать сайт самому атырау', 'сайт под ключ недорого атырау', 'itshka атырау', 'сделать сайт в атырау', 'создать сайт в атырау'],
+      en: ['website development atyrau', 'web development atyrau', 'create website atyrau', 'web studio atyrau', 'itshka atyrau'],
+      pl: ['tworzenie stron atyrau', 'strony www atyrau', 'itshka atyrau']
+    },
+    uniqueContent: {
+      heroDescription: {
+        ru: 'Атырау — нефтяная столица Казахстана с развитой нефтегазовой отраслью. Создаём сайты для атырауских компаний с учётом энергетической специфики и международного бизнес-климата региона.',
+        en: 'Atyrau is the oil capital of Kazakhstan with developed oil and gas industry. We create websites for Atyrau companies considering energy specifics and international business climate of the region.',
+        pl: 'Atyrau to naftowa stolica Kazachstanu z rozwiniętym przemysłem naftowo-gazowym. Tworzymy strony internetowe dla firm z Atyrau, uwzględniając specyfikę energetyczną i międzynarodowy klimat biznesowy regionu.'
+      },
+      bonusDescription: {
+        ru: 'Работаем с бизнесом в Атырау и Атырауской области. Понимаем особенности нефтегазового рынка Западного Казахстана и создаём сайты, которые помогают компаниям развиваться в энергетическом центре с международными проектами.',
+        en: 'We work with businesses in Atyrau and Atyrau Region. We understand the specifics of the oil and gas market of Western Kazakhstan and create websites that help companies develop in an energy center with international projects.',
+        pl: 'Pracujemy z firmami w Atyrau i obwodzie atyrauskim. Rozumiemy specyfikę rynku naftowo-gazowego Zachodniego Kazachstanu i tworzymy strony internetowe, które pomagają firmom rozwijać się w centrum energetycznym z projektami międzynarodowymi.'
+      },
+      cityFeatures: {
+        ru: ['Опыт работы в нефтегазовой отрасли', 'Международный подход', 'Энергетическая специфика', 'Современные технологии'],
+        en: ['Experience in oil and gas industry', 'International approach', 'Energy specifics', 'Modern technologies'],
+        pl: ['Doświadczenie w przemyśle naftowo-gazowym', 'Podejście międzynarodowe', 'Specyfika energetyczna', 'Nowoczesne technologie']
+      }
+    }
   }
 };
 
@@ -1948,7 +2258,8 @@ export const countryToCity: Record<string, CityCode> = {
   'BY': 'minsk', // По умолчанию Минск для Беларуси
   'PL': 'warsaw',
   'RU': 'moscow', // По умолчанию Москва для России
-  'UA': 'minsk'
+  'UA': 'minsk',
+  'KZ': 'almaty' // По умолчанию Алматы для Казахстана
 };
 
 // Маппинг городов по названию (для более точного определения)
@@ -2039,6 +2350,36 @@ export const cityNameToCode: Record<string, CityCode> = {
   'perm': 'perm',
   'пермь': 'perm',
   'volgograd': 'volgograd',
-  'волгоград': 'volgograd'
+  'волгоград': 'volgograd',
+  'almaty': 'almaty',
+  'алматы': 'almaty',
+  'nur-sultan': 'nur-sultan',
+  'nur sultan': 'nur-sultan',
+  'нур-султан': 'nur-sultan',
+  'нур султан': 'nur-sultan',
+  'astana': 'nur-sultan',
+  'астана': 'nur-sultan',
+  'shymkent': 'shymkent',
+  'шымкент': 'shymkent',
+  'karaganda': 'karaganda',
+  'караганда': 'karaganda',
+  'aktobe': 'aktobe',
+  'актобе': 'aktobe',
+  'taraz': 'taraz',
+  'тараз': 'taraz',
+  'pavlodar': 'pavlodar',
+  'павлодар': 'pavlodar',
+  'oskemen': 'oskemen',
+  'оскемен': 'oskemen',
+  'ust-kamenogorsk': 'oskemen',
+  'ust kamenogorsk': 'oskemen',
+  'усть-каменогорск': 'oskemen',
+  'усть каменогорск': 'oskemen',
+  'semey': 'semey',
+  'семей': 'semey',
+  'semipalatinsk': 'semey',
+  'семипалатинск': 'semey',
+  'atyrau': 'atyrau',
+  'атырау': 'atyrau'
 };
 
