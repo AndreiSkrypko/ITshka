@@ -606,83 +606,60 @@ export const CityProvider = ({ children }: CityProviderProps) => {
         return;
       }
 
-      // 1. Проверяем URL (высший приоритет)
-      const cityFromPath = getCityFromPath();
-      if (cityFromPath) {
-        // Город найден в URL и он валидный
-        setCurrentCityState(cityFromPath);
-        localStorage.setItem('selectedCity', cityFromPath);
-        setIsInitialized(true);
-        return;
-      }
-
-      // 2. Если в URL указан несуществующий город, определяем ближайший
-      const path = location.pathname;
-      if (path !== '/' && path !== '') {
-        const pathSegments = path.split('/').filter(Boolean);
-        if (pathSegments.length > 0) {
-          // В URL есть город, но он не найден в списке - определяем ближайший
-          try {
-            const nearestCity = await detectNearestCity();
-            setCurrentCityState(nearestCity);
-            localStorage.setItem('selectedCity', nearestCity);
-            // Обновляем URL на ближайший город (но сохраняем остальную часть пути если есть)
-            navigate(`/${nearestCity}`, { replace: true });
-            setIsInitialized(true);
-            return;
-          } catch (error) {
-            // Если не удалось определить, используем дефолт
-            setCurrentCityState('minsk');
-            localStorage.setItem('selectedCity', 'minsk');
-            navigate('/minsk', { replace: true });
-            setIsInitialized(true);
-            return;
-          }
-        }
-      }
-
-      // 3. Пытаемся определить город по геолокации/IP (только при первой загрузке)
+      // Проверяем, есть ли сохраненный город в localStorage
+      const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
+      
+      // Сначала определяем реальное местоположение пользователя
       try {
         const detected = await detectCityByIP();
         
-        // Проверяем, есть ли сохраненный город в localStorage
-        const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
-        
-        // Если есть сохраненный город, используем его (не переопределяем автоматически)
+        // 1. Если есть сохраненный город, проверяем, совпадает ли он с реальным местоположением
         if (savedCity && cities[savedCity]) {
-          setCurrentCityState(savedCity);
-          // Проверяем, находится ли пользователь в сохраненном городе
-          if (savedCity === detected.city) {
+          // Если пользователь физически находится в другом городе, переопределяем
+          // Это важно: если пользователь в Лиде, но в localStorage Варшава, используем Лиду
+          if (detected.city !== savedCity && detected.isInCity) {
+            // Пользователь физически в другом городе - используем реальное местоположение
+            setCurrentCityState(detected.city);
             setIsInCity(detected.isInCity);
-          } else {
-            setIsInCity(false);
+            localStorage.setItem('selectedCity', detected.city);
+            navigate(`/${detected.city}`, { replace: true });
+            setIsInitialized(true);
+            return;
           }
+          // Если сохраненный город совпадает с реальным или пользователь не в городе, используем сохраненный
+          setCurrentCityState(savedCity);
+          setIsInCity(detected.city === savedCity ? detected.isInCity : false);
           navigate(`/${savedCity}`, { replace: true });
           setIsInitialized(true);
           return;
         }
         
-        // Если нет сохраненного, используем определенный
+        // 2. Если нет сохраненного города, используем определенный по геолокации/IP
         setCurrentCityState(detected.city);
         setIsInCity(detected.isInCity);
         localStorage.setItem('selectedCity', detected.city);
         navigate(`/${detected.city}`, { replace: true });
         setIsInitialized(true);
+        return;
       } catch (error) {
-        // Если автоопределение не сработало, используем localStorage или дефолт
-        const savedCity = localStorage.getItem('selectedCity') as CityCode | null;
-        if (savedCity && cities[savedCity]) {
-          setCurrentCityState(savedCity);
-          navigate(`/${savedCity}`, { replace: true });
+        // Если автоопределение не сработало, проверяем URL как резерв
+        const cityFromPath = getCityFromPath();
+        if (cityFromPath && cities[cityFromPath]) {
+          setCurrentCityState(cityFromPath);
+          localStorage.setItem('selectedCity', cityFromPath);
+          navigate(`/${cityFromPath}`, { replace: true });
           setIsInitialized(true);
-        } else {
-          // Последний резерв - Минск
-          setCurrentCityState('minsk');
-          localStorage.setItem('selectedCity', 'minsk');
-          navigate('/minsk', { replace: true });
-          setIsInitialized(true);
+          return;
         }
+        
+        // Последний резерв - Минск
+        setCurrentCityState('minsk');
+        localStorage.setItem('selectedCity', 'minsk');
+        navigate('/minsk', { replace: true });
+        setIsInitialized(true);
+        return;
       }
+
     };
 
     if (!isInitialized) {
