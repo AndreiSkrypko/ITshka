@@ -14,7 +14,91 @@ const SEOMeta = () => {
     : cityConfig.name[lang] || cityConfig.name.ru;
   const cityNameNominative = cityConfig.name[lang] || cityConfig.name.ru; // Для некоторых мест нужен именительный падеж
   const regionName = cityConfig.region[lang] || cityConfig.region.ru;
-  const keywords = cityConfig.keywords[lang] || cityConfig.keywords.ru;
+  const cityKeywords = cityConfig.keywords[lang] || cityConfig.keywords.ru;
+  
+  // Общие ключевые слова (без привязки к городу) для расширения охвата
+  const generalKeywords = lang === 'ru'
+    ? [
+        'создать сайт',
+        'создание сайта',
+        'разработка сайта',
+        'сайт для бизнеса',
+        'сайт под ключ',
+        'заказать сайт',
+        'сделать сайт',
+        'веб студия',
+        'разработка сайтов',
+        'создание сайтов',
+        'веб разработка',
+        'веб дизайн',
+        'лендинг',
+        'интернет магазин',
+        'корпоративный сайт',
+        'сайт визитка',
+        'одностраничный сайт',
+        'адаптивный сайт',
+        'мобильная версия сайта',
+        'продвижение сайтов',
+        'создание сайта недорого',
+        'разработка сайта недорого',
+        'сайт дешево',
+        'сайт бесплатно',
+        'сайт на заказ',
+        'заказать сайт недорого',
+        'создать сайт самому',
+        'сайт под ключ недорого',
+        'itshka',
+        'сделать сайт в',
+        'создать сайт в'
+      ]
+    : lang === 'en'
+    ? [
+        'create website',
+        'website development',
+        'web development',
+        'website for business',
+        'website design',
+        'web design',
+        'landing page',
+        'online store',
+        'corporate website',
+        'business website',
+        'responsive website',
+        'mobile website',
+        'website builder',
+        'custom website',
+        'website creation',
+        'web studio',
+        'itshka',
+        'make website',
+        'build website',
+        'website cost',
+        'cheap website',
+        'affordable website',
+        'professional website',
+        'modern website',
+        'website services'
+      ]
+    : [
+        'stworzyć stronę',
+        'tworzenie stron',
+        'strony www',
+        'strona dla biznesu',
+        'strona internetowa',
+        'projektowanie stron',
+        'strona responsywna',
+        'sklep internetowy',
+        'strona firmowa',
+        'landing page',
+        'strona mobilna',
+        'itshka',
+        'tania strona',
+        'strona na zamówienie',
+        'strona pod klucz'
+      ];
+  
+  // Комбинируем общие и городские ключевые слова (городские в приоритете)
+  const keywords = [...cityKeywords, ...generalKeywords];
   
   // Выбираем телефон в зависимости от страны города (не пользователя!)
   // Это важно: если город в Беларуси - белорусский номер, если в Польше - польский
@@ -23,21 +107,22 @@ const SEOMeta = () => {
     : cityConfig.phone;
 
   // Генерируем title и description в зависимости от города и языка
+  // Включаем общие запросы для расширения охвата
   const getTitle = () => {
     const base = lang === 'ru' 
-      ? `Сделать сайт в ${cityName} | Создание сайтов под ключ недорого — ITshka`
+      ? `Создать сайт в ${cityName} | Сайт для бизнеса под ключ недорого — ITshka`
       : lang === 'en'
-      ? `Make a Website in ${cityNameNominative} | Website Development — ITshka`
-      : `Zrobić stronę w ${cityNameNominative} | Tworzenie stron internetowych — ITshka`;
+      ? `Create Website in ${cityNameNominative} | Website for Business — ITshka`
+      : `Stworzyć stronę w ${cityNameNominative} | Strona dla biznesu — ITshka`;
     return base;
   };
 
   const getDescription = () => {
     const base = lang === 'ru'
-      ? `🚀 Создание сайтов в ${cityName} и ${regionName}. Сначала делаем сайт — потом платите! ✅ Без предоплаты ✅ Гарантия результата ✅ От 3 дней. Звоните: ${currentPhone.display}`
+      ? `🚀 Создать сайт для бизнеса в ${cityName} и ${regionName}. Сайт под ключ недорого. Сначала делаем сайт — потом платите! ✅ Без предоплаты ✅ Гарантия результата ✅ От 3 дней. Звоните: ${currentPhone.display}`
       : lang === 'en'
-      ? `🚀 Website development in ${cityNameNominative} and ${regionName}. Website first — pay later! ✅ No prepayment ✅ Result guarantee ✅ From 3 days. Call: ${currentPhone.display}`
-      : `🚀 Tworzenie stron internetowych w ${cityNameNominative} i ${regionName}. Najpierw strona — potem płatność! ✅ Bez przedpłaty ✅ Gwarancja wyniku ✅ Od 3 dni. Zadzwoń: ${currentPhone.display}`;
+      ? `🚀 Create website for business in ${cityNameNominative} and ${regionName}. Website development services. Website first — pay later! ✅ No prepayment ✅ Result guarantee ✅ From 3 days. Call: ${currentPhone.display}`
+      : `🚀 Stworzyć stronę dla biznesu w ${cityNameNominative} i ${regionName}. Tworzenie stron internetowych. Najpierw strona — potem płatność! ✅ Bez przedpłaty ✅ Gwarancja wyniku ✅ Od 3 dni. Zadzwoń: ${currentPhone.display}`;
     return base;
   };
 
@@ -60,6 +145,11 @@ const SEOMeta = () => {
       "url": canonicalUrl,
       "telephone": currentPhone.tel,
       "priceRange": "$$",
+      "keywords": lang === 'ru' 
+        ? "создать сайт, сайт для бизнеса, сайт под ключ, разработка сайтов, веб студия, создание сайта, заказать сайт"
+        : lang === 'en'
+        ? "create website, website for business, website development, web design, web studio, custom website"
+        : "stworzyć stronę, strona dla biznesu, tworzenie stron, projektowanie stron, studio internetowe",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": cityNameNominative,
@@ -235,6 +325,14 @@ const SEOMeta = () => {
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />
       <meta name="yandex" content="index, follow" />
+      
+      {/* Дополнительные SEO мета-теги для общих запросов */}
+      <meta name="subject" content={lang === 'ru' ? 'Создание сайтов, разработка сайтов, сайт для бизнеса' : lang === 'en' ? 'Website development, web design, website for business' : 'Tworzenie stron, projektowanie stron, strona dla biznesu'} />
+      <meta name="classification" content={lang === 'ru' ? 'Веб-разработка, создание сайтов, веб-дизайн' : lang === 'en' ? 'Web development, website creation, web design' : 'Tworzenie stron, projektowanie stron'} />
+      <meta name="category" content={lang === 'ru' ? 'Веб-студия, создание сайтов' : lang === 'en' ? 'Web studio, website development' : 'Studio internetowe, tworzenie stron'} />
+      <meta name="coverage" content="Worldwide" />
+      <meta name="distribution" content="Global" />
+      <meta name="rating" content="General" />
       
       {/* Дополнительные SEO мета-теги */}
       <meta name="theme-color" content="#1DA79E" />
