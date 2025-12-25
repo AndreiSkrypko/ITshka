@@ -40,7 +40,7 @@ const BonusCard = () => {
           <h3 className="text-white font-bold text-sm sm:text-base md:text-lg leading-snug mb-0.5 sm:mb-1">
             <span className="text-primary">{t('bonus.title')}</span> {t('bonus.titleAccent')}
           </h3>
-          <p className="text-white/60 text-[11px] sm:text-xs md:text-sm leading-relaxed">
+          <p className="text-white/60 text-[11px] sm:text-xs md:text-sm leading-relaxed line-clamp-2">
             {getDescription()}
           </p>
         </div>
