@@ -258,6 +258,7 @@ const SEOMeta = () => {
     const faqPage = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
       "mainEntity": [
         {
           "@type": "Question",
